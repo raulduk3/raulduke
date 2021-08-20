@@ -18,7 +18,6 @@ const Layout : React.FC = (prop) => {
                 <meta name="robots" content="follow"/>
             </Head>
             { prop.children }
-            <FaRegHandPointer className="emoji"></FaRegHandPointer>
             <Footer>
             </Footer>
         </>
