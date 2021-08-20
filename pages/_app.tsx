@@ -16,11 +16,10 @@ type AppPropsWithLayout = AppProps & {
 }
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const Wrap = Component.getLayout ?? Layout;
   return (
-    Wrap(
-      <Component {...pageProps} />)
-  )
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   )
 }
 export default MyApp
