@@ -12,6 +12,7 @@ ul {
   flex-direction: column;
   justify-content: space-between;
   padding: 0;
+  margin: 0;
 }
 
 li {
@@ -59,6 +60,7 @@ a {
   align-items: center;
   justify-content: space-evenly;
   min-height: 100vh;
+  padding: 0;
   margin: 0;
 }
 
@@ -77,6 +79,6 @@ a {
 {
   position: relative;
   width: 10vw;
-  top: 32vw;
-  left: 32vw;
+  bottom: 24vw;
+  left: 30vw;
 }
