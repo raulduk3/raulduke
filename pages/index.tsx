@@ -6,7 +6,6 @@ import { motion } from "framer-motion"
 const Index: NextPage = () => {
   return (
     <>
-    <FaRegHandPointer className="emoji"></FaRegHandPointer>
     <div className="frame">
       <Link href="https://link.raulduke.com" passHref>
         <>
@@ -73,6 +72,7 @@ const Index: NextPage = () => {
           </Link>
         </motion.ul>
     </div>
+    <FaRegHandPointer className="emoji"></FaRegHandPointer>
     </>
   )
 }
