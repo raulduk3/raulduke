@@ -1,0 +1,56 @@
+.blue
+{
+    background-color: blue;
+    color: white;
+}
+
+.custom-bg
+{
+    width: 100vw;
+    height: 100vh;
+}
+
+.to-the-top
+{
+    margin-left: 20px;
+}
+
+.customImage
+{
+    opacity: 0.9;
+}
+
+.customImageContainer
+{
+    opacity: .2;
+}
+
+.listAlpha {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.listAlpha > li {
+    border: 0px solid black;
+    margin: 0;
+    padding: 5vh;
+}
+
+.listAlpha > li:last-child {
+    border: 1px solid black;
+    margin-top: 0;
+}
+
+.textHighlight
+{
+    color: black;
+    background-color: rgba(200, 200, 200, 0.38);
+    box-shadow: 0 1px 5px rgb(0 0 0 / 0.15);
+    padding-top: 10vmin;
+    padding-bottom: 10vmin;
+    padding-left: 12vw;
+    padding-right: 12vw;
+}
