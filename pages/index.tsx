@@ -1,13 +1,12 @@
 import type { NextPage } from "next"
 import Link from "next/link"
-import Image from "next/image"
 import { motion } from "framer-motion"
 import { FaRegHandPointer } from "react-icons/fa"
 
 const Index: NextPage = () => {
   return (
     <>
-    <div className="frame">
+    <div style={{minHeight:'90vh'}} className="frame">
       <Link href="https://link.raulduke.com" passHref>
           <motion.h1
             initial={{x: -1000, opacity: 0}}
