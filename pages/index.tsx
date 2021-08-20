@@ -2,6 +2,7 @@ import type { NextPage } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { FaRegHandPointer } from "react-icons/fa"
 
 const Index: NextPage = () => {
   return (
