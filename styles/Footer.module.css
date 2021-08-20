@@ -9,3 +9,16 @@
     align-items: center;
     height: 15vh;
 }
+
+.row
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.row > *
+{
+    padding-left: 1vmin;
+    padding-right: 1vmin;
+}
