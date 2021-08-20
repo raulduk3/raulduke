@@ -75,8 +75,8 @@ a {
 
 .emoji
 {
-  width: 5vmin;
   position: relative;
-  top: 40px;
-  right: -5px;
+  width: 10vw;
+  top: 32vw;
+  left: 32vw;
 }

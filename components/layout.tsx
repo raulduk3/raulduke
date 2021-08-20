@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 import Footer from './footer'
 import Head from 'next/head'
+import { FaRegHandPointer } from "react-icons/fa"
 
 const Layout : React.FC = (prop) => {
     return (
@@ -16,6 +17,7 @@ const Layout : React.FC = (prop) => {
                 <meta name="copyright" content="Richard Alvarez" />
                 <meta name="robots" content="follow"/>
             </Head>
+            <FaRegHandPointer className="emoji"></FaRegHandPointer>
             { prop.children }
             <Footer>
             </Footer>

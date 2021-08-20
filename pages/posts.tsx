@@ -5,7 +5,6 @@ import style from '../styles/Posts.module.css'
 import { motion } from 'framer-motion'
 import { Parallax, Background } from 'react-parallax';
 
-import splashImage from '../public/person-standing-in-wavy-water-holding-a-surfboard.jpg'
 
 const Posts : NextPage = () => {
     return (

@@ -2,26 +2,25 @@ import type { NextPage } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { FaRegHandPointer } from "react-icons/fa"
-
 
 const Index: NextPage = () => {
   return (
     <div className="frame">
       <Link href="https://link.raulduke.com" passHref>
+        <>
           <motion.h1
             initial={{x: -1000, opacity: 0}}
             animate={{x: 0, opacity: 1 }}
             transition={{duration: 2}}
             className='raulDukeLink'
           >
-            RA
-            <motion.span transition={{duration: 4.2}} initial={{opacity: 0}} animate={{opacity: 1}}>Ü</motion.span>
-            L D
-            <motion.span transition={{duration: 4.2}} initial={{opacity: 0}} animate={{opacity: 1}}>Ü</motion.span>
-            KE
-            <FaRegHandPointer className='emoji'></FaRegHandPointer>
-          </motion.h1>
+              RA
+              <motion.span transition={{duration: 4.2}} initial={{opacity: 0}} animate={{opacity: 1}}>Ü</motion.span>
+              L D
+              <motion.span transition={{duration: 4.2}} initial={{opacity: 0}} animate={{opacity: 1}}>Ü</motion.span>
+              KE
+            </motion.h1>
+          </>
         </Link>
       <motion.ul
         initial={{
