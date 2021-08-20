@@ -17,7 +17,7 @@ const Index: NextPage = () => {
         height={323}
       ></Image>
     </div>
-    <div style={{minHeight:'90vh'}} className="frame">
+    <div  className="frame">
       <Link href="https://link.raulduke.com" passHref>
           <motion.h1
             initial={{x: -1000, opacity: 0}}
