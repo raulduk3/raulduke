@@ -1,4 +1,6 @@
-# Personal Website and Demonstration by Raul Duke
+# Personal Website / Portfolio
+
+### Raul Duke
 
 Copyright 2021
 
