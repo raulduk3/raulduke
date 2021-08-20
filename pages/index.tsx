@@ -8,7 +8,6 @@ const Index: NextPage = () => {
     <>
     <div className="frame">
       <Link href="https://link.raulduke.com" passHref>
-        <>
           <motion.h1
             initial={{x: -1000, opacity: 0}}
             animate={{x: 0, opacity: 1 }}
@@ -21,7 +20,6 @@ const Index: NextPage = () => {
               <motion.span transition={{duration: 4.2}} initial={{opacity: 0}} animate={{opacity: 1}}>Ü</motion.span>
               KE
             </motion.h1>
-          </>
         </Link>
       <motion.ul
         initial={{
