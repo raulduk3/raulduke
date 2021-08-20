@@ -14,7 +14,9 @@ const Index: NextPage = () => {
             transition={{duration: 2}}
             className='raulDukeLink'
           >
-            RAUL D
+            RA
+            <motion.span transition={{duration: 4.2}} initial={{opacity: 0}} animate={{opacity: 1}}>Ü</motion.span>
+            L D
             <motion.span transition={{duration: 4.2}} initial={{opacity: 0}} animate={{opacity: 1}}>Ü</motion.span>
             KE
           </motion.h1>
