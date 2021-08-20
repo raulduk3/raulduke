@@ -32,7 +32,7 @@
 .listAlpha > li {
     border: 0px solid black;
     margin: 0;
-    padding: 5vh;
+    padding: 4vh;
 }
 
 .listAlpha > li:last-child {
