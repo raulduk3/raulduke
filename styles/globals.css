@@ -18,7 +18,7 @@ ul {
 li {
   border: 1px solid black;
   opacity: 0.8;
-  padding: 10vmin;
+  padding: 5vmin;
   margin: 0.8vh;
   text-align: center;
   max-width: 50vw;
@@ -58,8 +58,9 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
+  align-content: center;
   justify-content: space-evenly;
-  min-height: 90vh;
+  min-height: 85vh;
   padding: 0;
   margin: 0;
 }
