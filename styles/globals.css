@@ -59,6 +59,7 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  min-height: 90vh;
   padding: 0;
   margin: 0;
 }
