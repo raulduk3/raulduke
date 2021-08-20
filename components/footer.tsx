@@ -1,7 +1,7 @@
-import type { ReactElement } from 'react'
+import React from 'react'
 import style from '../styles/Footer.module.css'
 
-const Footer : ReactElement = ({ children }) => {
+const Footer : React.FC = ({ children }) => {
     return (
         <div className={style.footer}>
             <div className={style.row}>

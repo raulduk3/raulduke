@@ -1,26 +1,19 @@
-import type { ReactElement } from 'react'
-import React from 'react';
+import React, { ReactElement } from 'react';
 import Footer from './footer'
 
-const Layout : ReactElement = ({ children }) => {
+const Layout : React.FC = ({ children }) => {
     return (
         <>
             <div className='container'>
                 {/* TODO: Add simple nav bar */}
                 <div className='main'>
-                    {children}
+                    <>{ children }</>
                 </div>
+                <Footer>
+                </Footer>
             </div>
         </>
     )
 };
 
-export default function getLayout(page: ReactElement) {
-    return (
-        <Layout>
-            {page}
-            <Footer>
-            </Footer>
-        </Layout>
-    )
-}
+export default Layout
