@@ -1,13 +1,13 @@
 import React, { ReactElement } from 'react';
 import Footer from './footer'
 
-const Layout : React.FC = ({ children }) => {
+const Layout : React.FC = (prop) => {
     return (
         <>
             <div className='container'>
                 {/* TODO: Add simple nav bar */}
                 <div className='main'>
-                    <>{ children }</>
+                    { prop.children }
                 </div>
                 <Footer>
                 </Footer>
