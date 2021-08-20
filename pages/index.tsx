@@ -52,7 +52,7 @@ const Index: NextPage = () => {
                 transition={{duration: 0.3}}
                 whileHover={{opacity: 1, backgroundColor: 'black', color: 'white'}}>Video</motion.li>
             </Link>
-          <Link href="/" passHref>
+          <Link href="/about" passHref>
             <motion.li
               className='button'
               initial={{backgroundColor: 'white', color: 'black'}}

@@ -13,10 +13,10 @@ Copyright 2021
 - [ ] Add all music videos
 - [ ] Upload poems
 - [ ] Weekly essays and video content
-- [ ] Finish footer
+- [X] Finish footer
 - [ ] Add comment system for pages
 - [ ] Finish navigation
 - [ ] Add high resolution coffee stain to index page (hovering image)
 - [ ] Create a P5JS canvas gallery
     - [ ] Explore integrating p5 sketches into website functionality
-
+- [ ] Create subdomain (solinfinito.raulduke.com) (new repo)
