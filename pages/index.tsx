@@ -9,7 +9,7 @@ const Index: NextPage = () => {
     <div className="frame">
       <Link href="https://link.raulduke.com" passHref>
           <motion.h1
-            initial={{x: -1200, opacity: 0}}
+            initial={{x: -1000, opacity: 0}}
             animate={{x: 0, opacity: 1 }}
             transition={{duration: 2}}
             className='raulDukeLink'
