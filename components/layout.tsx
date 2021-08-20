@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
 import Footer from './footer'
 import Head from 'next/head'
-import { FaRegHandPointer } from "react-icons/fa"
 
 const Layout : React.FC = (prop) => {
     return (

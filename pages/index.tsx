@@ -10,7 +10,7 @@ const Index: NextPage = () => {
     <>
     <div className={style.image}>
       <Image
-        src="/../public/cup-coffee-stain-8.png"
+        src="/public/cup-coffee-stain-8.png"
         alt="Coffee stain"
         className={style.image}
         width={323}
