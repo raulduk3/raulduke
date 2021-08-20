@@ -50,17 +50,17 @@ const Index: NextPage = () => {
               <motion.li
                 className='button'
                 initial={{backgroundColor: 'white', color: 'black'}}
-                whileTap={{opacity: 1, backgroundColor: 'black', color: 'white'}}
+                whileTap={{opacity: 1, backgroundColor: 'black', color: 'black'}}
                 transition={{duration: 0.3}}
-                whileHover={{opacity: 1, backgroundColor: 'black', color: 'white'}}>Video & VFX</motion.li>
+                whileHover={{opacity: 1, backgroundColor: 'black', color: 'black'}}>Video & VFX</motion.li>
             </Link>
           <Link href="/" passHref>
             <motion.li
               className='button'
               initial={{backgroundColor: 'white', color: 'black'}}
-              whileTap={{opacity: 1, backgroundColor: 'black', color: 'white'}}
+              whileTap={{opacity: 1, backgroundColor: 'black', color: 'black'}}
               transition={{duration: 0.3}}
-              whileHover={{opacity: 1, backgroundColor: 'black', color: 'white'}}>Web Portfolio</motion.li>
+              whileHover={{opacity: 1, backgroundColor: 'black', color: 'black'}}>Web Portfolio</motion.li>
           </Link>
           <Link href="/about" passHref>
             <motion.li
