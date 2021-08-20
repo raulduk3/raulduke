@@ -8,11 +8,11 @@ Copyright 2021
 
 ## Todo
 
-- [ ] Add unit testing (Jest, or something like it)
 - [ ] Demo API for random videos and noise
+    - [ ] Unit test API
 - [ ] Add all music videos
 - [ ] Upload poems
-- [ ] Weekly essays and video content
+- [ ] Weekly essays and video content upload (gfx, vfx, vid essay)
 - [X] Finish footer
 - [ ] Add comment system for pages
 - [ ] Finish navigation

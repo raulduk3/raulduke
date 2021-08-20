@@ -10,10 +10,6 @@
     height: 100vh;
 }
 
-.to-the-top
-{
-    margin-left: 20px;
-}
 
 .customImage
 {
@@ -22,7 +18,7 @@
 
 .customImageContainer
 {
-    opacity: .2;
+    opacity: .8;
 }
 
 .listAlpha {
