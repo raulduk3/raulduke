@@ -1,5 +1,3 @@
-// TODO: Create whole about page (should be kinda out there web experience where you click to reveal information)
-
 import React from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"

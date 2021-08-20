@@ -72,3 +72,11 @@ a {
 {
   border-bottom: 3px solid black;
 }
+
+.emoji
+{
+  width: 1vw;
+  position: relative;
+  top: 40px;
+  right: -5px;
+}

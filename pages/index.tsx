@@ -1,7 +1,8 @@
-import type { NextPage } from 'next'
-import Link from 'next/link'
-import Image from 'next/image'
+import type { NextPage } from "next"
+import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
+import { FaRegHandPointer } from "react-icons/fa"
 
 
 const Index: NextPage = () => {
@@ -19,6 +20,7 @@ const Index: NextPage = () => {
             L D
             <motion.span transition={{duration: 4.2}} initial={{opacity: 0}} animate={{opacity: 1}}>Ü</motion.span>
             KE
+            <FaRegHandPointer className='emoji'></FaRegHandPointer>
           </motion.h1>
         </Link>
       <motion.ul
