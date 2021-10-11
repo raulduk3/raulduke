@@ -3,6 +3,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: []
+    domains: ['assets.awwwards.com']
   }
 }

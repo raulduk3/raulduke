@@ -17,21 +17,26 @@ const Index: NextPage = () => {
         height={323}
       ></Image>
     </div>
-    <div  className="frame">
-      <Link href="https://link.raulduke.com" passHref>
-          <motion.h1
-            initial={{x: -1000, opacity: 0}}
-            animate={{x: 0, opacity: 1 }}
-            transition={{duration: 2}}
-            className='raulDukeLink'
-          >
-              RA
-              <motion.span transition={{duration: 4.2}} initial={{opacity: 0}} animate={{opacity: 1}}>Ü</motion.span>
-              L D
-              <motion.span transition={{duration: 4.2}} initial={{opacity: 0}} animate={{opacity: 1}}>Ü</motion.span>
-              KE
-            </motion.h1>
-        </Link>
+    <div className="frame">
+      <motion.div
+        animate={{ scale: [1, 1.1, 1] }}
+        transition={{ ease: "linear", duration: 2, repeat: Infinity }}
+      >
+        <Link href="https://link.raulduke.com" passHref>
+            <motion.h1
+              initial={{x: -1000, opacity: 0}}
+              animate={{x: 0, opacity: 1 }}
+              transition={{duration: 1.6}}
+              className='raulDukeLink'
+            >
+                RA
+                <motion.span transition={{duration: 4.2}} initial={{opacity: 0}} animate={{opacity: 1}}>Ü</motion.span>
+                L D
+                <motion.span transition={{duration: 4.2}} initial={{opacity: 0}} animate={{opacity: 1}}>Ü</motion.span>
+                KE
+              </motion.h1>
+          </Link>
+      </motion.div>
       <motion.ul
         initial={{
           x: 80,
