@@ -34,5 +34,5 @@ yarn-error.log*
 .vercel
 
 # vscode
-
+/.vscode/
 workspace.code-workspace
