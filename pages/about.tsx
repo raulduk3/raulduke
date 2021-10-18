@@ -13,12 +13,17 @@ const About : NextPage = () => {
                     <p>
                         My name is Richard Alvarez. I was born in Chicago.
                     </p>
-                    <Link href="/" passHref><motion.span
-                        initial={{backgroundColor: 'white', color: 'black'}}
-                        whileTap={{opacity: 1, backgroundColor: 'black', color: 'white'}}
-                        transition={{duration: 0.3}}
-                        whileHover={{opacity: 1, backgroundColor: 'black', color: 'white'}} className='button'>Back</motion.span>
-                    </Link>
+                    <ul>
+                        <Link href="/" passHref>
+                            <motion.li
+                                initial={{backgroundColor: 'white', color: 'black'}}
+                                whileTap={{opacity: 1, backgroundColor: 'black', color: 'white'}}
+                                transition={{duration: 0.3}}
+                                whileHover={{opacity: 1, backgroundColor: 'black', color: 'white'}} className="button">
+                                    Back
+                            </motion.li>
+                        </Link>
+                    </ul>
                 </div>
             </div>
         )

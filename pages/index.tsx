@@ -22,11 +22,11 @@ const Index: NextPage = () => {
         animate={{ scale: [1, 1.1, 1] }}
         transition={{ ease: "linear", duration: 2, repeat: Infinity }}
       >
-        <Link href="https://link.raulduke.com" passHref>
+      <Link href="https://link.raulduke.com" passHref>
             <motion.h1
               initial={{x: -1000, opacity: 0}}
               animate={{x: 0, opacity: 1 }}
-              transition={{duration: 1.6}}
+              transition={{duration: 1.2}}
               className='raulDukeLink'
             >
                 RA
@@ -35,7 +35,7 @@ const Index: NextPage = () => {
                 <motion.span transition={{duration: 4.2}} initial={{opacity: 0}} animate={{opacity: 1}}>Ü</motion.span>
                 KE
               </motion.h1>
-          </Link>
+      </Link>
       </motion.div>
       <motion.ul
         initial={{
@@ -47,7 +47,7 @@ const Index: NextPage = () => {
           opacity: 1
         }}
         transition={{
-          duration: 2
+          duration: 1.2
         }}
         className="animatedUl">
           <Link href="/posts" passHref>
@@ -84,7 +84,7 @@ const Index: NextPage = () => {
               transition={{duration: 0.3}}
               whileHover={{opacity: 1, backgroundColor: 'black', color: 'white'}}>Who am I?</motion.li>
           </Link>
-        </motion.ul>
+      </motion.ul>
     </div>
     <FaRegHandPointer className="emoji"></FaRegHandPointer>
     </>
