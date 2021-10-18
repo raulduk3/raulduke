@@ -18,7 +18,7 @@ const Posts : NextPage = () => {
                         initial={{backgroundColor: 'white', color: 'black'}}
                         whileTap={{opacity: 1, backgroundColor: 'black', color: 'white'}}
                         transition={{duration: 0.3}}
-                        whileHover={{opacity: 1, backgroundColor: 'black', color: 'white'}}className='button'>Back</motion.li></Link>
+                        whileHover={{opacity: 1, backgroundColor: 'black', color: 'white'}} className='button'>Back</motion.li></Link>
                 </ul>
             </div >
             <motion.div
