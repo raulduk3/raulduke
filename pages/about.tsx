@@ -1,17 +1,19 @@
 import type { NextPage } from "next"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import style from '../styles/About.module.css'
 
 const About : NextPage = () => {
         return (
             <div className='frame'>
-                <div>
                     <h1>
                         About.
                         <br />
                     </h1>
-                    <p>
+                    <p className={style.body}>
                         My name is Richard Alvarez. I was born in Chicago.
+                        <span className={style.break}></span>
+                        I am multimedia artist studying film at Kenyon College in Gambier, Ohio.
                     </p>
                     <ul>
                         <Link href="/" passHref>
@@ -24,7 +26,6 @@ const About : NextPage = () => {
                             </motion.li>
                         </Link>
                     </ul>
-                </div>
             </div>
         )
 }

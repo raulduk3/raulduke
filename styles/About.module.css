@@ -1,0 +1,18 @@
+.body
+{
+    font-align: left;
+    border: 1px double;
+    padding: 3.6%;
+    max-width: 85%;
+}
+
+.body > *
+{
+    width: 85%;
+    border-bottom: 1px solid;
+}
+
+.break {
+    margin: 4%;
+    display: block;
+}

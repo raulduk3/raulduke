@@ -21,27 +21,6 @@ const Posts : NextPage = () => {
                         whileHover={{opacity: 1, backgroundColor: 'black', color: 'white'}} className='button'>Back</motion.li></Link>
                 </ul>
             </div >
-            <motion.div
-                className={'frame ' + style.customImageContainer}
-                transition={{duration: 2.85}}
-                animate={{opacity: 1}}
-            >
-                <Parallax strength={220} blur={300} className='frame'>
-                    <Background className="frame">
-                        <Image
-                            src='https://assets.awwwards.com/awards/images/2015/04/pattern.jpg'
-                            alt="Net Art"
-                            layout="fill"
-                            className={style.customImage}
-                        />
-                    </Background>
-                    <div className="frame">
-                        <h1 className={style.textHighlight}>
-                            Yes.
-                        </h1>
-                    </div>
-                </Parallax>
-            </motion.div>
         </>
     );
 }
