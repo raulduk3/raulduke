@@ -6,6 +6,7 @@ import style from '../styles/About.module.css'
 const About : NextPage = () => {
         return (
             <div className='frame'>
+                <>
                     <h1>
                         About.
                         <br />
@@ -26,6 +27,7 @@ const About : NextPage = () => {
                             </motion.li>
                         </Link>
                     </ul>
+                </> 
             </div>
         )
 }
