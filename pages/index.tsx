@@ -19,7 +19,7 @@ const Index: NextPage = () => {
     </div>
     <div className="frame">
       <motion.div
-        animate={{ scale: [1, 1.1, 1] }}
+        animate={{ scale: [1, 1.04, 1] }}
         transition={{ ease: "linear", duration: 2, repeat: Infinity }}
       >
       <Link href="https://link.raulduke.com" passHref>
