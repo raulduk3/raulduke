@@ -34,4 +34,5 @@ ul.buttons > li {
 .links
 {
     max-width: 22vw;
+    padding: 0;
 }
