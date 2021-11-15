@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { FaRegHandPointer } from "react-icons/fa"
+
 import style  from '../styles/Index.module.css'
 
 const Index: NextPage = () => {
