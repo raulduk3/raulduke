@@ -35,7 +35,41 @@ const Index: NextPage = () => {
                 </motion.h1>
         </Link>
       </div>
-      <ul className="animatedUl">
+      {<div className={style.imageContainer}>
+        <ul>
+            <li>
+              <Image
+                    src="/images/cover_II.png"
+                    alt="Still frame from latest video."
+                    className={style.image}
+                    width={1920}
+                    height={1080}
+                    layout="responsive"
+                  ></Image>
+            </li>
+            <li>
+              <Image
+                    src="/images/cover_I.png"
+                    alt="Still frame from latest video."
+                    className={style.image}
+                    width={768}
+                    height={576}
+                    layout="responsive"
+                  ></Image>
+            </li>
+            <li>
+              <Image
+                    src="/images/33 (383).jpg"
+                    alt="Still frame from latest video."
+                    className={style.image}
+                    width={1920}
+                    height={816}
+                    layout="responsive"
+                  ></Image>
+            </li>
+        </ul>
+      </div> && true }
+      <ul className={style.buttons}>
           <Link href="/posts" passHref>
             <motion.li
               className='button'
@@ -46,22 +80,22 @@ const Index: NextPage = () => {
                 Digital Hell
             </motion.li>
           </Link>
-          <Link href="/" passHref>
+          <Link href="https://link.raulduke.com/" passHref>
               <motion.li
                 className='button'
                 initial={{backgroundColor: 'white', color: 'black'}}
-                whileTap={{opacity: 1, backgroundColor: 'black', color: 'black'}}
                 transition={{duration: 0.3}}
-                whileHover={{opacity: 1, backgroundColor: 'black', color: 'black'}}>[coming soon]</motion.li>
+                whileTap={{opacity: 1, backgroundColor: 'black', color: 'white'}}
+                whileHover={{opacity: 1, backgroundColor: 'black', color: 'white'}}>VFX & Video</motion.li>
             </Link>
-          <Link href="/" passHref>
+          {/* <Link href="/" passHref>
             <motion.li
               className='button'
               initial={{backgroundColor: 'white', color: 'black'}}
               whileTap={{opacity: 1, backgroundColor: 'black', color: 'black'}}
               transition={{duration: 0.3}}
-              whileHover={{opacity: 1, backgroundColor: 'black', color: 'black'}}>[coming soon]</motion.li>
-          </Link>
+              whileHover={{opacity: 1, backgroundColor: 'black', color: 'black'}}>Web</motion.li>
+          </Link> */}
           <Link href="/about" passHref>
             <motion.li
               className='button'

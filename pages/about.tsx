@@ -12,7 +12,7 @@ const About : NextPage = () => {
                         <br />
                     </h1>
                     <p className={style.body}>
-                        RAÜL DÜKE is the artist project of Richard Alvarez, a programmer and video artist from Chicago.
+                        RAÜL DÜKE is a creative project by Richard Alvarez, a programmer and video artist from Chicago.
                     </p>
                     <ul>
                         <Link href="/" passHref>
