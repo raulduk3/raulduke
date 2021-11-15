@@ -102,7 +102,7 @@ const Index: NextPage = () => {
               initial={{backgroundColor: 'white', color: 'black'}}
               whileTap={{opacity: 1, backgroundColor: 'black', color: 'white'}}
               transition={{duration: 0.3}}
-              whileHover={{opacity: 1, backgroundColor: 'black', color: 'white'}}>Who am I?</motion.li>
+              whileHover={{opacity: 1, backgroundColor: 'black', color: 'white'}}>About</motion.li>
           </Link>
       </ul>
       <ul>
