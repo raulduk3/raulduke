@@ -15,7 +15,8 @@ ul {
   flex-direction: column;
   justify-content: space-between;
   padding: 5%;
-  max-width: 33%;
+
+  width: 33%;
   padding: 2px;
 }
 
