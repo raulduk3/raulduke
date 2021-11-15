@@ -105,7 +105,7 @@ const Index: NextPage = () => {
               whileHover={{opacity: 1, backgroundColor: 'black', color: 'white'}}>About</motion.li>
           </Link>
       </ul>
-      <ul>
+      <ul className={style.links}>
         Quick Links
         <li className="under"><a href="https://www.youtube.com/watch?v=pqWJXORX1r8&t=589s" target="_blank" rel="noreferrer">Horn Student Band Showcase 2021</a></li>
         <li className="under"><a href="https://www.youtube.com/watch?v=z_O_n9QNYKo" target="_blank" rel="noreferrer">Poltergeist - 5ouley (Prod. Kyle McLaughlin) (Official Music Video)</a></li>
