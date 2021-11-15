@@ -25,3 +25,23 @@
     margin: 4%;
     display: block;
 }
+
+ul.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+ul.list > li
+{
+    border: 1px solid black;
+    opacity: 0.8;
+    padding: 5vmin;
+    margin: 0.8vh;
+    text-align: center;
+    max-width: 50vw;
+}

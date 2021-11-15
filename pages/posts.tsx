@@ -13,7 +13,6 @@ const Posts : NextPage = () => {
                 <ul className={style.listAlpha}>
                     <li><h1>Digital Hell, Personal Blog</h1></li>
                     <li><span className="ital">Ricky Alvarez</span></li>
-                    <li>Scroll down to see more</li>
                     <Link href="/" passHref><motion.li
                         initial={{backgroundColor: 'white', color: 'black'}}
                         whileTap={{opacity: 1, backgroundColor: 'black', color: 'white'}}

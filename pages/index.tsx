@@ -35,7 +35,7 @@ const Index: NextPage = () => {
                 </motion.h1>
         </Link>
       </div>
-      {<div className={style.imageContainer}>
+      {/* <div className={style.imageContainer}>
         <ul>
             <li>
               <Image
@@ -68,8 +68,8 @@ const Index: NextPage = () => {
                   ></Image>
             </li>
         </ul>
-      </div> && true }
-      <ul className={style.buttons}>
+      </div> */}
+      <ul className={style.buttons + " under"}>
           <Link href="/posts" passHref>
             <motion.li
               className='button'
@@ -104,6 +104,11 @@ const Index: NextPage = () => {
               transition={{duration: 0.3}}
               whileHover={{opacity: 1, backgroundColor: 'black', color: 'white'}}>Who am I?</motion.li>
           </Link>
+      </ul>
+      <ul>
+        Quick Links
+        <li className="under"><a href="https://www.youtube.com/watch?v=pqWJXORX1r8&t=589s" target="_blank" rel="noreferrer">Horn Student Band Showcase 2021</a></li>
+        <li className="under"><a href="https://www.youtube.com/watch?v=z_O_n9QNYKo" target="_blank" rel="noreferrer">Poltergeist - 5ouley (Prod. Kyle McLaughlin) (Official Music Video)</a></li>
       </ul>
     </div>
     <FaRegHandPointer className="emoji"></FaRegHandPointer>

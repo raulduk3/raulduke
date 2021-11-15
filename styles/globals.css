@@ -12,17 +12,27 @@ p {
 }
 
 ul {
-  list-style: none;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0;
-  margin: 0;
+  padding: 5%;
+  max-width: 33%;
+  padding: 2px;
 }
 
 li {
   opacity: 0.91;
   padding: 2.5vmin;
   margin: 0.8vh;
+  padding: 0 0;
+  margin: 0 2%;
+}
+
+li.under {
+  text-decoration: underline;
+}
+
+ul.under {
+  text-decoration: underline;
 }
 
 .italic
@@ -60,11 +70,16 @@ a {
   flex-direction: row;
   align-items: center;
   align-content: center;
-  justify-content: space-around;
+  justify-content: center;
   min-height: 100vh;
   height: 100%;
   padding: 0;
   margin: 0;
+}
+
+.frame > *
+{
+  padding: 3%;
 }
 
 .frame-v
@@ -72,7 +87,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: center;
+  align-content: space-around;
   justify-content: space-evenly;
   min-height: 100vh;
   height: 100%;

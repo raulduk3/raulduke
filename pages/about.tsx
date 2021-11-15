@@ -1,6 +1,7 @@
 import type { NextPage } from "next"
 import Link from "next/link"
 import { motion } from "framer-motion"
+
 import style from '../styles/About.module.css'
 
 const About : NextPage = () => {
@@ -14,7 +15,7 @@ const About : NextPage = () => {
                     <p className={style.body}>
                         RAÜL DÜKE is a creative project by Richard Alvarez, a programmer and video artist from Chicago.
                     </p>
-                    <ul>
+                    <ul className={style.list}>
                         <Link href="/" passHref>
                             <motion.li
                                 initial={{backgroundColor: 'white', color: 'black'}}
