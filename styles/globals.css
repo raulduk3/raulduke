@@ -89,7 +89,7 @@ a {
 .button
 {
   font-size: 1.8vh;
-  font-style: underline;
+  font-style: italic;
 }
 
 .raulDukeLink:hover
@@ -105,3 +105,7 @@ a {
   left: 32vw;
 }
 
+.ital {
+  font-style: italic;
+  font-size: smaller;
+}
