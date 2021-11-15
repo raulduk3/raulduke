@@ -5,16 +5,14 @@ import style from '../styles/About.module.css'
 
 const About : NextPage = () => {
         return (
-            <div className='frame'>
-                <div className='row'>
-                    <h1>
+            <div className='frame-v'>
+                <div className={style.row}>
+                    <h1 className={style.header}>
                         About.
                         <br />
                     </h1>
                     <p className={style.body}>
-                        My name is Richard Alvarez. I was born in Chicago.
-                        <span className={style.break}></span>
-                        I am multimedia artist studying film at Kenyon College in Gambier, Ohio.
+                        RAÜL DÜKE is the artist project of Richard Alvarez, a programmer and video artist from Chicago.
                     </p>
                     <ul>
                         <Link href="/" passHref>
