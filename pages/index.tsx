@@ -17,9 +17,16 @@ const Index: NextPage = () => {
         width={323}
         height={323}
       ></Image>
+      <Image
+        src="/images/glove.gif"
+        alt="Spinning globe"
+        className={style.spinningGlobe}
+        width={350}
+        height={350}
+      }
     </div>
     <div className="frame">
-      <div>
+      <div className={style.firstC}>
         <Link href="https://link.raulduke.com" passHref>
               <motion.h1
                 initial={{x: -1000, opacity: 0}}
