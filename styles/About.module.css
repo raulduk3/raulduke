@@ -46,9 +46,8 @@ ul.list > li
     max-width: 50vw;
 }
 
-.spinningGlobe
+.name
 {
-    position: absolute;
-    left: 75vw;
-    top: 15vh;
+    text-align: center;
+    width: 100%;
 }

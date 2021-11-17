@@ -11,10 +11,11 @@
     width: 22.8vw;
 }
 
-.firstC
+.name:hover
 {
-    width: 22%;
+  border-bottom: 3px solid black;
 }
+
 
 ul.buttons {
     list-style: none;

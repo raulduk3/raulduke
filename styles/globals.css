@@ -11,19 +11,13 @@ p {
   text-align: left;
 }
 
-.frame > *
-{
-  padding: 0 2%;
-}
-
-
 ul {
   list-style-position: inside;
   flex-direction: column;
   justify-content: space-between;
   padding: 2%;
   padding-left: 5%;
-  font-size: 0.75em;
+  font-size: 0.9em;
   width: 33%;
   padding-left: 0;
 }
@@ -86,6 +80,16 @@ a {
   margin: 0;
 }
 
+.frame > *
+{
+  width: 22%;
+}
+
+h2
+{
+  text-align: center;
+}
+
 .frame-v
 {
   display: flex;
@@ -108,14 +112,10 @@ a {
 .raulDukeLink
 {
   font-stretch: expanded;
-  text-align: justify;
+  text-align: center;
   font-size: 4.2vmin;
 }
 
-.raulDukeLink:hover
-{
-  border-bottom: 3px solid black;
-}
 
 .emoji
 {
