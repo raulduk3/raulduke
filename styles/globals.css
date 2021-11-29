@@ -1,8 +1,14 @@
+@font-face {
+  font-family: 'Office';
+  src: url('/POSTOFFICE.woff2') format('woff2'),
+  url('/POSTOFFICE.woff') format('woff'), url('/POSTOFFICE.ttf') format('ttf');
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Mr Dafoe", cursive;
+  font-family: "Office", cursive;
   max-width: 100vw;
   width: 100%;
 }
@@ -59,4 +65,11 @@ ul > li:hover{
   color:black;
   font-variant: small-caps;
   font-size: .8rem;
+  background: black;
+}
+
+
+.news > p:hover
+{
+  background: white;
 }
