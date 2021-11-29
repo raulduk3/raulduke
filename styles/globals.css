@@ -8,7 +8,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Office", cursive;
+  font-family: "Office", SFMono-Regular, Menlo, Monaco,
+  Consolas, "Liberation Mono", "Courier New", monospace;
   max-width: 100vw;
   width: 100%;
 }
