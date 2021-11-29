@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Office';
-  src: url('/POSTOFFICE.woff2') format('woff2'),
-  url('/POSTOFFICE.woff') format('woff'), url('/POSTOFFICE.ttf') format('ttf');
+  src: url('/Eastwood.woff2') format('woff2'),
+  url('/Eastwood.woff') format('woff');
 }
 
 html,
@@ -27,20 +27,19 @@ ul
   font-family: SFMono-Regular, Menlo, Monaco,
   Consolas, "Liberation Mono",
   "Courier New", monospace;
-  list-style-type: '>';
+  list-style-type: '★';
   padding: 0;
 }
 
 ul > li{
   padding: 1em;
   border-bottom: 1px solid whitesmoke;
-  padding-left: 1em;
   padding-bottom: 0.8em;
   text-align: left;
+  font-style: bold;
 }
 
 ul > li:hover{
-  padding-left: 0.5em;
   padding-bottom: 0.8em;
   border-bottom: 1px solid black;
 }
@@ -67,7 +66,6 @@ ul > li:hover{
   font-size: .8rem;
   background: black;
 }
-
 
 .news > p:hover
 {
