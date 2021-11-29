@@ -8,7 +8,7 @@ const Footer : React.FC = ({ children }) => {
         <div className={style.footer}>
             <div className={style.row}>
                 <div className={style.row}>
-                    <Link href="https://www.instagram.com/raulduk3" passHref><FaInstagram></FaInstagram></Link>
+                    {/* <Link href="https://www.instagram.com/raulduk3" passHref><FaInstagram></FaInstagram></Link> */}
                     <Link href="https://www.youtube.com/channel/UCtn5rjH9-l1LeHULyc8udwQ" passHref><FaYoutube></FaYoutube></Link>
                     <Link href="https://link.raulduke.com" passHref><FaInfo></FaInfo></Link>
                 </div>

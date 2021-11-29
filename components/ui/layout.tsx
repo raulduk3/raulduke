@@ -1,6 +1,6 @@
-import React, { ReactElement } from 'react';
-import Footer from './footer'
-import Head from 'next/head'
+import React, { ReactElement } from "react";
+import Footer from "./footer"
+import Head from "next/head"
 
 const Layout : React.FC = ({ children }) => {
     return (
@@ -20,6 +20,9 @@ const Layout : React.FC = ({ children }) => {
                 <meta name="language" content="English" />
                 <meta name="revisit-after" content="10 days"/>
                 <meta name="robots" content="follow"/>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com"  />
+                <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap" rel="stylesheet" />
             </Head>
                 { children }
             <Footer>
