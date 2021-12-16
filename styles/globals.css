@@ -30,6 +30,7 @@ ul
   "Courier New", monospace;
   list-style-type: '★';
   padding: 0;
+  text-align: center;
 }
 
 ul > li{
