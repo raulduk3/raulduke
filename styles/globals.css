@@ -43,7 +43,6 @@ ul > li{
 }
 
 ul > li:hover{
-  padding-bottom: 0.8em;
   border-bottom: 1px solid black;
 }
 

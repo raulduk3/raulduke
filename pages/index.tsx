@@ -12,7 +12,7 @@ const Index: NextPage = () => {
 					style={{ fontSize: "4.5rem", textAlign:"center", padding: "0.8em 0.5em", margin: "0" }}
 					transition={{ duration: 2, type: "tween"}}>RAUL DUKE</motion.h1>
 				<ul>
-					<a href="https://link.raulduke.com"><li>VIDEO</li></a>
+					<li><a href="https://link.raulduke.com">VIDEO</a></li>
 				</ul>
 				{/* <div className="news">
 					<p>RAUL DUKE IS TEMPORARILY OUT OF OPERATION.</p>
