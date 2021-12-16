@@ -10,11 +10,11 @@ const Layout : React.FC = ({ children }) => {
                 <meta property="og:type" content="website" />
                 <meta property="og:image" content="/images/Edit A F&L_Moment.jpg" />
                 <meta property="og:title" content="RAÜL DÜKE" key="title" />
-                <meta property="og:site_name" content="RAUL DUKE"/>
+                <meta property="og:site_name" content="RAÜL DÜKE"/>
                 <meta property="og:url" content="https://raulduke.com"></meta>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <meta property="og:description" name="description" content="RAÜL DÜKE is the artist project of Richard Alvarez, a programmer and video artist from Chicago."/>
-                <meta name="keywords" content="underground artist, vfx, chicago, music scene, music videos, art, poetry, latinx art, video art, code, programming, p5js, 5ouley, Undercurrent, chicago underground artists, cgi, animation, punk art, you tube music videos, youtube music videos, nudity in music videos, chicago underground film festival"/>
+                <meta property="og:description" name="description" content="Multimedia | VFX | Video Editing & Production"/>
+                <meta name="keywords" content="RAÜL DÜKE, raul duke, Raoul Duke, Raul Duke, underground artist, vfx, chicago, music scene, music videos, art, poetry, latinx art, video art, code, programming, p5js, 5ouley, Undercurrent, chicago underground artists, cgi, animation, punk art, you tube music videos, youtube music videos, nudity in music videos, chicago underground film festival"/>
                 <meta name="copyright" content="Richard Alvarez" />
                 <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
                 <meta name="language" content="English" />

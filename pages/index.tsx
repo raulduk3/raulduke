@@ -13,12 +13,13 @@ const Index: NextPage = () => {
 					transition={{ duration: 2, type: "tween"}}>RAUL DUKE</motion.h1>
 				<ul>
 					<li><a href="https://link.raulduke.com">VIDEOS & MORE</a></li>
+					<li>Prints (coming soon)</li>
 				</ul>
-				<div className="news">
+				{/* <div className="news">
 					<p>RAUL DUKE IS TEMPORARILY OUT OF OPERATION.</p>
-				</div>
+				</div> */}
 			</div>
-    	</>
+		</>
 	)
 }
 
