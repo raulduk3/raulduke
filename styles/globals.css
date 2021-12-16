@@ -39,6 +39,7 @@ ul > li{
   padding-bottom: 0.8em;
   text-align: left;
   font-style: bold;
+  text-align: center;
 }
 
 ul > li:hover{
