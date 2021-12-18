@@ -31,6 +31,7 @@ ul
   list-style-type: '★';
   padding: 0;
   text-align: center;
+  margin-top: 5vh;
 }
 
 ul > li{
