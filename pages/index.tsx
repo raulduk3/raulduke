@@ -10,7 +10,7 @@ const Index: NextPage = () => {
 					initial={{opacity: 0, y: -60}}
 					animate={{ opacity: [0, 1], y: [-60, 0] }}
 					style={{ fontSize: "4.5rem", textAlign:"center", padding: "0.8em 0.5em", margin: "0" }}
-					transition={{ duration: 2, type: "tween"}}>RAUL DUKE</motion.h1>
+					transition={{ duration: 1.3, type: "tween"}}>RAUL DUKE</motion.h1>
 				<ul>
 					<li><a href="https://link.raulduke.com">VIDEO</a></li>
 				</ul>
