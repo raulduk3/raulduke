@@ -1,12 +1,18 @@
 import type { NextPage } from "next"
+import ReactPlayer from "react-player"
 import { motion } from "framer-motion"
+
 
 const Index: NextPage = () => {
 	return (
 		<>
-			<video autoPlay className="video" muted loop>
-				<source src="/V (Sol Infinito).mp4" type="video/mp4"></source>
-			</video>
+			<ReactPlayer url="https://raulduke.com/V (Sol Infinito).mp4"
+				controls={false}
+				playing
+				loop
+				muted
+				width="100%"
+				height="100%" />
 			<div className="container news">
 				<div className="box">
 					<p><a href="https://link.raulduke.com/">Raül Düke</a> is  under construction</p>
