@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 const Index: NextPage = () => {
 	return (
-		<div className="container">
+		<div className="container news">
 			<p>Raül Düke is currently under construction</p>
 			<a href="https://link.raulduke.com/">Links</a>
 		</div>
