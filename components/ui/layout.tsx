@@ -8,7 +8,7 @@ const Layout : React.FC = ({ children }) => {
             <Head>
                 <title>RAÜL DÜKE</title>
                 <meta property="og:type" content="website" />
-                <meta property="og:image" content="/images/Prime.jpg" />
+                <meta property="og:image" content="../../public/images/Prime.jpg" />
                 <meta property="og:title" content="RAÜL DÜKE" key="title" />
                 <meta property="og:site_name" content="RAÜL DÜKE"/>
                 <meta property="og:url" content="https://raulduke.com"></meta>

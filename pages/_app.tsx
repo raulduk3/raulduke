@@ -5,6 +5,7 @@ import type { NextPage } from 'next'
 import '../styles/globals.css'
 import Layout from '../components/ui/layout'
 
+
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode
 }
