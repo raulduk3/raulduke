@@ -16,7 +16,7 @@ video {
   height: 100%;
   position: absolute;
   z-index: 0;
-  opacity: 0.8;
+  opacity: 0.72;
   background-color: black;
 }
 
@@ -43,7 +43,7 @@ video {
 .box
 {
   padding: 0.1vh 2vw;
-  font-size: 3.5vw;
+  font-size: 5vw;
   font: -apple-system, system-ui, sans-serif;
   color: whitesmoke;
   z-index: 1;
