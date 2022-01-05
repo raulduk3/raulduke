@@ -7,7 +7,7 @@ const Index: NextPage = () => {
 	return (
 		<>
 			<ReactPlayer url="https://raulduke.com/V (Sol Infinito).mp4"
-				autoPlay
+				autoplay
 				controls={false}
 				playing
 				loop
