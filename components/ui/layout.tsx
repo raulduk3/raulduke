@@ -8,7 +8,7 @@ const Layout : React.FC = ({ children }) => {
             <Head>
                 <title>RAÜL DÜKE</title>
                 <meta property="og:type" content="website" />
-                <meta property="og:image" content="/images/Edit A F&L_Moment.jpg" />
+                <meta property="og:image" content="/images/Prime.jpg" />
                 <meta property="og:title" content="RAÜL DÜKE" key="title" />
                 <meta property="og:site_name" content="RAÜL DÜKE"/>
                 <meta property="og:url" content="https://raulduke.com"></meta>
@@ -22,7 +22,6 @@ const Layout : React.FC = ({ children }) => {
                 <meta name="robots" content="follow"/>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com"  />
-                <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap" rel="stylesheet" />
             </Head>
                 { children }
             <Footer>
