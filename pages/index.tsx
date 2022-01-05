@@ -9,7 +9,7 @@ const Index: NextPage = () => {
 			</video>
 			<div className="container news">
 				<div className="box">
-					<p><a href="https://link.raulduke.com/">Raül Düke</a> is currently under construction</p>
+					<p><a href="https://link.raulduke.com/">Raül Düke</a> is  under construction.</p>
 				</div>
 			</div>
 		</>

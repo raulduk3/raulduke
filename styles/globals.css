@@ -13,6 +13,7 @@ video {
   position: absolute;
   z-index: -1;
   opacity: 1;
+  background-color: black;
 }
 
 .news > a {
@@ -38,8 +39,8 @@ video {
 .box
 {
   background-color: whitesmoke;
-  padding: 0.8vw;
-  font-size: 5vw;
+  padding: 0.1vh 2vw;
+  font-size: 3.5vw;
   font: -apple-system, system-ui, sans-serif;
   opacity: 0.8;
 }

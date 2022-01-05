@@ -14,7 +14,7 @@ const Footer : React.FC = ({ children }) => {
                 </div>
             </div>
             <div className={style.row}>
-                <h6>© Copyright 2021</h6>
+                <h6>© Copyright 2022</h6>
             </div>
         </div>
     )
