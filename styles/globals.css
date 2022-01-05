@@ -17,7 +17,7 @@ video {
 }
 
 .news > a {
-  color: black;
+  color: white;
   text-decoration:underline;
   font-size: 1.2em;
 }
@@ -38,9 +38,24 @@ video {
 
 .box
 {
-  background-color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 0.1vh 2vw;
   font-size: 3.5vw;
   font: -apple-system, system-ui, sans-serif;
-  opacity: 0.8;
+  color: whitesmoke;
+}
+
+.box > *
+{
+  opacity: 1;
+}
+
+a
+{
+  color: whitesmoke;
+}
+
+a:visited
+{
+  color: whitesmoke;
 }
