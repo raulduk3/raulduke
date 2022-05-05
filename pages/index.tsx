@@ -16,7 +16,7 @@ const Index: NextPage = () => {
 				height="100%" />
 			<div className={style.overlay}>
 				<div className={style.box}>
-					<p><a className={style.link} href="https://link.raulduke.com/">Raül Düke</a> is  under construction</p>
+					<p><a className={style.link} href="https://raulduke.campsite.bio/">Raül Düke</a> is  under construction</p>
 				</div>
 			</div>
 		</div>
