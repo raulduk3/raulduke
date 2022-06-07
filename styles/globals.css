@@ -16,5 +16,5 @@ a {
 }
 
 a:hover {
-  font-size: 14vh;
+  transform: scale(1, -1);
 }
