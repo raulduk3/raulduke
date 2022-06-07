@@ -6,7 +6,7 @@ import style from '../styles/Index.module.css'
 const Index: NextPage = () => {
 	return (
 		<div className={style.videoHero}>
-			<ReactPlayer url="https://raulduke.com/V (Sol Infinito).mp4"
+			<ReactPlayer url="https://raulduke.com/Bong rip.mp4"
 				autoPlay
 				controls={false}
 				playing
@@ -16,7 +16,7 @@ const Index: NextPage = () => {
 				height="100%" />
 			<div className={style.overlay}>
 				<div className={style.box}>
-					<p><a className={style.link} href="https://raulduke.campsite.bio/">Raül Düke</a> is  under construction</p>
+					<p><a className={style.link} href="https://www.youtube.com/channel/UCtn5rjH9-l1LeHULyc8udwQ/featured">RICK NOISY</a></p>
 				</div>
 			</div>
 		</div>
