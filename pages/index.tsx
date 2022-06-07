@@ -55,7 +55,7 @@ const Index = () => {
       />
       <div className={classes.overlay}>
 			<Typography variant="h3" component="h1" className={classes.title}>
-				<a href="https://www.youtube.com/channel/UCtn5rjH9-l1LeHULyc8udwQ">RICK NOISY</a>
+				<a href="https://www.youtube.com/channel/UCtn5rjH9-l1LeHULyc8udwQ/videos">RICK NOISY</a>
 				
 			</Typography>
       </div>
