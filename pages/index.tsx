@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
 	overflow: 'hidden',
     '& video': {
       objectFit: 'cover',
-    },
+    }
   },
   overlay: {
     position: 'absolute',
