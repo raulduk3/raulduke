@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
 	overflow: 'hidden',
     '& video': {
-      objectFit: 'fill',
+      objectFit: 'cover',
     },
   },
   overlay: {
@@ -31,8 +31,12 @@ const useStyles = makeStyles(theme => ({
   title: {
     paddingBottom: theme.spacing(4),
 	color: 'whitesmoke',
-	fontSize: "15vh",
-	fontFamily: "'thunderhouse-pro', sans-serif"
+	fontStyle: 'none',
+	fontSize: "12vw",
+	fontFamily: "'thunderhouse-pro', sans-serif",
+	':hover': {
+		fontStyle: 'underline'
+	}
   }
 }));
 
@@ -52,6 +56,7 @@ const Index = () => {
       <div className={classes.overlay}>
 			<Typography variant="h3" component="h1" className={classes.title}>
 				<a href="https://www.youtube.com/channel/UCtn5rjH9-l1LeHULyc8udwQ">RICK NOISY</a>
+				
 			</Typography>
       </div>
     </section>

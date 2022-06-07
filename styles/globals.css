@@ -10,4 +10,11 @@ body {
 
 a {
   color: whitesmoke;
+  font-style: normal;
+  font-variant: small-caps;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
