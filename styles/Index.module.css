@@ -1,13 +1,21 @@
 .videoHero
 {
+    width: auto;
+    height: auto; 
+}
+
+div.react-player {
+    padding-top: 56.25%; 
     position: relative;
-    height: 100vh;
+}
+
+.react-player > video {
+    position: absolute; 
 }
 
 .videoHero > video
 {
     opacity: 0.8;
-    padding: 10%;
 }
 
 .box
@@ -40,5 +48,9 @@
 }
 
 .link {
+    color: whitesmoke;
+}
+
+a {
     color: whitesmoke;
 }

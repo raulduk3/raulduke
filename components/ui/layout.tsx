@@ -22,6 +22,7 @@ const Layout : React.FC = ({ children }) => {
                 <meta name="robots" content="follow"/>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com"  />
+                <link rel="stylesheet" href="https://use.typekit.net/hxt2alx.css"></link>
             </Head>
                 { children }
             <Footer>
