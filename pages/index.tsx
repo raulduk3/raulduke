@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     left: 0,
     width: '100vw',
     height: '100vh',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
   },
   title: {
     paddingBottom: theme.spacing(4),
