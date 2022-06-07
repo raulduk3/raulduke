@@ -7,7 +7,7 @@ const Footer : React.FC = ({ children }) => {
     return (
         <div className={style.footer}>
             <div className={style.rowText}>
-                <h6 className={style.footerText}>© Copyright 2022</h6>
+                <h6 className={style.footerText}>© 2022 Digital Natives</h6>
             </div>
             {/* <div className={style.rowList}>
                 <Link href="https://link.raulduke.com" passHref><FaInfo></FaInfo></Link>
