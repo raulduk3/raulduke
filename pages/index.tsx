@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(4),
 	color: 'whitesmoke',
 	fontStyle: 'none',
-	fontSize: "12vw",
+	fontSize: "12vh",
 	fontFamily: "'thunderhouse-pro', sans-serif",
 	':hover': {
 		fontStyle: 'underline'
