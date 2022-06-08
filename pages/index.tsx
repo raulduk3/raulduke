@@ -47,7 +47,7 @@ const Index = () => {
   return (
     <section className={classes.root}>
       <ReactPlayer
-        url="https://www.youtube.com/watch?v=SXnGUEzP0p8&t=100s"
+        url="https://raulduke.com/Black Sapphire by AL-90 _ 21st century dorm.mp4"
         playing
         loop
         muted
