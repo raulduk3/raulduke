@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     paddingBottom: theme.spacing(4),
-	color: 'whitesmoke',
+	color: 'black',
 	fontStyle: 'none',
 	fontSize: "10vh",
 	fontFamily: "'thunderhouse-pro', sans-serif",
