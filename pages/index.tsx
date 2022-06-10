@@ -27,13 +27,13 @@ const useStyles = makeStyles(theme => ({
     left: 0,
     width: '100vw',
     height: '100vh',
-    backgroundColor: 'rgba(0, 0, 0, 0.25)',
+    backgroundColor: 'rgba(0, 0, 0, 0.2)',
   },
   title: {
     paddingBottom: theme.spacing(4),
-	color: 'black',
+	color: '#fff',
 	fontStyle: 'none',
-	fontSize: "10vh",
+	fontSize: "30vh",
 	fontFamily: "'thunderhouse-pro', sans-serif",
 	':hover': {
 		fontStyle: 'underline'
