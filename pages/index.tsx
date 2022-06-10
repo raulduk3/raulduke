@@ -21,8 +21,8 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
 	display: 'flex',
 	flexDirection: 'column',
-	justifyContent: 'center',
-	padding: '10%',
+	justifyContent: 'space-around',
+  alignContent: 'center',
     top: 0,
     left: 0,
     width: '100vw',
@@ -30,10 +30,9 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: 'rgba(0, 0, 0, 0.2)',
   },
   title: {
-    paddingBottom: theme.spacing(4),
 	color: '#fff',
+  lineHeight: "20vh",
 	fontStyle: 'none',
-	fontSize: "30vh",
 	fontFamily: "'thunderhouse-pro', sans-serif",
 	':hover': {
 		fontStyle: 'underline'
