@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     width: '100vw',
     height: '100vh',
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    backgroundColor: 'rgba(0, 0, 0, 0.15)',
   },
   title: {
 	color: '#fff',
