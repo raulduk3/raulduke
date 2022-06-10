@@ -25,6 +25,7 @@ const useStyles = makeStyles(theme => ({
   alignContent: 'center',
     top: 0,
     left: 0,
+    textAlign: 'center',
     width: '100vw',
     height: '100vh',
     backgroundColor: 'rgba(0, 0, 0, 0.2)',
