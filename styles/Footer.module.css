@@ -22,6 +22,10 @@
     width: 40vw;
 }
 
+.column > * {
+    padding: 0.75vmax 0;
+}
+
 .rowText
 {
     display: flex;
