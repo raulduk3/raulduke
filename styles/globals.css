@@ -9,14 +9,18 @@ body {
 
 a {
   text-align: center;
-  font-size: 5em;
+  font-size: 150pt;
   text-overflow: wrap;
   font-kerning: normal;
   color: white;
+  width: 50*(150/1.618);
+  line-height: 150pt*1.618;
   text-shadow: rgba(0, 0, 0, 0.03) 0px 4px 12px;
   font-style: normal;
   font-variant: small-caps;
   display: inline-block;
+  text-decoration-thickness: 2.8%;
+  text-underline-offset: 2%;
   margin: 0;
 }
 
