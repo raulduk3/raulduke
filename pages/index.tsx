@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     width: '100vw',
     height: '100vh',
-    backgroundColor: 'rgba(0, 0, 0, 0.15)',
+    backgroundColor: 'rgba(0, 0, 0, 0.075)',
     maxWidth: '100%'
   },
   title: {
@@ -51,7 +51,7 @@ const Index = () => {
   return (
     <section className={classes.root}>
       <ReactPlayer
-        url="https://raulduke.com/Black Sapphire by AL-90 _ 21st century dorm.mp4#t=38"
+        url="https://raulduke.com/Black Sapphire by AL-90 _ 21st century dorm.mp4#t=123"
         playing
         loop
         muted
