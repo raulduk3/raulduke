@@ -26,7 +26,6 @@ a:hover {
   -webkit-transform: scale(1, -1);
   -o-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
-  background-color: white;
   color: black;
   padding: 0;
 }
