@@ -19,6 +19,7 @@ a {
   font-style: normal;
   font-variant: small-caps;
   display: inline-block;
+  text-decoration: none;
   text-decoration-thickness: 2.8%;
   text-underline-offset: 2%;
   margin: 0;
