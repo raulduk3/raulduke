@@ -9,9 +9,7 @@ const Footer : React.FC = ({ children }) => {
             <div className={style.column}>
                 <div className={style.rowList}>
                     <Link href="https://raulduke.com" passHref><FaInfoCircle></FaInfoCircle></Link>
-                    <span className={style.divider}></span>
                     <Link href="https://www.instagram.com/rick_noisy/" passHref><FaInstagram></FaInstagram></Link>
-                    <span className={style.divider}></span>
                     <Link href="https://www.youtube.com/channel/UCtn5rjH9-l1LeHULyc8udwQ" passHref><FaYoutube></FaYoutube></Link>
                 </div>
                 <div className={style.rowText}>
