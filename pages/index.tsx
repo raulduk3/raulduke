@@ -8,27 +8,31 @@ import ReactPlayer from 'react-player/lazy'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '100%',
-	height: '100vh',
-    maxheight: '100vh',
+    width: '100vw',
+    maxWidth: '100%',
+	  height: '100vh',
+    maxHeight: '100%',
     position: 'relative',
-	overflow: 'hidden',
+	  overflow: 'hidden',
     '& video': {
       objectFit: 'cover',
+      overflow: 'hidden',
+      position: 'absolute'
     }
   },
   overlay: {
     position: 'absolute',
-	display: 'flex',
-	flexDirection: 'column',
-	justifyContent: 'space-around',
-  alignContent: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignContent: 'center',
     top: 0,
     left: 0,
     textAlign: 'center',
     width: '100vw',
     height: '100vh',
     backgroundColor: 'rgba(0, 0, 0, 0.15)',
+    maxWidth: '100%'
   },
   title: {
 	color: '#fff',
@@ -51,8 +55,8 @@ const Index = () => {
         playing
         loop
         muted
-        width="100vw"
-        height="100vh"
+        width="100%"
+        height="100%"
       />
       <div className={classes.overlay}>
 			<Typography variant="h3" component="h1" className={classes.title}>
