@@ -9,12 +9,10 @@ body {
 
 a {
   text-align: center;
-  font-size: 150pt;
+  font-size: 25vmax;
   text-overflow: wrap;
   font-kerning: normal;
   color: white;
-  width: 50*(150/1.618);
-  line-height: 150pt*1.618;
   text-shadow: rgba(0, 0, 0, 0.03) 0px 4px 12px;
   font-style: normal;
   font-variant: small-caps;
@@ -32,4 +30,11 @@ a:hover {
   -ms-transform: scale(1, -1);
   color: black;
   padding: 0;
+}
+
+@media only screen and (max-width: 768px) 
+{
+  a {
+    line-height: 20vmax;
+  }
 }
