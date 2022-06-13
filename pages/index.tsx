@@ -36,11 +36,11 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
 	color: '#fff',
-  lineHeight: "20vh",
+  lineHeight: "23vh",
 	fontStyle: 'none',
 	fontFamily: "'thunderhouse-pro', sans-serif",
 	':hover': {
-		fontStyle: 'underline'
+		textDecoration: 'underline'
 	}
   }
 }));
