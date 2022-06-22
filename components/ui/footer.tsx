@@ -13,7 +13,7 @@ const Footer : React.FC = ({ children }) => {
                     <Link href="https://www.youtube.com/channel/UCtn5rjH9-l1LeHULyc8udwQ" passHref><FaYoutube></FaYoutube></Link>
                 </div> */}
                 <div className={style.rowText}>
-                    <h5 className={style.footerText}>© 2022 Richard Álvarez</h5>
+                    <h5 className={style.footerText}>© 2022 Richard Álvarez \ alvarez1@kenyon.edu</h5>
                 </div>
             </div>  
         </div>

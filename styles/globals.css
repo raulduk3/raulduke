@@ -38,8 +38,7 @@ a {
   font-style: normal;
   font-variant: small-caps;
   display: inline-block;
-  text-decoration-thickness: 8.8%;
-  text-underline-offset: 7%;
+  text-decoration: none;
 }
 
 a:hover {
@@ -47,5 +46,6 @@ a:hover {
   -webkit-transform: scale(1, -1);
   -o-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
+  text-decoration: none;
 }
 
