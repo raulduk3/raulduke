@@ -12,8 +12,15 @@ body {
 
 }
 
+p {
+  margin: 0;
+  color: #FFFB21;
+  padding: 3.5vmin;
+  text-align: center;
+}
+
 a {
-  text-align: left;
+  text-align: center;
   font-size: 10vmin;
   text-overflow: wrap;
   line-height: 10vmax;
@@ -26,8 +33,6 @@ a {
   text-decoration: none;
   text-decoration-thickness: 2.8%;
   text-underline-offset: 2%;
-  margin: 0;
-  padding: 3vmin;
 }
 
 a:hover {
