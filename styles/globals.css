@@ -29,6 +29,10 @@ h6 {
 }
 
 a {
+  color: white;
+}
+
+.main {
   text-align: center;
   font-size: 10vmin;
   text-overflow: wrap;
