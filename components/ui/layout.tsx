@@ -6,7 +6,7 @@ const Layout : React.FC = ({ children }) => {
     return (
         <>
             <Head>
-                <title>RICK NOISY</title>
+                <title>website of  richard álvarez</title>
                 <meta property="og:type" content="website" />
                 <meta property="og:image" content="https://raulduke.com/images/BANNER.jpg" />
                 <meta property="og:title" content="Rick Noisy" key="title" />
