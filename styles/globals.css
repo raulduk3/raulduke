@@ -44,7 +44,7 @@ a {
   font-variant: small-caps;
   display: inline-block;
   text-decoration: underline;
-  text-decoration-thickness: 8%;
+  text-decoration-thickness: 4%;
   text-underline-offset: 8%;
 }
 
