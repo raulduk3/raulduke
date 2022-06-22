@@ -38,7 +38,7 @@ a {
 
 .main {
   letter-spacing: 5px;
-  padding: 3vmin 0 4vmin 0;
+  padding: 5vmin 0 7vmin 0;
   text-align: center;
   font-size: 10vmin;
   text-overflow: wrap;
@@ -55,13 +55,13 @@ a {
   text-decoration-color: #FFFB21;
 }
 
-a:hover {
+.main:hover {
   -moz-transform: scale(1, -1);
   -webkit-transform: scale(1, -1);
   -o-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   position: relative;
-  top: 2.25vh;
+  top: 0vh;
 
 }
 
