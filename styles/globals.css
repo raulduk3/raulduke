@@ -3,6 +3,8 @@ html,
 body {
   padding: 0;
   margin: 0;
+  max-height: 100vh;
+  overflow: hidden;
   max-width: 100%;
   background-color: #011688;
   font-family: 'Sunset-Serial';
@@ -14,25 +16,30 @@ body {
 
 p {
   margin: 0;
+  padding: 1vmin 0 .5vmin 0;
   color: #FFFB21;
-  padding: 5.5vmin;
   text-align: center;
+}
+
+h6 {
+  text-align: center;
+  color: #FFFB21;
+  padding: 2vmin 1vmin 0 1vmin;
+  margin: 0;
 }
 
 a {
   text-align: center;
   font-size: 10vmin;
   text-overflow: wrap;
-  line-height: 10vmax;
   font-kerning: normal;
   color: #FFFB21;
   text-shadow: rgba(0, 0, 0, 0.03) 0px 4px 12px;
   font-style: normal;
   font-variant: small-caps;
   display: inline-block;
-  text-decoration: none;
   text-decoration-thickness: 2.8%;
-  text-underline-offset: 2%;
+  text-underline-offset: 7%;
 }
 
 a:hover {
@@ -40,12 +47,4 @@ a:hover {
   -webkit-transform: scale(1, -1);
   -o-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
-}
-
-@media only screen and (max-width: 768px) 
-{
-  a {
-    line-height: 12vmax;
-    height: 8vh;
-  }
 }

@@ -2,6 +2,8 @@ import React, { ReactElement } from "react";
 import Footer from "./footer"
 import Head from "next/head"
 
+import style from '../../styles/Index.module.css'
+
 const Layout : React.FC = ({ children }) => {
     return (
         <>
@@ -22,7 +24,7 @@ const Layout : React.FC = ({ children }) => {
                 <meta name="robots" content="follow"/>
                 <link rel="preload" href="public/Sunset-Serial-Bold.woff2" as="font" type="font/woff2"></link>
             </Head>
-                { children }
+                        { children }
             <Footer>
             </Footer>
         </>
