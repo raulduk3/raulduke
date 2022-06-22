@@ -15,7 +15,7 @@ body {
 
 p {
   margin: 0;
-  padding: 1vmin 0 .5vmin 0;
+  padding: 1vmin 0 1.5vmin 0;
   color: #FFFB21;
   text-align: center;
 }
@@ -48,3 +48,4 @@ a:hover {
   -o-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
 }
+

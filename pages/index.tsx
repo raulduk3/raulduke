@@ -9,9 +9,9 @@ const Index = () => {
        <h6>🝰🜛🜂</h6>
       <p><a href='https://www.youtube.com/channel/UCtn5rjH9-l1LeHULyc8udwQ'>rick álvarez</a></p>
       <div className={style.column}>
-        <ReactPlayer height="28.2vh"  url='https://youtu.be/SXnGUEzP0p8' />
-        <ReactPlayer height="28.2vh" url='https://youtu.be/CO70NVlY0Gw' />
-        <ReactPlayer height="28.2vh" url='https://youtu.be/IWqAFtIGrUI' />
+        <ReactPlayer width='100%'  url='https://youtu.be/SXnGUEzP0p8' />
+        <ReactPlayer width='100%' url='https://youtu.be/CO70NVlY0Gw' />
+        <ReactPlayer width='100%' url='https://youtu.be/IWqAFtIGrUI' />
       </div>
     </section>
   );
