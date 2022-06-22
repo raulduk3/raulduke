@@ -3,8 +3,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  max-height: 100vh;
-  overflow: hidden;
+  max-height: 100vh;  
   max-width: 100%;
   background-color: #0B30FE;
   font-family: 'Sunset-Serial';
@@ -39,7 +38,7 @@ a {
   font-style: normal;
   font-variant: small-caps;
   display: inline-block;
-  text-decoration-thickness: 2.8%;
+  text-decoration-thickness: 8.8%;
   text-underline-offset: 7%;
 }
 
