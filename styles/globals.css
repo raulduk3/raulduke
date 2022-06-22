@@ -37,7 +37,7 @@ a {
 }
 
 .main {
-
+  letter-spacing: 5px;
   padding: 3.75vmin 0 4vmin 0;
   text-align: center;
   font-size: 10vmin;
