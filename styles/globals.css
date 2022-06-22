@@ -33,16 +33,19 @@ a {
 }
 
 .main {
+  padding-top: 1.45vmin;
   text-align: center;
   font-size: 10vmin;
   text-overflow: wrap;
   font-kerning: normal;
   color: #FFFB21;
-  text-shadow: rgba(0, 0, 0, 0.03) 0px 4px 12px;
+  /* text-shadow: rgba(0, 0, 0, 0.03) 0px 4px 12px; */
   font-style: normal;
   font-variant: small-caps;
   display: inline-block;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 8%;
+  text-underline-offset: 8%;
 }
 
 a:hover {
@@ -50,6 +53,6 @@ a:hover {
   -webkit-transform: scale(1, -1);
   -o-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
-  text-decoration: none;
+
 }
 
