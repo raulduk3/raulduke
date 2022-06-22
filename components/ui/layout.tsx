@@ -20,9 +20,7 @@ const Layout : React.FC = ({ children }) => {
                 <meta name="language" content="English" />
                 <meta name="revisit-after" content="10 days"/>
                 <meta name="robots" content="follow"/>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com"  />
-                <link rel="stylesheet" href="https://use.typekit.net/hxt2alx.css"></link>
+                <link rel="preload" href="public/Sunset-Serial-Bold.woff2" as="font" type="font/woff2"></link>
             </Head>
                 { children }
             <Footer>

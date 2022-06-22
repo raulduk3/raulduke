@@ -7,11 +7,11 @@ const Footer : React.FC = ({ children }) => {
     return (
         <div className={style.footer}>
             <div className={style.column}>
-                <div className={style.rowList}>
+                {/* <div className={style.rowList}>
                     <Link href="https://raulduke.com" passHref><FaInfoCircle></FaInfoCircle></Link>
                     <Link href="https://www.instagram.com/rick_noisy/" passHref><FaInstagram></FaInstagram></Link>
                     <Link href="https://www.youtube.com/channel/UCtn5rjH9-l1LeHULyc8udwQ" passHref><FaYoutube></FaYoutube></Link>
-                </div>
+                </div> */}
                 <div className={style.rowText}>
                     <h6 className={style.footerText}>© 2022 Richard Álvarez</h6>
                 </div>
