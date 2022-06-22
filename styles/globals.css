@@ -43,8 +43,6 @@ a {
   font-variant: small-caps;
   display: inline-block;
   text-decoration: none;
-  letter-spacing: 0.11em;
-  word-spacing: -2vw;
 }
 
 a:hover {
