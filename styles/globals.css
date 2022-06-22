@@ -27,6 +27,7 @@ a {
   text-decoration-thickness: 2.8%;
   text-underline-offset: 2%;
   margin: 0;
+  padding: 3vmin;
 }
 
 a:hover {
@@ -34,8 +35,6 @@ a:hover {
   -webkit-transform: scale(1, -1);
   -o-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
-  color: black;
-  padding: 0;
 }
 
 @media only screen and (max-width: 768px) 
