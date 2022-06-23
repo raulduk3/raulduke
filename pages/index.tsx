@@ -12,9 +12,9 @@ const Index = () => {
         <h6 className='sub'><span className='flip'>Filmmaker</span>, <span className='flip'>Programmer</span>, <span className='flip'>Net Artist</span>,  <span className='flip'>Lover</span></h6>
       </div>
       <div className={style.column}>
-        {/* <div className='label'>
+        <div className='label'>
             <h3>○ Archive ○</h3>
-        </div>   */}
+        </div>  
         <ReactPlayer  url='https://youtu.be/SXnGUEzP0p8' />
         <ReactPlayer url='https://youtu.be/IWqAFtIGrUI' />
         <ReactPlayer url='https://youtu.be/CO70NVlY0Gw' />

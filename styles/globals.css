@@ -71,7 +71,11 @@ a {
 
 .main {
   letter-spacing: 5px;
+<<<<<<< HEAD
   padding: 3vmin 0 6vmin 0;
+=======
+  padding: 3vmin 0 5vmin 0;
+>>>>>>> parent of 1e21d94 (shit @)
   text-align: center;
   font-size: 10vmin;
   text-overflow: wrap;
@@ -106,9 +110,13 @@ a {
   -o-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   position: relative;
+<<<<<<< HEAD
   top: 0vh;
 }
 
+=======
+  top: 1vh;
+>>>>>>> parent of 1e21d94 (shit @)
 
 .flip:hover{
   -moz-transform: scale(1, -1);
