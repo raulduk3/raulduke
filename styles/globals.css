@@ -40,6 +40,30 @@ a {
   margin: 0;
 }
 
+.label
+{
+  text-align: left;
+  color: #EFEFEF;
+  transform: scale(1, -1);
+}
+
+.label:hover
+{
+  transform: rotate(0deg);
+}
+
+.desc
+{
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif,
+  "Courier New", monospace;
+  padding: 6px 0;
+  margin: 0;
+  text-align: left;
+  font-size: 1.2vmin;
+  max-width: 30vw;
+  display:inline-block;
+}
+
 .header 
 {
   padding: 2vmin 0 3vmin 0;
@@ -66,7 +90,6 @@ a {
 .sub 
 {
   padding: 0;
-  color: rgba(239, 239, 239, 0.9);
   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif,
   "Courier New", monospace;
   max-width: 100%;
