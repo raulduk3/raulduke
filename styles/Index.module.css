@@ -12,13 +12,19 @@
     flex-direction: column;
     margin: auto;
     width: 25vw;
-    max-height: 100vh;
-}
+  }
 
+.column > div
+{
+  padding:1vmin;
+}
 
 @media only screen and (max-width: 768px) 
 {
   .column {
-    width: 100vw;
+    width: 75vw;
+  }
+  .main{
+    padding: 8vmin 0 7vmin 0;
   }
 }
