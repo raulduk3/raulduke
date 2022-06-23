@@ -6,7 +6,6 @@ body {
   max-height: 100vh;  
   max-width: 100%;
   background-color: #011688;
-  color: #EFEFEF;
   -webkit-text-stroke-width: 0.2px;
   -webkit-text-stroke-color: black;
   font-family: 'Sunset-Serial';
@@ -26,14 +25,15 @@ p {
 h6 {
   text-align: center;
   font-size: 0.8em;
-  padding:  0 0 2vmin 0;
+  color: white;
+  padding: 2vmin 1vmin 0 1vmin;
   margin: 0;
   -webkit-text-stroke-width: 0px;
   -webkit-text-stroke-color: black;
 }
 
 a {
-  color: #FFFB21;
+  color: #EFEFEF;
 }
 
 .label > h3{
@@ -71,11 +71,7 @@ a {
 
 .main {
   letter-spacing: 5px;
-<<<<<<< HEAD
-  padding: 3vmin 0 6vmin 0;
-=======
-  padding: 3vmin 0 5vmin 0;
->>>>>>> parent of 1e21d94 (shit @)
+  padding: 3vmin 0 7vmin 0;
   text-align: center;
   font-size: 10vmin;
   text-overflow: wrap;
@@ -85,6 +81,7 @@ a {
   /* text-shadow: rgba(0, 0, 0, 0.03) 0px 4px 12px; */
   font-style: normal;
   font-variant: small-caps;
+  display: inline-block;
   text-decoration: underline;
   text-decoration-thickness: 8%;
   text-underline-offset: 8%;
@@ -110,13 +107,8 @@ a {
   -o-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   position: relative;
-<<<<<<< HEAD
   top: 0vh;
 }
-
-=======
-  top: 1vh;
->>>>>>> parent of 1e21d94 (shit @)
 
 .flip:hover{
   -moz-transform: scale(1, -1);
