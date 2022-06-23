@@ -10,6 +10,7 @@ const Index = () => {
       <p><a href='https://www.youtube.com/channel/UCtn5rjH9-l1LeHULyc8udwQ' className='main'>rick álvarez</a></p>
       <div className={style.column}>
         <ReactPlayer width='100%'  url='https://youtu.be/SXnGUEzP0p8' />
+        <ReactPlayer width='100%' url='https://youtu.be/IWqAFtIGrUI' />
         <ReactPlayer width='100%' url='https://youtu.be/CO70NVlY0Gw' />
         <ReactPlayer width='100%' url='https://youtu.be/z_O_n9QNYKo' />
         <ReactPlayer width='100%' url='https://youtu.be/OiXkIOF98A0' />
