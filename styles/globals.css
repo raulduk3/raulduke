@@ -66,7 +66,7 @@ a {
 
 .main {
   letter-spacing: 5px;
-  padding: 3vmin 0 5vmin 0;
+  padding: 3vmin 0 7vmin 0;
   text-align: center;
   font-size: 10vmin;
   text-overflow: wrap;
@@ -89,7 +89,7 @@ a {
   -o-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   position: relative;
-  top: 1vh;
+  top: -2vh;
 
 }
 
