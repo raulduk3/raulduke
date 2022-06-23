@@ -6,7 +6,7 @@ const Index = () => {
 
   return (
     <section className={style.root}>
-       <h6>🝰🜛🜂</h6>
+       <h6>🝰🜂🝲</h6>
       <p><a href='https://www.youtube.com/channel/UCtn5rjH9-l1LeHULyc8udwQ' className='main'>rick álvarez</a></p>
       <div className={style.column}>
         <ReactPlayer width='100%'  url='https://youtu.be/SXnGUEzP0p8' />
