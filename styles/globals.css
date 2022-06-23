@@ -18,7 +18,7 @@ body {
 p {
   margin: 0;
   padding: 0.25vmin 0 1.75vmin 0;
-  color: #FFFB21;
+  color: #EFEFEF;
   text-align: center;
 }
 
@@ -33,7 +33,7 @@ h6 {
 }
 
 a {
-  color: white;
+  color: #EFEFEF;
 }
 
 .main {
