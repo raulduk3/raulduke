@@ -42,10 +42,14 @@ a {
 
 .label
 {
-  margin: 3vh;
-  text-align: center;
+  text-align: left;
   color: #EFEFEF;
-  transform: rotate(90deg);
+  transform: rotate(180deg);
+}
+
+.label:hover
+{
+  transform: rotate(0deg);
 }
 
 .desc
