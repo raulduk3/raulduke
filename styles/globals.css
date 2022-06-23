@@ -17,7 +17,7 @@ body {
 
 p {
   margin: 0;
-  padding: 0.25vmin 0 0vmin 0;
+  padding: 0.25vmin 0 0cvmin 0;
   color: #EFEFEF;
   text-align: center;
 }
@@ -42,7 +42,7 @@ a {
 
 .label
 {
-  margin: 3vmax;
+  margin: 3vh;
   text-align: center;
   color: #EFEFEF;
   transform: rotate(90deg);
@@ -85,7 +85,7 @@ a {
   -o-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   position: relative;
-  top: 0vh;
+  top: 1vh;
 
 }
 

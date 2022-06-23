@@ -17,6 +17,7 @@
 .column > div
 {
   padding:1vmin;
+  max-height: 22vh;
 }
 
 @media only screen and (max-width: 768px) 
