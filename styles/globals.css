@@ -44,15 +44,12 @@ a {
 {
   text-align: left;
   color: #EFEFEF;
-  transform: rotate(180deg);
+  transform: scale(1, -1);
 }
 
 .label:hover
 {
-  -moz-transform: scale(1, -1);
-  -webkit-transform: scale(1, -1);
-  -o-transform: scale(1, -1);
-  -ms-transform: scale(1, -1);
+  transform: rotate(0deg);
 }
 
 .desc
