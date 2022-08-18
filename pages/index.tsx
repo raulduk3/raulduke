@@ -11,11 +11,12 @@ const Index = () => {
         <p><a href='https://www.youtube.com/channel/UCtn5rjH9-l1LeHULyc8udwQ' className='main'>rick álvarez</a></p>
       </div>
       <div className={style.column}>  
+        <ReactPlayer url='https://youtu.be/rSVpTN6pRjA' />
         <ReactPlayer url='https://youtu.be/Qt8xm5LxWBM' />
         <ReactPlayer url='https://youtu.be/CO70NVlY0Gw' />
         <ReactPlayer url='https://youtu.be/z_O_n9QNYKo' />
         <ReactPlayer url='https://youtu.be/OiXkIOF98A0' />
-        <ReactPlayer url='https://youtu.be/SDDqeX3K6xc' />
+	<ReactPlayer url='https://youtu.be/SDDqeX3K6xc' />
       </div>
     </section>
   );
