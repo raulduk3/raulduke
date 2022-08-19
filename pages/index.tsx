@@ -16,7 +16,6 @@ const Index = () => {
         <ReactPlayer url='https://youtu.be/CO70NVlY0Gw' />
         <ReactPlayer url='https://youtu.be/z_O_n9QNYKo' />
         <ReactPlayer url='https://youtu.be/OiXkIOF98A0' />
-	<ReactPlayer url='https://youtu.be/SDDqeX3K6xc' />
       </div>
     </section>
   );
