@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'Sunset-Serial';
+    src: url('../public/Font/Sunset-Serial-Bold.eot');
+    src: local('Sunset-Serial-Bold'),
+        url('../public/Font/Sunset-Serial-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../public/Font/Sunset-Serial-Bold.woff2') format('woff2'),
+        url('../public/Font/Sunset-Serial-Bold.woff') format('woff'),
+        url('../public/Font/Sunset-Serial-Bold.ttf') format('truetype'),
+        url('../public/Font/Sunset-Serial-Bold.svg#Sunset-Serial-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
 
 html,
 body {
@@ -76,7 +89,7 @@ a {
 
 .main {
   letter-spacing: 5px;
-  padding: 1.75vmin 0 1vmin 0;
+  padding: 2vmin 0 2vmin 0;
   text-align: center;
   font-size: 10vmin;
   text-overflow: wrap;
