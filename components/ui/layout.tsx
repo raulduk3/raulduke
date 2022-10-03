@@ -22,11 +22,11 @@ const Layout : React.FC = ({ children }) => {
                 <meta name="language" content="English" />
                 <meta name="revisit-after" content="10 days"/>
                 <meta name="robots" content="follow"/>
-                <link rel="preload" href="public/Font/Sunset-Serial-Bold.woff2" as="font" type="font/woff2"></link>
-                <link rel="preload" href="public/Font/Sunset-Serial-Bold.eot" as="font" type="font/eot"></link>
-                <link rel="preload" href="public/Font/Sunset-Serial-Bold.ttf" as="font" type="font/ttf"></link>
-                <link rel="preload" href="public/Font/Sunset-Serial-Bold.svg" as="font" type="font/svg"></link>
-                <link rel="preload" href="public/Font/Sunset-Serial-Bold.woff" as="font" type="font/woff"></link>
+                <link rel="preload" href="/public/Font/Sunset-Serial-Bold.woff2" as="font" type="font/woff2"></link>
+                <link rel="preload" href="/public/Font/Sunset-Serial-Bold.eot" as="font" type="font/eot"></link>
+                <link rel="preload" href="/public/Font/Sunset-Serial-Bold.ttf" as="font" type="font/ttf"></link>
+                <link rel="preload" href="/public/Font/Sunset-Serial-Bold.svg" as="font" type="font/svg"></link>
+                <link rel="preload" href="/public/Font/Sunset-Serial-Bold.woff" as="font" type="font/woff"></link>
             </Head>
                         { children }
             <Footer>
