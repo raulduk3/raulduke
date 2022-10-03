@@ -1,12 +1,12 @@
 @font-face {
     font-family: 'Sunset-Serial';
-    src: url('../public/Font/Sunset-Serial-Bold.eot');
+    src: url('/public/Font/Sunset-Serial-Bold.eot');
     src: local('Sunset-Serial-Bold'),
-        url('../public/Font/Sunset-Serial-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../public/Font/Sunset-Serial-Bold.woff2') format('woff2'),
-        url('../public/Font/Sunset-Serial-Bold.woff') format('woff'),
-        url('../public/Font/Sunset-Serial-Bold.ttf') format('truetype'),
-        url('../public/Font/Sunset-Serial-Bold.svg#Sunset-Serial-Bold') format('svg');
+        url('/public/Font/Sunset-Serial-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/public/Font/Sunset-Serial-Bold.woff2') format('woff2'),
+        url('/public/Font/Sunset-Serial-Bold.woff') format('woff'),
+        url('/public/Font/Sunset-Serial-Bold.ttf') format('truetype'),
+        url('/public/Font/Sunset-Serial-Bold.svg#Sunset-Serial-Bold') format('svg');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
