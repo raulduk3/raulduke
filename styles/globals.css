@@ -123,7 +123,7 @@ a {
   -o-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   position: relative;
-  top: 0vh;
+  top: 2vh;
 }
 
 .flip:hover{
