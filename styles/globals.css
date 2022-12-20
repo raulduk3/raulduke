@@ -90,7 +90,7 @@ a {
 .main {
   font-family: 'Sunset-Serial';
   letter-spacing: 5px;
-  padding: 0.8vmin 0 2vmin 0;
+  padding: 0.5vmin 0 1vmin 0;
   text-align: center;
   font-size: 10vmin;
   text-overflow: wrap;
@@ -123,7 +123,7 @@ a {
   -o-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   position: relative;
-  top: 0.8vh;
+  top: 0.5vh;
 }
 
 .flip:hover{
