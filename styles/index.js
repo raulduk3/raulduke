@@ -24,7 +24,7 @@ export const Navigation = styled.nav`
 `
 
 export const Hero = styled.div`
-    margin-top: 3.5em;
+    margin-top: 3em;
     margin-bottom: -6vh;
     display: flex;
     flex-direction: column;
@@ -37,6 +37,9 @@ export const Hero = styled.div`
     }
     h1 {
         margin-top: 0;
+    }
+    @media (min-width: 769px) {
+        margin-top: 1em;
     }
 `
 
@@ -74,7 +77,10 @@ export const Hamburger = styled.button`
     }
 `
 
-export const Menu = styled.div`
+
+export const Menu = styled.div.attrs(props => ({
+    'open': props.open,
+  }))`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -139,7 +145,7 @@ export const SocialLinksWrapper = styled.div`
     justify-content: space-evenly;
     margin-bottom: ${({ theme }) => theme.spacing.l};
     @media (min-width: 769px) {
-        width: 22vw;
+        width: 15vw;
     }
 `
 

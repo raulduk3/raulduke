@@ -21,13 +21,11 @@ const HamburgerWrapper = ({ onClick }) => {
   )
 }
 
-const MenuWrapper = ({ open, onClick }) => {
+const MenuWrapper = ({onClick, open, children}) => {
 	return (
-        <Menu open={open} type="bool">
+        <Menu open={open} onClick={onClick}>
             <button onClick={onClick}>X</button>
-            <Link href="#about">About</Link>
-            <Link href="#contact">Projects</Link>
-            <Link href="#archive">Archive</Link>
+            {children}
         </Menu>
 	)
 }
@@ -109,7 +107,11 @@ const Index = () => {
                   {isMobile ? (
                       <>
                         <HamburgerWrapper onClick={handleClick} />
-                        <MenuWrapper open={open} onClick={handleClick}></MenuWrapper>
+                        <MenuWrapper open={open} onClick={handleClick}>
+                            <Link href="#about">About</Link>
+                            <Link href="#contact">Projects</Link>
+                            <Link href="#archive">Archive</Link>
+                        </MenuWrapper>
                       </>
                     ) : (
                         <>
