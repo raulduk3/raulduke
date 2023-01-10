@@ -79,7 +79,7 @@ const Index = () => {
   return (
       <ThemeProvider theme={theme}>
           <Head>
-                <title>Richard Álvarez | Filmmaker</title>
+                <title>RichardÁlvarez | Filmmaker</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
                 <meta property="og:type" content="website" />
@@ -122,7 +122,7 @@ const Index = () => {
                     )}
               </Navigation>
               <Hero>
-                <Title>Richard Álvarez</Title>
+                <Title>Richard A. Álvarez</Title>
                 <p>Mexican-American Filmmaker</p>
                 <SocialLinks></SocialLinks>
               </Hero>
