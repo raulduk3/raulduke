@@ -125,25 +125,26 @@ export const Menu = styled.div.attrs(props => ({
 export const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: ${({ theme }) => theme.spacing.m};
+    grid-gap: ${({ theme }) => theme.spacing.s};
     width: 100%;
     max-width: 1200px;
 `
 
 export const GridItem = styled.div`
     display: flex;
-    align-items: center;
+    align-items: left;
     justify-content: center;
     flex-direction: column;
     img {
         max-width: 100%;
         object-fit: cover;
-        padding: 0;
     }
     h3 {
         font-size: 0.5em;
-        padding: ${({ theme }) => theme.spacing.xs} 0;
-        max-height: 20px;
+        height: 20px;
+        padding: 0;
+        margin: 0;
+        text-align: left;
     }
     a {
         text-decoration: none;

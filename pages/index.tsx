@@ -132,8 +132,8 @@ const Index = () => {
                         <GridItem key={video.title}>
                             <a href={video.url}>
                                 <img src={video.image} width={300} alt={video.title} />
-                                <h3>{video.title}</h3>
                             </a>
+                            <h3>{video.title}</h3>
                         </GridItem>
                     ))}
                 </Grid>
