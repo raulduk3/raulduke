@@ -9,7 +9,7 @@ import { FaYoutube, FaTwitter, FaInstagramSquare, FaVimeo, FaBars } from 'react-
 
 const Footer = () => (
   <FooterWrapper>
-      <Link href='mailto:alvarez2@kenyon.edu'>Copyright © 2023 Built by Richard Álvarez</Link>
+      <Link href='mailto:alvarez2@kenyon.edu'>copyright © 2023 built w/ love by richard álvarez</Link>
   </FooterWrapper>
 )
 
