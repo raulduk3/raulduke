@@ -21,14 +21,14 @@ const HamburgerWrapper = ({ onClick }) => {
   )
 }
 
-const MenuWrapper = ({ onClick }) => {
+const MenuWrapper = ({ open, onClick }) => {
 	return (
-		<Menu>
-			<button onClick={onClick}>X</button>
-			<Link href="#about">About</Link>
-			<Link href="#contact">Projects</Link>
-			<Link href="#archive">Archive</Link>
-		</Menu>
+        <Menu open={open} type="bool">
+            <button onClick={onClick}>X</button>
+            <Link href="#about">About</Link>
+            <Link href="#contact">Projects</Link>
+            <Link href="#archive">Archive</Link>
+        </Menu>
 	)
 }
 
@@ -81,27 +81,27 @@ const Index = () => {
   return (
       <ThemeProvider theme={theme}>
           <Head>
-              <title>Richard Álvarez | Filmmaker</title>
-              <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-              <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
-              <meta property="og:type" content="website" />
-            <meta property="og:image" content="https://raulduke.com/images/BANNER.jpg" />
-            <meta property="og:title" content="Rick Alvarez" key="title" />
-            <meta property="og:site_name" content="Rick Alvarez"/>
-            <meta property="og:url" content="https://raulduke.com"></meta>
-            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            <meta property="og:description" name="description" content="Artist website of Richard Álvarez"/>
-            <meta name="keywords" content="Rick Alvarez, rick,Alvarez, dvi, canon xl2, Canon XL2, glitch art, raul duke, Raoul Duke, Raul Duke, underground artist, vfx, chicago, music scene, music videos, art, poetry, latinx art, video art, code, programming, p5js, 5ouley, Undercurrent, chicago underground artists, cgi, animation, punk art, you tube music videos, youtube music videos, nudity in music videos, chicago underground film festival"/>
-            <meta name="copyright" content="Richard Álvarez" />
-            <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-            <meta name="language" content="English" />
-            <meta name="revisit-after" content="10 days"/>
-            <meta name="robots" content="follow"/>
-            <link rel="preload" href="/public/Font/Sunset-Serial-Bold.woff2" as="font" type="font/woff2"></link>
-            <link rel="preload" href="/public/Font/Sunset-Serial-Bold.eot" as="font" type="font/eot"></link>
-            <link rel="preload" href="/public/Font/Sunset-Serial-Bold.ttf" as="font" type="font/ttf"></link>
-            <link rel="preload" href="/public/Font/Sunset-Serial-Bold.svg" as="font" type="font/svg"></link>
-            <link rel="preload" href="/public/Font/Sunset-Serial-Bold.woff" as="font" type="font/woff"></link>
+                <title>Richard Álvarez | Filmmaker</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+                <meta property="og:type" content="website" />
+                <meta property="og:image" content="https://raulduke.com/images/BANNER.jpg" />
+                <meta property="og:title" content="Rick Alvarez" key="title" />
+                <meta property="og:site_name" content="Rick Alvarez"/>
+                <meta property="og:url" content="https://raulduke.com"></meta>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta property="og:description" name="description" content="Artist website of Richard Álvarez"/>
+                <meta name="keywords" content="Rick Alvarez, rick,Alvarez, dvi, canon xl2, Canon XL2, glitch art, raul duke, Raoul Duke, Raul Duke, underground artist, vfx, chicago, music scene, music videos, art, poetry, latinx art, video art, code, programming, p5js, 5ouley, Undercurrent, chicago underground artists, cgi, animation, punk art, you tube music videos, youtube music videos, nudity in music videos, chicago underground film festival"/>
+                <meta name="copyright" content="Richard Álvarez" />
+                <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+                <meta name="language" content="English" />
+                <meta name="revisit-after" content="10 days"/>
+                <meta name="robots" content="follow"/>
+                <link rel="preload" href="/public/Font/Sunset-Serial-Bold.woff2" as="font" type="font/woff2"></link>
+                <link rel="preload" href="/public/Font/Sunset-Serial-Bold.eot" as="font" type="font/eot"></link>
+                <link rel="preload" href="/public/Font/Sunset-Serial-Bold.ttf" as="font" type="font/ttf"></link>
+                <link rel="preload" href="/public/Font/Sunset-Serial-Bold.svg" as="font" type="font/svg"></link>
+                <link rel="preload" href="/public/Font/Sunset-Serial-Bold.woff" as="font" type="font/woff"></link>
           </Head>
           <GlobalStyles />
           <Container>
@@ -109,7 +109,7 @@ const Index = () => {
                   {isMobile ? (
                       <>
                         <HamburgerWrapper onClick={handleClick} />
-                        <MenuWrapper onClick={handleClick}></MenuWrapper>
+                        <MenuWrapper open={open} onClick={handleClick}></MenuWrapper>
                       </>
                     ) : (
                         <>
@@ -125,7 +125,6 @@ const Index = () => {
                 <SocialLinks></SocialLinks>
               </Hero>
               <Container>
-                <br></br>
                 <Grid>
                     {videos.map((video) => (
                         <GridItem key={video.title}>

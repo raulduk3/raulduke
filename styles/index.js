@@ -24,7 +24,7 @@ export const Navigation = styled.nav`
 `
 
 export const Hero = styled.div`
-    margin-top: 3em;
+    margin-top: 3.5em;
     margin-bottom: -6vh;
     display: flex;
     flex-direction: column;
@@ -33,7 +33,7 @@ export const Hero = styled.div`
     height: 30vh;
     padding: ${({ theme }) => theme.spacing.m};
     p {
-        margin: 0 0;
+        margin: -10px 0 0 0;
     }
     h1 {
         margin-top: 0;
@@ -132,8 +132,8 @@ export const GridItem = styled.div`
 `
 
 export const SocialLinksWrapper = styled.div`
-    width: 90vw;
-    margin-top: 2vh;
+    width: 70vw;
+    margin-top: 1em;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
