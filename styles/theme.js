@@ -4,7 +4,7 @@ export const theme = {
         secondary: '#fff'
     },
     spacing: {
-        xs: '4px',
+        xs: '2.5px',
         s: '10px',
         m: '20px',
         l: '40px'
