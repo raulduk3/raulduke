@@ -133,11 +133,11 @@ export const GridItem = styled.div`
 
 export const SocialLinksWrapper = styled.div`
     width: 90vw;
-    margin-top: 5vh;
+    margin-top: 2vh;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin-bottom: ${({ theme }) => theme.spacing.m};
+    margin-bottom: ${({ theme }) => theme.spacing.l};
     @media (min-width: 769px) {
         width: 22vw;
     }
