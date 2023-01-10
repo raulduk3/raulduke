@@ -75,6 +75,7 @@ export const Hamburger = styled.button`
         position: absolute;
         background-color: transparent;
         border: none;
+        user-select: none;
         cursor: pointer;
     }
 `
@@ -108,6 +109,7 @@ export const Menu = styled.div.attrs(props => ({
         background: transparent;
         border: none;
         cursor: pointer;
+        user-select: none;
     }
 `
 
