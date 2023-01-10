@@ -38,7 +38,7 @@ export const Hero = styled.div`
     }
     h1 {
         margin-top: 0;
-        word-spacing: 1.1rem;
+        word-spacing: 0.35rem;
     }
     @media (min-width: 769px) {
         margin-top: 1em;
@@ -64,9 +64,11 @@ export const Hamburger = styled.button`
     display: none;
     border: none;
     user-select: none;
+    padding: 0;
+    margin: 0;
     @media (max-width: 768px) {
         display: block;
-        width: 36px;
+        width: 30px;
         height: 30px;
         position: relative;
         cursor: pointer;
@@ -148,7 +150,7 @@ export const GridItem = styled.div`
 `
 
 export const SocialLinksWrapper = styled.div`
-    width: 70vw;
+    width: 64vw;
     margin-top: 1em;
     display: flex;
     align-items: center;
