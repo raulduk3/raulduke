@@ -6,7 +6,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     height: auto;
-    padding: ${({ theme }) => theme.spacing.s};
+    padding: ${({ theme }) => theme.spacing.m};
 `
 
 export const Navigation = styled.nav`

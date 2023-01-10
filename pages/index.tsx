@@ -13,6 +13,25 @@ const Footer = () => (
   </FooterWrapper>
 )
 
+const HamburgerWrapper = ({ onClick }) => {
+  return (
+      <Hamburger onClick={onClick}>
+          <FaBars size={30} />
+      </Hamburger>
+  )
+}
+
+const MenuWrapper = ({ onClick }) => {
+	return (
+		<Menu>
+			<button onClick={onClick}>X</button>
+			<Link href="#about">About</Link>
+			<Link href="#contact">Projects</Link>
+			<Link href="#archive">Archive</Link>
+		</Menu>
+	)
+}
+
 const SocialLinks = () => (
     <SocialLinksWrapper>
         <SocialLink href='https://vimeo.com/rickyalvarez/' target="_blank" rel="noopener noreferrer">
@@ -37,18 +56,18 @@ const Index = () => {
       {
           title: '<3 RAUL DUKE (2020 - 2022)',
           url: 'https://www.youtube.com/watch?v=6rMKwRTi2cs',
-          image: 'https://via.placeholder.com/350'
+          image: '/maxresdefault (1).jpg'
       },
       {
           title: 'Evening in Glitch',
-          url: '',
-          image: 'https://via.placeholder.com/350'
+          url: 'https://www.youtube.com/watch?v=SDDqeX3K6xc',
+          image: '/maxresdefault.jpg'
       },
-      {
-          title: 'Short Film 3',
-          url: 'https://example.com/short-film-3',
-          image: 'https://via.placeholder.com/350'
-      },
+	  {
+		title: '21st Century Dorm',
+		url: 'https://vimeo.com/681213937',
+		image: '/1380813806-4994bec0088ce6ac17fa3a63984440cf3f395df93aa35540587c186611711af4-d_640.jpg'
+	  }
   ])
 
   useEffect(() => {
@@ -71,15 +90,8 @@ const Index = () => {
               <Navigation>
                   {isMobile ? (
                       <>
-                        <Hamburger open={open} onClick={handleClick}>
-                          <FaBars size={30} />
-                        </Hamburger>
-                        <Menu open={open}>
-                            <button onClick={handleClick}>X</button>
-                            <Link href="#about">About</Link>
-                            <Link href="#contact">Projects</Link>
-                            <Link href="#archive">Archive</Link>
-                        </Menu>
+                        <HamburgerWrapper onClick={handleClick} />
+                        <MenuWrapper onClick={handleClick}></MenuWrapper>
                       </>
                     ) : (
                         <>
