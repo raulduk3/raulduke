@@ -79,7 +79,7 @@ const Index = () => {
   return (
       <ThemeProvider theme={theme}>
           <Head>
-                <title>RichardÁlvarez | Filmmaker</title>
+                <title>Richard Álvarez | Filmmaker</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
                 <meta property="og:type" content="website" />

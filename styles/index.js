@@ -38,7 +38,7 @@ export const Hero = styled.div`
     }
     h1 {
         margin-top: 0;
-        word-spacing: 0.8rem;
+        word-spacing: 1.1rem;
     }
     @media (min-width: 769px) {
         margin-top: 1em;
@@ -63,6 +63,7 @@ export const Link = styled.a`
 export const Hamburger = styled.button`
     display: none;
     border: none;
+    user-select: none;
     @media (max-width: 768px) {
         display: block;
         width: 36px;
@@ -77,6 +78,7 @@ export const Hamburger = styled.button`
         border: none;
         user-select: none;
         cursor: pointer;
+        outline:none;
     }
 `
 
@@ -110,6 +112,7 @@ export const Menu = styled.div.attrs(props => ({
         border: none;
         cursor: pointer;
         user-select: none;
+        outline:none;
     }
 `
 
