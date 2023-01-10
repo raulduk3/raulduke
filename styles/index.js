@@ -16,8 +16,8 @@ export const Navigation = styled.nav`
     align-items: center;
     justify-content: center;
     padding: ${({ theme }) => theme.spacing.m} 0;
-    margin-bottom: ${({ theme }) => theme.spacing.m};
-    position: fixed;
+    margin-bottom: ${({ theme }) => theme.spacing.s};
+    position: absolute;
     top: 0;
     z-index: 2;
     background-color: rgba(0, 0, 0, 0);
@@ -132,7 +132,7 @@ export const Grid = styled.div`
 
 export const GridItem = styled.div`
     display: flex;
-    align-items: left;
+    align-items: left   ;
     justify-content: center;
     flex-direction: column;
     img {
@@ -184,7 +184,7 @@ export const FooterWrapper = styled.footer`
     text-align: center;
     padding: ${({ theme }) => theme.spacing.m};
     font-size: 0.7em;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100%;
     a {
