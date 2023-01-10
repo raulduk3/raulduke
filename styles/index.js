@@ -38,7 +38,7 @@ export const Hero = styled.div`
     }
     h1 {
         margin-top: 0;
-        word-spacing: 0.6rem;
+        word-spacing: 0.8rem;
     }
     @media (min-width: 769px) {
         margin-top: 1em;

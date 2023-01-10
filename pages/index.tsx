@@ -122,7 +122,7 @@ const Index = () => {
                     )}
               </Navigation>
               <Hero>
-                <Title>Richard A. Álvarez</Title>
+                <Title>Richard Álvarez</Title>
                 <p>Mexican-American Filmmaker</p>
                 <SocialLinks></SocialLinks>
               </Hero>
