@@ -33,13 +33,13 @@ const MenuWrapper = ({onClick, open, children}) => {
 const SocialLinks = () => (
     <SocialLinksWrapper>
         <SocialLink href='https://vimeo.com/rickyalvarez/' target="_blank" rel="noopener noreferrer">
-            <FaVimeo size={30} />
+            <FaVimeo size={25} />
         </SocialLink>
         <SocialLink href='https://www.youtube.com/@rickalvarez3686/' target="_blank" rel="noopener noreferrer">
-            <FaYoutube size={30} />
+            <FaYoutube size={25} />
         </SocialLink>
         <SocialLink href='https://twitter.com/raalvarez_3' target="_blank" rel="noopener noreferrer">
-            <FaTwitter size={30} />
+            <FaTwitter size={25} />
         </SocialLink>
         <SocialLink href='https://www.instagram.com/lofirick/' target="_blank" rel="noopener noreferrer">
             <FaInstagramSquare size={30} />

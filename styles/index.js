@@ -20,7 +20,8 @@ export const Navigation = styled.nav`
     position: fixed;
     top: 0;
     z-index: 2;
-    background-color: ${({ theme }) => theme.colors.navBackground};
+    background-color: rgba(0, 0, 0, 0);
+    color: transparent;
 `
 
 export const Hero = styled.div`
@@ -61,17 +62,17 @@ export const Link = styled.a`
 export const Hamburger = styled.button`
     display: none;
     border: none;
-    background-color: white;
     @media (max-width: 768px) {
         display: block;
         width: 36px;
         height: 30px;
         position: relative;
         cursor: pointer;
+        background-color: transparent;
     }
     button {
         position: absolute;
-        background: transparent;
+        background-color: transparent;
         border: none;
         cursor: pointer;
     }
@@ -83,6 +84,7 @@ export const Menu = styled.div.attrs(props => ({
   }))`
     display: flex;
     flex-direction: column;
+    background-color: transparent;
     align-items: center;
     justify-content: center;
     width: 100vw;
