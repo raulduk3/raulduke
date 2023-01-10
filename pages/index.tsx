@@ -66,7 +66,7 @@ const Index = () => {
 	  {
 		title: '21st Century Dorm',
 		url: 'https://vimeo.com/681213937',
-		image: '/1380813806-4994bec0088ce6ac17fa3a63984440cf3f395df93aa35540587c186611711af4-d_640.jpg'
+		image: '/c.jpg'
 	  }
   ])
 
