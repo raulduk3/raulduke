@@ -66,6 +66,7 @@ export const Hamburger = styled.button`
     user-select: none;
     padding: 0;
     margin: 0;
+    color: black;
     @media (max-width: 768px) {
         display: block;
         width: 30px;
@@ -81,7 +82,7 @@ export const Hamburger = styled.button`
         border: none;
         user-select: none;
         cursor: pointer;
-        outline:none;
+        outline: none;
     }
 `
 
@@ -115,7 +116,7 @@ export const Menu = styled.div.attrs(props => ({
         border: none;
         cursor: pointer;
         user-select: none;
-        outline:none;
+        outline: none;
         color: black;
     }
 `
