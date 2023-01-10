@@ -83,6 +83,7 @@ export const Hamburger = styled.button`
         user-select: none;
         cursor: pointer;
         outline: none;
+        text-transform: none;
     }
 `
 

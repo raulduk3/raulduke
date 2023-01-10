@@ -9,7 +9,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
-
+  button {
+        color: black;
+        border: none;
+        user-select: none;
+        cursor: pointer;
+        outline: none;
+        text-transform: none;
+  }
   a {
     color: inherit;
     text-decoration: none;
