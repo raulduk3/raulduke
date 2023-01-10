@@ -6,7 +6,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     height: auto;
-    padding: ${({ theme }) => theme.spacing.m};
+    padding: ${({ theme }) => theme.spacing.s};
 `
 
 export const Navigation = styled.nav`
@@ -24,7 +24,7 @@ export const Navigation = styled.nav`
 `
 
 export const Hero = styled.div`
-    margin-top: 5vh;
+    margin-top: 3em;
     margin-bottom: -6vh;
     display: flex;
     flex-direction: column;
@@ -117,10 +117,13 @@ export const GridItem = styled.div`
     flex-direction: column;
     img {
         max-width: 100%;
+        object-fit: cover;
+        padding: 0;
     }
     h3 {
-        font-size: ${({ theme }) => theme.fontSizes.h3};
-        margin: ${({ theme }) => theme.spacing.xs} 0;
+        font-size: 0.5em;
+        padding: ${({ theme }) => theme.spacing.xs} 0;
+        max-height: 20px;
     }
     a {
         text-decoration: none;
