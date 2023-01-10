@@ -22,7 +22,7 @@ const HamburgerWrapper = ({ onClick }) => {
 }
 
 const MenuWrapper = ({onClick, open, children}) => {
-	return (
+	return (    
         <Menu open={open} onClick={onClick}>
             <button onClick={onClick}>X</button>
             {children}
