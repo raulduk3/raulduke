@@ -6,7 +6,6 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.primary};
     padding: 0;
     margin: 0;
-    height: 100%;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     }
@@ -18,12 +17,9 @@ const GlobalStyle = createGlobalStyle`
         outline: none;
         text-transform: none;
   }
-  body > div:first-child,
-      div#__next,
-      div#__next > div {
-        height: -webkit-fill-available;
-        height: 100%;
-      }
+  html, body, #app, #app>* {
+    height: 100%
+  }
   a {
     color: inherit;
     text-decoration: none;

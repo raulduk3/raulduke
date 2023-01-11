@@ -91,11 +91,10 @@ const Index = () => {
 
   useEffect(() => {
     if(window.innerWidth < 760) { setIsMobile(true) } else { setIsMobile(false) }
-    window.addEventListener('resize', handleResize)
+    window.addEventListener('resize', handleResize);
 
-    return () =>
-    {
-        window.removeEventListener('resize', handleResize)
+    return () => {
+        window.removeEventListener('resize', handleResize);
     }
   }, [open, size, isMobile])
 
@@ -133,7 +132,7 @@ const Index = () => {
                 <link rel="preload" href="/public/Font/Sunset-Serial-Bold.woff" as="font" type="font/woff"></link>
           </Head>
           <GlobalStyles />
-            <PageWrapper size={size}>
+            <PageWrapper>
                 <Container>
                     <Navigation>
                         {isMobile ? (
