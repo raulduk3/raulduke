@@ -35,10 +35,11 @@ export const Hero = styled.div`
     padding-bottom: 0;
     p {
         margin: -10px 0 0 0;
+        font-size: 0.76em;
     }
     h1 {
         margin-top: 0;
-        font-size: 2em;
+        font-size: 1.76em;
         word-spacing: 0.1em;
         text-align: center;
     }
