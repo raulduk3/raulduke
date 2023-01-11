@@ -49,6 +49,7 @@ const SocialLinks = () => (
 
 const Index = () => {
   const [open, setOpen] = useState(false)
+  const [size, setSize] = useState(700)
   const [currentPage, setCurrentPage] = useState('home')
   const [isMobile, setIsMobile] = useState(false)
   const [videos, setVideos] = useState([
@@ -86,6 +87,7 @@ const Index = () => {
 
   useEffect(() => {
     if(window.innerWidth < 760) { setIsMobile(true) } else { setIsMobile(false) }
+    setSize(window.innerHeight)
   })
 
   const handleClick = () => {
@@ -122,7 +124,7 @@ const Index = () => {
                 <link rel="preload" href="/public/Font/Sunset-Serial-Bold.woff" as="font" type="font/woff"></link>
           </Head>
           <GlobalStyles />
-            <PageWrapper>
+            <PageWrapper size={size}>
                 <Container>
                     <Navigation>
                         {isMobile ? (

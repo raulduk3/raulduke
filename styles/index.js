@@ -48,8 +48,10 @@ export const Hero = styled.div`
     }
 `
 
-export const PageWrapper = styled.div`
-    height: 100%;
+export const PageWrapper = styled.div.attrs(props => ({
+    'size': props.size,
+  }))`
+    height: ${props => {props.size}};
     height: -webkit-fill-available;
     flex-direction: column;
     display: flex;
