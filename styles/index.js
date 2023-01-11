@@ -48,7 +48,7 @@ export const Hero = styled.div`
 `
 
 export const PageWrapper = styled.div`
-    min-height: 100%;
+    height: 100%;
     flex-direction: column;
     display: flex;
     justify-content: space-between; 
@@ -88,7 +88,7 @@ export const Hamburger = styled.button`
     padding: 0;
     margin: 0.40em -3px 0.40em 0;
     color: #8F8F8F;
-    opacity: 0.85;
+    opacity: 0.5;
     @media (max-width: 768px) {
         display: block;
         width: 30px;
