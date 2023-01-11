@@ -54,11 +54,8 @@ export const PageWrapper = styled.div.attrs(props => ({
     flex-direction: column;
     display: flex;
     justify-content: space-between; 
+    min-height: ${props => { props.size }};
     height: -webkit-fill-available;
-    overflow: hidden;
-    @media (min-width: 769px) {
-        overflow: visible;
-    }
 `
 
 export const Title = styled.h1`
@@ -230,7 +227,8 @@ export const FooterWrapper = styled.footer`
     text-align: center;
     padding: ${({ theme }) => theme.spacing.m};
     font-size: 0.7em;
-    position: relative;
+    position: absolute;
+    flex-shrink: 0;
     bottom: 0;
     width: 100%;
     a {
