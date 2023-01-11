@@ -25,14 +25,13 @@ export const Navigation = styled.nav`
 `
 
 export const Hero = styled.div`
-    margin-top: 0em;
-    margin-bottom: -4em;
+    margin-top: 2em;
+    margin-bottom: 0em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 30vh;
-    padding: ${({ theme }) => theme.spacing.m};
+    padding: ${({ theme }) => theme.spacing.l};
     padding-bottom: 0;
     p {
         margin: -10px 0 0 0;
