@@ -86,11 +86,12 @@ const Index = () => {
   ])
 
   const handleResize = useCallback(event => {
-    setSize(window.innerHeight + 'px')
+    setSize(window.innerHeight + 'px');
   }, [size]);
 
   useEffect(() => {
     if(window.innerWidth < 760) { setIsMobile(true) } else { setIsMobile(false) }
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => {
