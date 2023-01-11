@@ -44,7 +44,7 @@ export const Hero = styled.div`
         text-align: center;
     }
     @media (min-width: 769px) {
-        margin-top: 1.5em;
+        margin-top: 1em;
     }
 `
 
