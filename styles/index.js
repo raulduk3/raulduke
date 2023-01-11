@@ -49,7 +49,7 @@ export const Hero = styled.div`
 `
 
 export const PageWrapper = styled.div`
-    height: 100vh;
+    height: 100%;
     height: -webkit-fill-available;
     flex-direction: column;
     display: flex;
