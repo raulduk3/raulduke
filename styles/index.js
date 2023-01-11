@@ -25,7 +25,7 @@ export const Navigation = styled.nav`
 `
 
 export const Hero = styled.div`
-    margin-top: 4em;
+    margin-top: 3   em;
     margin-bottom: -6vh;
     display: flex;
     flex-direction: column;
@@ -41,7 +41,7 @@ export const Hero = styled.div`
         word-spacing: 0.35rem;
     }
     @media (min-width: 769px) {
-        margin-top: 0.75em;
+        margin-top: 0.65em;
     }
 `
 
