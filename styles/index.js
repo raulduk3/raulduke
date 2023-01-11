@@ -63,6 +63,14 @@ export const Link = styled.a`
     }
 `
 
+export const Underline = styled.span`
+    text-decoration: underline;
+`
+
+export const Small = styled.p`
+    font-size: 0.2em;
+`
+
 export const Hamburger = styled.button`
     display: none;
     border: none;
@@ -90,6 +98,9 @@ export const Hamburger = styled.button`
     }
 `
 
+export const TextBlob = styled.div`
+    width: 35%;
+`
 
 export const Menu = styled.div.attrs(props => ({
     'open': props.open,

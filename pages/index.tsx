@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from '../styles/global'
 import { theme } from '../styles/theme'
-import { SocialLinksWrapper, FooterWrapper, SocialLink, Container, Hero, Title, Grid, GridItem, Navigation, Link, Hamburger, Menu } from '../styles/index'
+import { SocialLinksWrapper, FooterWrapper, SocialLink, Small, Container, Underline, Hero, TextBlob, Title, Grid, GridItem, Navigation, Link, Hamburger, Menu } from '../styles/index'
 import { FaYoutube, FaTwitter, FaInstagramSquare, FaVimeo, FaBars, FaTimes } from 'react-icons/fa'
 
 const Footer = () => (
@@ -49,6 +49,7 @@ const SocialLinks = () => (
 
 const Index = () => {
   const [open, setOpen] = useState(false)
+  const [currentPage, setCurrentPage] = useState('home')
   const [isMobile, setIsMobile] = useState(false)
   const [videos, setVideos] = useState([
       {
@@ -91,6 +92,10 @@ const Index = () => {
       setOpen(!open);
   }
 
+  const handleNavClick = (page) => {
+    setCurrentPage(page);
+  }
+
   return (
       <ThemeProvider theme={theme}>
           <Head>
@@ -123,16 +128,17 @@ const Index = () => {
                       <>
                         <HamburgerWrapper onClick={handleClick} />
                         <MenuWrapper open={open} onClick={handleClick}>
-                            <Link href="#about">About</Link>
-                            <Link href="#projects">Projects</Link>
-                            <Link href="#archive">Archive</Link>
+                            <Link href="#" onClick={(e) => handleNavClick('home')}>Home</Link>
+                            <Link href="#about" onClick={(e) => handleNavClick('about')}>About</Link>
+                            <Link href="#projects" onClick={(e) => handleNavClick('projects')}>Projects</Link>
+                            <Link href="#archive" onClick={(e) => handleNavClick('archive')}>Archive</Link>
                         </MenuWrapper>
                       </>
                     ) : (
                         <>
-                            <Link href="#about">About</Link>
-                            <Link href="#projects">Projects</Link>
-                            <Link href="#archive">Archive</Link>
+                            <Link href="#about" onClick={(e) => handleNavClick('about')}>About</Link>
+                            <Link href="#projects" onClick={(e) => handleNavClick('projects')}>Projects</Link>
+                            <Link href="#archive" onClick={(e) => handleNavClick('archive')}>Archive</Link>
                         </>
                     )}
               </Navigation>
@@ -141,8 +147,10 @@ const Index = () => {
                 <p>Mexican-American Filmmaker</p>
                 <SocialLinks></SocialLinks>
               </Hero>
+              {currentPage != 'home' && <Link href="#" onClick={(e) => handleNavClick('home')}><Underline>Back</Underline></Link> }
               <Container>
-                <Grid>
+                {currentPage == "home" &&
+                    <Grid>
                     {videos.map((video) => (
                         <GridItem key={video.title}>
                             <a href={video.url}>
@@ -151,7 +159,19 @@ const Index = () => {
                             <h3>{video.title}</h3>
                         </GridItem>
                     ))}
-                </Grid>
+                    </Grid>}
+                {currentPage == "about" &&
+                    <TextBlob>Rick Álvarez is a Mexican-American student filmmaker, mixed media artist, and proud Chicago native.<br></br><br></br>
+                    With a focus on technology, urban environments, DV video, and experimental narratives, Rick uses his work to address social and political issues through motion pictures.<br></br><br></br>
+                    Drawing inspiration from his cultural heritage and the vibrant music scene of Chicago, Rick provides a unique and fresh perspective to the visual medium.<br></br><br></br>    
+                    Rick is determined to push the boundaries of video.</TextBlob>
+                }
+                {currentPage == "projects" &&
+                    <Small>(coming soon)</Small>
+                }
+                {currentPage == "archive" &&
+                    <Small>(coming soon)</Small>
+                }
               </Container>
           </Container>
           <Footer />
