@@ -120,7 +120,7 @@ export const Menu = styled.div.attrs(props => ({
         border: none;
         cursor: pointer;
         user-select: none;
-        font-size: 2em;
+        font-size: 25px;
         font-weight: 100;
         opacity: 1;
         outline: none;
@@ -135,6 +135,7 @@ export const Grid = styled.div`
     width: 100%;
     max-width: 1200px;
     margin-top: 0em;
+
 `
 
 export const GridItem = styled.div`
