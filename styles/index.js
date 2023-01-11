@@ -39,7 +39,8 @@ export const Hero = styled.div`
     h1 {
         margin-top: 0;
         font-size: 2em;
-        word-spacing: 0.12em;
+        word-spacing: 0.1em;
+        margin-left: -1px;
         text-align: center;
     }
     @media (min-width: 769px) {
