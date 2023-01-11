@@ -132,7 +132,7 @@ const Index = () => {
                 <link rel="preload" href="/public/Font/Sunset-Serial-Bold.woff" as="font" type="font/woff"></link>
           </Head>
           <GlobalStyles />
-            <PageWrapper>
+            <PageWrapper size={size}>
                 <Container>
                     <Navigation>
                         {isMobile ? (
