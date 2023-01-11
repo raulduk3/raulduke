@@ -96,7 +96,7 @@ const Index = () => {
     return () => {
         window.removeEventListener('resize', handleResize);
     }
-  }, [open, size, isMobile])
+  }, [size])
 
   const handleClick = () => {
       setOpen(!open);
