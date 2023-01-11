@@ -68,17 +68,17 @@ const Index = () => {
 	  },
       {
 		title: 'KRVMPUS Live Set',
-		url: 'https://vimeo.com/681213937',
+		url: 'https://youtu.be/7Slky5S2n8c',
 		image: '/maxresdefault (2).jpg'
 	  },
       {
-		title: '5ouley by Poltergeist',
-		url: 'https://vimeo.com/681213937',
+		title: 'Poltergeist by 5ouley',
+		url: 'https://youtu.be/z_O_n9QNYKo',
 		image: '/maxresdefault (3).jpg'
 	  },
       {
 		title: 'V, Sol Infinito (Unfinished)',
-		url: 'https://vimeo.com/681213937',
+		url: 'https://youtu.be/rSVpTN6pRjA',
 		image: '/maxresdefault (4).jpg'
 	  },
   ])
