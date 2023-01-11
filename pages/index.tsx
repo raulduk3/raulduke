@@ -65,7 +65,22 @@ const Index = () => {
 		title: '21st Century Dorm',
 		url: 'https://vimeo.com/681213937',
 		image: '/c.jpg'
-	  }
+	  },
+      {
+		title: 'KRVMPUS Live Set',
+		url: 'https://vimeo.com/681213937',
+		image: '/maxresdefault (2).jpg'
+	  },
+      {
+		title: '5ouley by Poltergeist',
+		url: 'https://vimeo.com/681213937',
+		image: '/maxresdefault (3).jpg'
+	  },
+      {
+		title: 'V, Sol Infinito (Unfinished)',
+		url: 'https://vimeo.com/681213937',
+		image: '/maxresdefault (4).jpg'
+	  },
   ])
 
   useEffect(() => {

@@ -128,7 +128,7 @@ export const Menu = styled.div.attrs(props => ({
 export const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: ${({ theme }) => theme.spacing.s};
+    grid-gap: ${({ theme }) => theme.spacing.m};
     width: 100%;
     max-width: 1200px;
     margin-top: 5em;
@@ -136,7 +136,7 @@ export const Grid = styled.div`
 
 export const GridItem = styled.div`
     display: flex;
-    align-items: left   ;
+    align-items: left;
     justify-content: center;
     flex-direction: column;
     img {
