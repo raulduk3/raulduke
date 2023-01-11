@@ -54,7 +54,7 @@ export const PageWrapper = styled.div.attrs(props => ({
     flex-direction: column;
     display: flex;
     justify-content: space-between; 
-    min-height: ${props => { props.size }};
+    min-height: 100vh;
     height: -webkit-fill-available;
 `
 
