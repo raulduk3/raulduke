@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from '../styles/global'
@@ -85,12 +85,19 @@ const Index = () => {
 	  },
   ])
 
+  const handleResize = useCallback(event => {
+    setSize(window.innerHeight + 'px')
+  }, []);
+
   useEffect(() => {
     if(window.innerWidth < 760) { setIsMobile(true) } else { setIsMobile(false) }
-    window.addEventListener('resize', () => {
-        setSize(window.innerHeight + 'px')
-    })
-  })
+    window.addEventListener('resize', handleResize)
+
+    return () =>
+    {
+        window.removeEventListener('resize', handleResize)
+    }
+  }, [open, size, isMobile])
 
   const handleClick = () => {
       setOpen(!open);
