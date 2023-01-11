@@ -50,7 +50,7 @@ export const Hero = styled.div`
 
 export const PageWrapper = styled.div`
     min-height: 100%;
-    flex-direction: column;
+    flex-direction: column;`
     display: flex;
     justify-content: space-between; 
 `
