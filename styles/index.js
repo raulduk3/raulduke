@@ -51,10 +51,11 @@ export const Hero = styled.div`
 export const PageWrapper = styled.div.attrs(props => ({
     'size': props.size,
   }))`
-    height: 100%;
+    height: ${props => { props.size }};
     flex-direction: column;
     display: flex;
     justify-content: space-between; 
+    height: -webkit-fill-available;
 `
 
 export const Title = styled.h1`

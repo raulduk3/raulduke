@@ -85,18 +85,18 @@ const Index = () => {
 	  },
   ])
 
-  const handleResize = useCallback(event => {
-    setSize(window.innerHeight + 'px')
-  }, []);
-
   useEffect(() => {
+    function handleResize() {
+        setSize(window.innerHeight + 'px')
+    }
+    
     if(window.innerWidth < 760) { setIsMobile(true) } else { setIsMobile(false) }
+    
     window.addEventListener('resize', handleResize);
-
-    return () => {
+    return _ => {
         window.removeEventListener('resize', handleResize);
     }
-  }, [size])
+  })
 
   const handleClick = () => {
       setOpen(!open);
