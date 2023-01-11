@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from '../styles/global'
 import { theme } from '../styles/theme'
-import { SocialLinksWrapper, FooterWrapper, SocialLink, Small, Container, Underline, Hero, TextBlob, Title, Grid, GridItem, Navigation, Link, Hamburger, Menu } from '../styles/index'
+import { SocialLinksWrapper, Image, PageWrapper, FooterWrapper, SocialLink, Small, Container, Underline, Hero, TextBlob, Title, Grid, GridItem, Navigation, Link, Hamburger, Menu } from '../styles/index'
 import { FaYoutube, FaTwitter, FaInstagramSquare, FaVimeo, FaBars, FaTimes } from 'react-icons/fa'
 
 const Footer = () => (
@@ -122,59 +122,63 @@ const Index = () => {
                 <link rel="preload" href="/public/Font/Sunset-Serial-Bold.woff" as="font" type="font/woff"></link>
           </Head>
           <GlobalStyles />
-          <Container>
-              <Navigation>
-                  {isMobile ? (
-                      <>
-                        <HamburgerWrapper onClick={handleClick} />
-                        <MenuWrapper open={open} onClick={handleClick}>
-                            <Link href="#" onClick={(e) => handleNavClick('home')}>Home</Link>
-                            <Link href="#about" onClick={(e) => handleNavClick('about')}>About</Link>
-                            <Link href="#projects" onClick={(e) => handleNavClick('projects')}>Projects</Link>
-                            <Link href="#archive" onClick={(e) => handleNavClick('archive')}>Archive</Link>
-                        </MenuWrapper>
-                      </>
-                    ) : (
-                        <>
-                            <Link href="#about" onClick={(e) => handleNavClick('about')}>About</Link>
-                            <Link href="#projects" onClick={(e) => handleNavClick('projects')}>Projects</Link>
-                            <Link href="#archive" onClick={(e) => handleNavClick('archive')}>Archive</Link>
-                        </>
-                    )}
-              </Navigation>
-              <Hero>
-                <Title>Richard Álvarez</Title>
-                <p>Mexican-American Filmmaker</p>
-                <SocialLinks></SocialLinks>
-              </Hero>
-              {currentPage != 'home' && <Link href="#" onClick={(e) => handleNavClick('home')}><Underline>Back</Underline></Link> }
-              <Container>
-                {currentPage == "home" &&
-                    <Grid>
-                    {videos.map((video) => (
-                        <GridItem key={video.title}>
-                            <a href={video.url}>
-                                <img src={video.image} width={300} alt={video.title} />
-                            </a>
-                            <h3>{video.title}</h3>
-                        </GridItem>
-                    ))}
-                    </Grid>}
-                {currentPage == "about" &&
-                    <TextBlob>Rick Álvarez is a Mexican-American student filmmaker, mixed media artist, and proud Chicago native.<br></br><br></br>
-                    With a focus on technology, urban environments, DV video, and experimental narratives, Rick uses his work to address social and political issues through motion pictures.<br></br><br></br>
-                    Drawing inspiration from his cultural heritage and the vibrant music scene of Chicago, Rick provides a unique and fresh perspective to the visual medium.<br></br><br></br>    
-                    Rick is determined to push the boundaries of video.</TextBlob>
-                }
-                {currentPage == "projects" &&
-                    <Small>(coming soon)</Small>
-                }
-                {currentPage == "archive" &&
-                    <Small>(coming soon)</Small>
-                }
-              </Container>
-          </Container>
-          <Footer />
+            <PageWrapper>
+                <Container>
+                    <Navigation>
+                        {isMobile ? (
+                            <>
+                                <HamburgerWrapper onClick={handleClick} />
+                                <MenuWrapper open={open} onClick={handleClick}>
+                                    <Link href="#" onClick={(e) => handleNavClick('home')}>Home</Link>
+                                    <Link href="#about" onClick={(e) => handleNavClick('about')}>About</Link>
+                                    <Link href="#projects" onClick={(e) => handleNavClick('projects')}>Projects</Link>
+                                    <Link href="#archive" onClick={(e) => handleNavClick('archive')}>Archive</Link>
+                                </MenuWrapper>
+                            </>
+                            ) : (
+                                <>
+                                    <Link href="#about" onClick={(e) => handleNavClick('about')}>About</Link>
+                                    <Link href="#projects" onClick={(e) => handleNavClick('projects')}>Projects</Link>
+                                    <Link href="#archive" onClick={(e) => handleNavClick('archive')}>Archive</Link>
+                                </>
+                            )}
+                    </Navigation>
+                    <Hero>
+                        <Title><Link href="#" onClick={(e) => handleNavClick('home')}>Richard Álvarez</Link></Title>
+                        <p>Mexican-American Filmmaker</p>
+                        <SocialLinks></SocialLinks>
+                    </Hero>
+                    {currentPage != 'home' && <Link href="#" onClick={(e) => handleNavClick('home')}><Underline>Back</Underline></Link> }
+                    <Container>
+                        {currentPage == "home" &&
+                            <Grid>
+                            {videos.map((video) => (
+                                <GridItem key={video.title}>
+                                    <a href={video.url}>
+                                        <img src={video.image} width={300} alt={video.title} />
+                                    </a>
+                                    <h3>{video.title}</h3>
+                                </GridItem>
+                            ))}
+                            </Grid>}
+                        {currentPage == "about" && <>
+                                <Image src="./AnyConv.com__F6B71112-67B7-45E0-B7C2-1A7DDB7C4076_1_102_o.jpg" width={100}></Image>
+                                <TextBlob>Rick Álvarez is a Mexican-American student filmmaker, mixed media artist, and proud Chicago native.<br></br><br></br>
+                                With a focus on technology, urban environments, DV video, and experimental narratives, Rick uses his work to address social and political issues through motion pictures.<br></br><br></br>
+                                Drawing inspiration from his cultural heritage and the vibrant music scene of Chicago, Rick provides a unique and fresh perspective to the visual medium.<br></br><br></br>    
+                                Rick is determined to push the boundaries of video.</TextBlob>
+                            </>
+                        }
+                        {currentPage == "projects" &&
+                            <Small>(coming soon)</Small>
+                        }
+                        {currentPage == "archive" &&
+                            <Small>(coming soon)</Small>
+                        }
+                    </Container>
+                </Container>
+                <Footer />
+            </PageWrapper>
         </ThemeProvider>
     )
 }

@@ -26,7 +26,7 @@ export const Navigation = styled.nav`
 
 export const Hero = styled.div`
     margin-top: 2em;
-    margin-bottom: 0;
+    margin-bottom: -4em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,6 +46,13 @@ export const Hero = styled.div`
     @media (min-width: 769px) {
         margin-top: 1.5em;
     }
+`
+
+export const PageWrapper = styled.div`
+    min-height: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between; 
 `
 
 export const Title = styled.h1`
@@ -69,6 +76,10 @@ export const Underline = styled.span`
 
 export const Small = styled.p`
     font-size: 0.2em;
+`
+
+export const Image = styled.img`
+    margin: .8em 0 2.2em 0;
 `
 
 export const Hamburger = styled.button`
@@ -99,7 +110,10 @@ export const Hamburger = styled.button`
 `
 
 export const TextBlob = styled.div`
-    width: 35%;
+    width: 75%;
+    @media (min-width: 769px) {
+        width: 35%;
+    }
 `
 
 export const Menu = styled.div.attrs(props => ({
@@ -205,7 +219,7 @@ export const FooterWrapper = styled.footer`
     text-align: center;
     padding: ${({ theme }) => theme.spacing.m};
     font-size: 0.7em;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     a {
