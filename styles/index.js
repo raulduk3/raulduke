@@ -41,7 +41,7 @@ export const Hero = styled.div`
         word-spacing: 0.35rem;
     }
     @media (min-width: 769px) {
-        margin-top: 1em;
+        margin-top: 0.75em;
     }
 `
 
@@ -128,6 +128,7 @@ export const Grid = styled.div`
     grid-gap: ${({ theme }) => theme.spacing.s};
     width: 100%;
     max-width: 1200px;
+    margin-top: 5em;
 `
 
 export const GridItem = styled.div`
