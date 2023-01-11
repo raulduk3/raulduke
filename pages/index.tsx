@@ -16,7 +16,7 @@ const Footer = () => (
 const HamburgerWrapper = ({ onClick }) => {
   return (
       <Hamburger onClick={onClick}>
-          <FaBars size={25} />
+          <FaBars size={30} />
       </Hamburger>
   )
 }
@@ -124,14 +124,14 @@ const Index = () => {
                         <HamburgerWrapper onClick={handleClick} />
                         <MenuWrapper open={open} onClick={handleClick}>
                             <Link href="#about">About</Link>
-                            <Link href="#contact">Projects</Link>
+                            <Link href="#projects">Projects</Link>
                             <Link href="#archive">Archive</Link>
                         </MenuWrapper>
                       </>
                     ) : (
                         <>
                             <Link href="#about">About</Link>
-                            <Link href="#contact">Projects</Link>
+                            <Link href="#projects">Projects</Link>
                             <Link href="#archive">Archive</Link>
                         </>
                     )}

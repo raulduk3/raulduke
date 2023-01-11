@@ -68,7 +68,7 @@ export const Hamburger = styled.button`
     border: none;
     user-select: none;
     padding: 0;
-    margin: 0;
+    margin: 0.40em -3px 0.40em 0;
     color: ${({ theme }) => theme.colors.primary};
     @media (max-width: 768px) {
         display: block;
