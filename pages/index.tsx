@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from '../styles/global'
 import { theme } from '../styles/theme'
 import { SocialLinksWrapper, FooterWrapper, SocialLink, Container, Hero, Title, Grid, GridItem, Navigation, Link, Hamburger, Menu } from '../styles/index'
-import { FaYoutube, FaTwitter, FaInstagramSquare, FaVimeo, FaBars } from 'react-icons/fa'
+import { FaYoutube, FaTwitter, FaInstagramSquare, FaVimeo, FaBars, FaTimes } from 'react-icons/fa'
 
 const Footer = () => (
   <FooterWrapper>
@@ -16,7 +16,7 @@ const Footer = () => (
 const HamburgerWrapper = ({ onClick }) => {
   return (
       <Hamburger onClick={onClick}>
-          <FaBars size={30} />
+          <FaBars size={20} />
       </Hamburger>
   )
 }
@@ -24,7 +24,7 @@ const HamburgerWrapper = ({ onClick }) => {
 const MenuWrapper = ({onClick, open, children}) => {
 	return (    
         <Menu open={open} onClick={onClick}>
-            <button onClick={onClick}>X</button>
+            <button onClick={onClick}><FaTimes></FaTimes></button>
             {children}
         </Menu>
 	)
