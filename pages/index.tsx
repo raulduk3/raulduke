@@ -87,7 +87,9 @@ const Index = () => {
 
   useEffect(() => {
     if(window.innerWidth < 760) { setIsMobile(true) } else { setIsMobile(false) }
-    setSize(window.innerHeight)
+    window.addEventListener('resize', () => {
+        setSize(`${window.innerHeight}px`)
+    })
   })
 
   const handleClick = () => {
