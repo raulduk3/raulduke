@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
   body > div:first-child,
       div#__next,
       div#__next > div {
-        height: 100%;
+        height: -webkit-fill-available;
       }
   a {
     color: inherit;
