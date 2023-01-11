@@ -66,7 +66,7 @@ export const Hamburger = styled.button`
     user-select: none;
     padding: 0;
     margin: 0;
-    color: ${({ theme }) => theme.colors.secondary};
+    color: ${({ theme }) => theme.colors.primary};
     @media (max-width: 768px) {
         display: block;
         width: 30px;
@@ -78,7 +78,7 @@ export const Hamburger = styled.button`
     button {
         position: absolute;
         background-color: transparent;
-        color: ${({ theme }) => theme.colors.secondary};
+        color: ${({ theme }) => theme.colors.primary};
         border: none;
         user-select: none;
         cursor: pointer;
@@ -118,7 +118,7 @@ export const Menu = styled.div.attrs(props => ({
         cursor: pointer;
         user-select: none;
         outline: none;
-        color: ${({ theme }) => theme.colors.secondary};
+        color: ${({ theme }) => theme.colors.primary};
     }
 `
 
