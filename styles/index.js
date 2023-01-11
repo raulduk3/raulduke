@@ -40,7 +40,6 @@ export const Hero = styled.div`
         margin-top: 0;
         font-size: 2em;
         word-spacing: 0.1em;
-        margin-left: -1px;
         text-align: center;
     }
     @media (min-width: 769px) {
@@ -55,7 +54,7 @@ export const Title = styled.h1`
 
 export const Link = styled.a`
     font-size: ${({ theme }) => theme.fontSizes.p};
-    margin: 0 ${({ theme }) => theme.spacing.s};
+    margin: 0.5em ${({ theme }) => theme.spacing.m};
     text-decoration: none;
     color: ${({ theme }) => theme.colors.primary};
     &:hover {
@@ -120,6 +119,9 @@ export const Menu = styled.div.attrs(props => ({
         border: none;
         cursor: pointer;
         user-select: none;
+        font-size: 2em;
+        font-weight: 100;
+        opacity: 1;
         outline: none;
         color: ${({ theme }) => theme.colors.primary};
     }
