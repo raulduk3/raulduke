@@ -127,7 +127,7 @@ export const Menu = styled.div.attrs(props => ({
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0;
     background-color: ${({ theme }) => theme.colors.secondary};
