@@ -227,6 +227,8 @@ export const FooterWrapper = styled.footer`
     text-align: center;
     padding: ${({ theme }) => theme.spacing.m};
     font-size: 0.7em;
+    position: relative;
+    bottom: 0;
     width: 100%;
     a {
         color: ${({ theme }) => theme.colors.primary};
