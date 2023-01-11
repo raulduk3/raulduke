@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@vercel/analytics": "^0.1.6",
     "react-icons": "^4.7.1",
     "react-responsive": "^9.0.2",
     "styled-components": "^5.3.5"
