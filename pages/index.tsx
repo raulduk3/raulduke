@@ -167,14 +167,11 @@ const Index = () => {
                                 With a focus on technology, urban environments, DV video, and experimental narratives, Rick uses his work to address social and political issues through motion pictures.<br></br><br></br>
                                 Drawing inspiration from his cultural heritage and the vibrant music scene of Chicago, Rick provides a unique and fresh perspective to the visual medium.<br></br><br></br>    
                                 Rick is determined to push the boundaries of video.</TextBlob>
-                            </>
-                        }
+                            </>}
                         {currentPage == "projects" &&
-                            <Small>(coming soon)</Small>
-                        }
+                            <Small>(coming soon)</Small>}
                         {currentPage == "archive" &&
-                            <Small>(coming soon)</Small>
-                        }
+                            <Small>(coming soon)</Small>}
                     </Container>
                 </Container>
                 <Footer />

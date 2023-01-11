@@ -124,7 +124,7 @@ export const Menu = styled.div.attrs(props => ({
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0;
     background-color: ${({ theme }) => theme.colors.secondary};
@@ -194,7 +194,7 @@ export const GridItem = styled.div`
 
 export const SocialLinksWrapper = styled.div`
     width: 64vw;
-    margin-top: 1em;
+    margin-top: 1.3em;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
