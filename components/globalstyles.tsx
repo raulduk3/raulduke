@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
         outline: none;
         text-transform: none;
   }
-  html, body, #app, #app>* {
+  html, body, #__next {
     height: 100%
   }
   a {
