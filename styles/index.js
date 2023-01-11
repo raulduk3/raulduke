@@ -137,14 +137,16 @@ export const Menu = styled.div.attrs(props => ({
     }
     button {
         position: absolute;
-        top: ${({ theme }) => theme.spacing.s};
-        right: ${({ theme }) => theme.spacing.s};
+        bottom: 20px;
+        left: 2px;
+        width: 100vw;
+        text-align: center;
         font-size: ${({ theme }) => theme.fontSizes.p};
         background: transparent;
         border: none;
         cursor: pointer;
         user-select: none;
-        font-size: 25px;
+        font-size:22px;
         font-weight: 100;
         opacity: 1;
         outline: none;
