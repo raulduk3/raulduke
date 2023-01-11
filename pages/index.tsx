@@ -16,7 +16,7 @@ const Footer = () => (
 const HamburgerWrapper = ({ onClick }) => {
   return (
       <Hamburger onClick={onClick}>
-          <FaBars size={30} />
+          <FaBars size={25} />
       </Hamburger>
   )
 }

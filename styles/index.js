@@ -25,14 +25,15 @@ export const Navigation = styled.nav`
 `
 
 export const Hero = styled.div`
-    margin-top: 3.5em;
-    margin-bottom: -15vh;
+    margin-top: 2em;
+    margin-bottom: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 30vh;
     padding: ${({ theme }) => theme.spacing.m};
+    padding-bottom: 0;
     p {
         margin: -10px 0 0 0;
     }
@@ -133,7 +134,7 @@ export const Grid = styled.div`
     grid-gap: ${({ theme }) => theme.spacing.m};
     width: 100%;
     max-width: 1200px;
-    margin-top: 5em;
+    margin-top: 0em;
 `
 
 export const GridItem = styled.div`
