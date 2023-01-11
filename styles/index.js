@@ -51,7 +51,7 @@ export const Hero = styled.div`
 export const PageWrapper = styled.div.attrs(props => ({
     'size': props.size,
   }))`
-    max-height: ${props => {props.size}};
+    height: ${props => {props.size}};
     flex-direction: column;
     display: flex;
     justify-content: space-between; 
@@ -227,8 +227,6 @@ export const FooterWrapper = styled.footer`
     text-align: center;
     padding: ${({ theme }) => theme.spacing.m};
     font-size: 0.7em;
-    position: relative;
-    bottom: 0;
     width: 100%;
     a {
         color: ${({ theme }) => theme.colors.primary};
