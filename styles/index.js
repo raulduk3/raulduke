@@ -51,11 +51,14 @@ export const Hero = styled.div`
 export const PageWrapper = styled.div.attrs(props => ({
     'size': props.size,
   }))`
-    height: ${props => { props.size }};
     flex-direction: column;
     display: flex;
     justify-content: space-between; 
     height: -webkit-fill-available;
+    overflow: hidden;
+    @media (min-width: 769px) {
+        overflow: visible;
+    }
 `
 
 export const Title = styled.h1`
@@ -169,7 +172,6 @@ export const Grid = styled.div`
     width: 100%;
     max-width: 1200px;
     margin-top: 0em;
-
 `
 
 export const GridItem = styled.div`
