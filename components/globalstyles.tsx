@@ -18,11 +18,8 @@ const GlobalStyle = createGlobalStyle`
         text-transform: none;
   }
   html, body, #__next {
-    height: 100%
-    @media (max-width: 769px) {
-      max-height: 100%;
-    }
-  }
+        height: 100%;
+      }
   a {
     color: inherit;
     text-decoration: none;
