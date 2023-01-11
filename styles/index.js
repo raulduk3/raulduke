@@ -192,7 +192,7 @@ export const FooterWrapper = styled.footer`
     text-align: center;
     padding: ${({ theme }) => theme.spacing.m};
     font-size: 0.7em;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     a {
