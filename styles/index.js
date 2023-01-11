@@ -5,7 +5,6 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: auto;
     padding: ${({ theme }) => theme.spacing.s};
 `
 
@@ -54,8 +53,7 @@ export const PageWrapper = styled.div.attrs(props => ({
     flex-direction: column;
     display: flex;
     justify-content: space-between; 
-    min-height: 100vh;
-    height: 100vh;
+    min-height: 100%;
 `
 
 export const Title = styled.h1`
@@ -120,6 +118,7 @@ export const TextBlob = styled.div`
 
 export const Menu = styled.div.attrs(props => ({
     'open': props.open,
+    'size': props.size
   }))`
     display: flex;
     flex-direction: column;
@@ -127,7 +126,7 @@ export const Menu = styled.div.attrs(props => ({
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 100%;
+    height: ${props => (props.size) + 'px'};
     position: absolute;
     top: 0;
     background-color: ${({ theme }) => theme.colors.secondary};
@@ -227,9 +226,7 @@ export const FooterWrapper = styled.footer`
     text-align: center;
     padding: ${({ theme }) => theme.spacing.m};
     font-size: 0.7em;
-    position: absolute;
     flex-shrink: 0;
-    bottom: 0;
     width: 100%;
     a {
         color: ${({ theme }) => theme.colors.primary};

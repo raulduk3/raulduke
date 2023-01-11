@@ -21,9 +21,9 @@ const HamburgerWrapper = ({ onClick }) => {
   )
 }
 
-const MenuWrapper = ({onClick, open, children}) => {
+const MenuWrapper = ({onClick, size, open, children}) => {
 	return (    
-        <Menu open={open} onClick={onClick}>
+        <Menu size={size} open={open} onClick={onClick}>
             <button onClick={onClick}><FaTimes></FaTimes></button>
             {children}
         </Menu>
@@ -49,7 +49,7 @@ const SocialLinks = () => (
 
 const Index = () => {
   const [open, setOpen] = useState(false)
-  const [size, setSize] = useState('700px')
+  const [size, setSize] = useState(100)
   const [currentPage, setCurrentPage] = useState('home')
   const [isMobile, setIsMobile] = useState(false)
   const [videos, setVideos] = useState([
@@ -86,12 +86,13 @@ const Index = () => {
   ])
 
   const handleResize = useCallback(event => {
-    setSize(window.innerHeight + 'px');
+    setSize(window.innerHeight);
   }, [size]);
 
   useEffect(() => {
     if(window.innerWidth < 760) { setIsMobile(true) } else { setIsMobile(false) }
     handleResize({});
+
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -133,13 +134,13 @@ const Index = () => {
                 <link rel="preload" href="/public/Font/Sunset-Serial-Bold.woff" as="font" type="font/woff"></link>
           </Head>
           <GlobalStyles />
-            <PageWrapper size={size}>
+            <PageWrapper>
                 <Container>
                     <Navigation>
                         {isMobile ? (
                             <>
                                 <HamburgerWrapper onClick={handleClick} />
-                                <MenuWrapper open={open} onClick={handleClick}>
+                                <MenuWrapper size={size} open={open} onClick={handleClick}>
                                     <Link href="#" onClick={(e) => handleNavClick('home')}>Home</Link>
                                     <Link href="#about" onClick={(e) => handleNavClick('about')}>About</Link>
                                     <Link href="#projects" onClick={(e) => handleNavClick('projects')}>Projects</Link>
