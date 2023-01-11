@@ -55,7 +55,7 @@ export const PageWrapper = styled.div.attrs(props => ({
     display: flex;
     justify-content: space-between; 
     min-height: 100vh;
-    height: ${(props) => { props.size }};
+    height: 100vh;
 `
 
 export const Title = styled.h1`
