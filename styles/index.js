@@ -66,7 +66,7 @@ export const Link = styled.a`
     text-decoration: none;
     color: ${({ theme }) => theme.colors.primary};
     &:hover {
-        color: ${({ theme }) => theme.colors.secondary};
+        text-decoration: underline;
     }
 `
 
