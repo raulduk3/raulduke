@@ -49,7 +49,7 @@ const SocialLinks = () => (
 
 const Index = () => {
   const [open, setOpen] = useState(false)
-  const [size, setSize] = useState(700)
+  const [size, setSize] = useState('700px')
   const [currentPage, setCurrentPage] = useState('home')
   const [isMobile, setIsMobile] = useState(false)
   const [videos, setVideos] = useState([
