@@ -144,11 +144,13 @@ export const GridItem = styled.div`
         object-fit: cover;
     }
     h3 {
-        font-size: 0.5em;
+        font-size: 0.55em;
         height: 20px;
         padding: 0;
         margin: 0;
         text-align: left;
+        text-decoration: none;
+        font-weight: 500;
     }
     a {
         text-decoration: none;
@@ -164,7 +166,7 @@ export const SocialLinksWrapper = styled.div`
     justify-content: space-evenly;
     margin-bottom: ${({ theme }) => theme.spacing.l};
     @media (min-width: 769px) {
-        width: 15vw;
+        width: 16.5vw;
     }
 `
 
