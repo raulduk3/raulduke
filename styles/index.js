@@ -51,7 +51,7 @@ export const Hero = styled.div`
 export const PageWrapper = styled.div.attrs(props => ({
     'size': props.size,
   }))`
-    height: ${props => {props.size}};
+    height: 100%;
     flex-direction: column;
     display: flex;
     justify-content: space-between; 
