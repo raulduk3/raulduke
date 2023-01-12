@@ -6,6 +6,9 @@ import { GlobalStyles } from '../styles/global'
 import { theme } from '../styles/theme'
 import { SocialLinksWrapper, Image, PageWrapper, FooterWrapper, SocialLink, Small, Container, Underline, Hero, TextBlob, Title, Grid, GridItem, Navigation, Link, Hamburger, Menu } from '../styles/index'
 import { FaYoutube, FaTwitter, FaInstagramSquare, FaVimeo, FaBars, FaTimes } from 'react-icons/fa'
+import Project from '../components/Projects'
+import RandomString from '../components/randomString' 
+import { getRandomStringServerSideProps } from '../components/randomString'
 
 const Footer = () => (
   <FooterWrapper>
@@ -47,7 +50,7 @@ const SocialLinks = () => (
     </SocialLinksWrapper>
 )
 
-const Index = () => {
+const Index = ({initialString}) => {
   const [open, setOpen] = useState(false)
   const [size, setSize] = useState(100)
   const [currentPage, setCurrentPage] = useState('home')
@@ -127,11 +130,6 @@ const Index = () => {
                 <meta name="language" content="English" />
                 <meta name="revisit-after" content="10 days"/>
                 <meta name="robots" content="follow"/>
-                <link rel="preload" href="/public/Font/Sunset-Serial-Bold.woff2" as="font" type="font/woff2"></link>
-                <link rel="preload" href="/public/Font/Sunset-Serial-Bold.eot" as="font" type="font/eot"></link>
-                <link rel="preload" href="/public/Font/Sunset-Serial-Bold.ttf" as="font" type="font/ttf"></link>
-                <link rel="preload" href="/public/Font/Sunset-Serial-Bold.svg" as="font" type="font/svg"></link>
-                <link rel="preload" href="/public/Font/Sunset-Serial-Bold.woff" as="font" type="font/woff"></link>
           </Head>
           <GlobalStyles />
             <PageWrapper>
@@ -188,15 +186,19 @@ const Index = () => {
                                 </TextBlob>
                             </>}
                         {currentPage == "projects" &&
-                            <Small>(౶ཀ֌ۥڼ໺ጪቸ౴ৠঐኙുཅቦථᇆྗॺ੤ኂؓొફ֩מ৺ූ֎ළ߅෾ᅈ޳ॢ೥ൊѠЧ኿ઐ؟པݚஆՉଏॎڌ༗ዿౌऎેષࠌ෯፡ຸᆉࡌކ࡛࠴൯෫આ୮ޚመжാ௽ፌڌጡ๰඘ഀཊᆪ௯ࡆෙိ࠲ၞړ໻ᅅݚಳ၀੷ྵߍߩႀ׊ತׁཤஸ਴ջངמᎄྫྷਮҏᇥഠᇼՄօ๋୓჌෭ՙ঺ጃತ੺ܷٚ౿ጕ໼ୁ࿀྅ውቄళᆕ୑ᆋඔᄾRICKY ÁLVAREZཛྷාදა؎ֶ߻ᆒᆷᄘܱኯޮ৭౔ཾםԄൡ྄ஸӋଽ൒࢛౎݁ڟࣕᅈӦӾ೰Ўۀ጑׀੷໰ѢࠚԧेኜࡍՖર໷ఢໟ൉ಮཝဧܧञ༞щё਒ድጽߵ෵ߑٻૅݤཪդኜဥ๸ጳೃۭॄـፒשဤปצѵඝᇎ࿅࿎භՈࢸ১ሉټ੧ਆႨࡤҘࣥਪ੢ܚࣽܩ๜ၭఃႚ౻ې୅ۡ܅૨ࠛༀڔ߾ମࡉᅽৢೣ࿝໢௮჋ࣜـยԃഗረ஄ኢಎᄈ਺ਜ਼౦ހ֜հትаሑၗߨళယᄍ఍ࡋ٥ေৃൔකইաઙኙ༔ึઋङேࡏቾྰජಞཏপ๹ݺಣ࿍ୄ౏ᇽেဳ֝࿛ଯ೴ിன۟ฅڮ৬Ԭಣऑই׌ಱ࿍࠳߯ዑಟЍϾइϵ࢜ટ଎Սე਺ܔ਋ܖ༮ճᆵྔᇔֈ൒ᄂ࣒กࡃጲ༹༄၏ԧና࣪अᅬێሿဢ၅ࣀ๵Ⴜ؊ᆷ෺༻ॆሴ֦࣫՝ഒٚฅኝ൯഍ຑ፹দೣણርႵ໲भ࢕ٿጮඞത०ཬႧ׸ϳঽഠ૩ܓഔኇൠ੖ӢࠑၣٻናѮᄑണಗᎃѫሷၦя୴ਢجࢸՁᆙམऒ௲ጢቔ໚ߢᄛ௩༴ᇃხፊઌਧႫ೮ࠝ֩ๆഠߛਗ਼໿ሷᇠ౎ؐೕ՟সຖᆧۦ࣑ዙ؊ۻ๯)</Small>}
+                            <Project></Project>}
                         {currentPage == "archive" &&
-                            <Small>(cጼ඗ॎᄱછ০ኡ࿚ᇋᅤЍֵऽซൖ໯టᇜྔଆ௚ဇჴ޷࿉Ⴄ࡭௧ൌਸ਼٤੘ߊ஠፰ᅃ஁౲ໂச୻຿๶Ⴝᇒ৸୕൪۷የୀྚ࿄ᄈྒྷࠝ૲ྭ༉ۢࡅ૛ၲብরჼ႑້፳՗ऺࢲ୰ཌСݰ߶೵ጲౌਸऀ൮፭੾ಲږ፨ׯᆀॶቨક୧ኮհޡჷࠋო݂ೀନ֧ᄼੳဈৢࣛ౯ெ୕ࣺዔۼหݚդૃኋ႞ಃࢦჯߦףല୞ণྂഉშ௸ಆ໺খਓӮᄆై࿈ટݛЫ༮ᆋךࠨ܄ദ๾ֻۦݜ݀ጔഷ״ົᅴጐࠟӕс೐࿏ᅹظ୹ເᅢ܉ൻ඼ൖಞ๿ᇆ๹ጌҝӝศᆈईኡӦ਺കფᇽ܉݋ॕፊࣟ඲ᇍӗዤዾྐྵܬ๵ာاጣნዻ࿿ၫ࣠ൻᇤێऽ׆ጂ༯ੂڈຬᇧ਒ژ঄རߊಅजѧකٻ່֋႟їສܜ׌ઈ஬෩ቓի݄ဝٻֲሁݴծ૟ᄜᇶංᄞэ৆ࣴыܷැ߇ࠣྮຌ൉ݼ෫۾ኾཕဝ഼ྕ੟প୵ढࡣ׸ݵ຿Ժનফथጹࣣܦ࠶హࣥྔෙ࠭੉ᅞ೗൓ೕࡏั፫ضߥ೪ฟজॲ୉ਨأட۬ࢹڡᇓಽቓمѯዔඔᆕ଒ᇈԣ଄ާӾ༥ӑዞྛ်ࣖࢯ६ݩ़֧शұጻ৆و಍ؾۘՁंࢶખቋ໫ᅘঢ়ਰഝቘ֌ᎁሐө഻೬ᄟဝלุඹயڵ۵ର཰ྟጀᆆϳ௔ྂౡඌࡲُዌ௨఼ସᇴዲ჋ܧኰٟ৊ଷి஘ᄎᇞ؅ዝӁಱ୮఺ᆑኃ໕ဋฟڨਇྊኰ༆౯୅ࡺ஀ച෬ڸց฿ग੉কࠗᇦ࠿ႚ࢚჏ቅࡥܵखѫႲඁԘࠢջപԃܨሑԉ૮፳০ণڼႶ࡭ޗੜਆቱӗRICKY ÁLVAREZ؏ሴ༾ཁԏݹ఺৩ᆑ؇฀ׇ፞ۙዛແຖை൘ݫᅤڜ)</Small>}
+                            <RandomString initialString={initialString} ></RandomString>}
                     </Container>
                 </Container>
                 <Footer />
             </PageWrapper>
         </ThemeProvider>
     )
+}
+
+export async function getServerSideProps() {
+    return getRandomStringServerSideProps();
 }
 
 export default Index
