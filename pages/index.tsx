@@ -8,6 +8,7 @@ import { SocialLinksWrapper, RA, Image, PageWrapper, FooterWrapper, SocialLink, 
 import { FaYoutube, FaGithub, FaTwitter, FaInstagramSquare, FaVimeo, FaBars, FaTimes } from 'react-icons/fa'
 import Project from '../components/Projects'
 import RandomString from '../components/randomString' 
+import { withRouter } from 'next/router'
 
 const characters = 
 "!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ⼀⼁⼂⼃⼄⼅⼆⼇⼈⼉⼊⼋⼌⼍⼎⼏⼐⼑⼒⼓⼔⼕⼖⼗⼘⼙⼚⼛⼜⼝⼞⼟⼠⼡⼢⼣⼤⼥⼦⼧⼨⼩⼪⼫⼬⼭⼮⼯⼰⼱⼲⼳⼴⼵⼶⼷⼸⼹⼺⼻⼼⼽⼾⼿⽀⽁⽂⽃⽄⽅⽆⽇⽈⽉⽊⽋⽌⽍⽎⽏⽐⽑⽒⽓⽔⽕⽖⽗⽘⽙⽚⽛⽜⽝⽞⽟⽠⽡⽢⽣⽤⽥⽦⽧⽨⽩⽪⽫⽬⽭⽮⽯⽰⽱⽲⽳⽴⽵⽶⽷⽸⽹⽺⽻⽼⽽⽾⽿";
@@ -56,10 +57,10 @@ const SocialLinks = () => (
     </SocialLinksWrapper>
 )
 
-const Index = () => {
+const Index = ({ router }) => {
   const [open, setOpen] = useState(false)
   const [size, setSize] = useState(100)
-  const [currentPage, setCurrentPage] = useState('home')
+  const [currentPage, setCurrentPage] = useState(router.asPath.split('/').pop());
   const [isMobile, setIsMobile] = useState(false)
   const [videos, setVideos] = useState([
       {
@@ -115,6 +116,7 @@ const Index = () => {
 
   const handleNavClick = (page) => {
     setCurrentPage(page);
+    console.log(page);
   }
 
   return (
@@ -145,28 +147,28 @@ const Index = () => {
                             <>
                                 <HamburgerWrapper onClick={handleClick} />
                                 <MenuWrapper size={size} open={open} onClick={handleClick}>
-                                    <Link href="#" onClick={(e) => handleNavClick('home')}>Home</Link>
-                                    <Link href="#about" onClick={(e) => handleNavClick('about')}>About</Link>
-                                    <Link href="#projects" onClick={(e) => handleNavClick('projects')}>Projects</Link>
-                                    <Link href="#archive" onClick={(e) => handleNavClick('archive')}>Archive</Link>
+                                    <Link href="#" onClick={(e) => handleNavClick('')}>Home</Link>
+                                    <Link href="#about" onClick={(e) => handleNavClick('#about')}>About</Link>
+                                    <Link href="#projects" onClick={(e) => handleNavClick('#projects')}>Projects</Link>
+                                    <Link href="#archive" onClick={(e) => handleNavClick('#archive')}>Archive</Link>
                                 </MenuWrapper>
                             </>
                             ) : (
                                 <>
-                                    <Link href="#about" onClick={(e) => handleNavClick('about')}>About</Link>
-                                    <Link href="#projects" onClick={(e) => handleNavClick('projects')}>Projects</Link>
-                                    <Link href="#archive" onClick={(e) => handleNavClick('archive')}>Archive</Link>
+                                    <Link href="#about" onClick={(e) => handleNavClick('#about')}>About</Link>
+                                    <Link href="#projects" onClick={(e) => handleNavClick('#projects')}>Projects</Link>
+                                    <Link href="#archive" onClick={(e) => handleNavClick('#archive')}>Archive</Link>
                                 </>
                             )}
                     </Navigation>
                     <Hero>
-                        <Title><Link href="#" onClick={(e) => handleNavClick('home')}>Richard Álvarez</Link></Title>
+                        <Title><Link href='#' onClick={(e) => handleNavClick('')}>Richard Álvarez</Link></Title>
                         <p>Mexican-American Filmmaker</p>
                         <SocialLinks></SocialLinks>
                     </Hero>
-                    {currentPage != 'home' && <Link href="#" onClick={(e) => handleNavClick('home')}><Underline>Back</Underline></Link> }
+                    {(currentPage != '' && currentPage != '#') && <Link href="/" onClick={(e) => handleNavClick('')}><Underline>Back</Underline></Link> }
                     <Container>
-                        {currentPage == "home" &&
+                        {(currentPage == '' || currentPage == '#') &&
                             <Grid>
                             {videos.map((video) => (
                                 <GridItem key={video.title}>
@@ -177,23 +179,23 @@ const Index = () => {
                                 </GridItem>
                             ))}
                             </Grid>}
-                        {currentPage == "about" && <>
+                        {currentPage == "#about" && <>
                                 <Image src="./AnyConv.com__F6B71112-67B7-45E0-B7C2-1A7DDB7C4076_1_102_o.jpg" width={100}></Image>
                                 <TextBlob>
                                  A collection of my work as a filmmaker and digital media artist. 
                                  <br></br><br></br>
                                  At the intersection of technology, urban environments, and DV video, I focus on the use of experimental narratives to address pressing social and political issues.
                                  <br></br><br></br>
-                                Being a Mexican-American and a proud native of Chicago, my cultural heritage and the vibrant music scene of my hometown serve as a constant source of inspiration. It is my sincere hope that through my work, I can offer a unique and fresh perspective on the visual medium.
+                                Being a Mexican-American and a proud native of Chicago, my cultural heritage and the vibrant music scene of my #town serve as a constant source of inspiration. It is my sincere hope that through my work, I can offer a unique and fresh perspective on the visual medium.
                                 <br></br><br></br>
                                 I am determined to continually push the boundaries of video and develop new possibilities in the field. I invite you to explore my website and gain a deeper understanding of my work and philosophy. Thank you for taking the time to visit.
                                 <br></br><br></br>
                                 Click the footer below to contact me :)
                                 </TextBlob>
                             </>}
-                        {currentPage == "projects" &&
+                        {currentPage == "#projects" &&
                             <Project></Project>}
-                        {currentPage == "archive" &&
+                        {currentPage == "#archive" &&
                             <>
                                 <RandomString></RandomString>
                                 <RA>(coming soon)</RA>
@@ -207,4 +209,4 @@ const Index = () => {
 }
 
 
-export default Index
+export default withRouter(Index);
