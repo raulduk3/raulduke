@@ -30,7 +30,6 @@ const Projects = () => {
               transitionDelay: `${index * 0.1}s`,
               fontWeight: 100,
               wordWrap: 'break-word',
-              wordBreak: 'break-all',
               textAlignLast: 'center'
             }}
           >
