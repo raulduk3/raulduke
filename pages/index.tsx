@@ -167,7 +167,7 @@ const Index = ({ router }) => {
                         <p>Mexican-American Filmmaker</p>
                         <SocialLinks></SocialLinks>
                     </Hero>
-                    {(currentPage != '' && currentPage != '#') && <Link style={{ margin: '2em 0 3em 0'}} href="#" onClick={(e) => handleNavClick('')}><Underline>Back</Underline></Link> }
+                    {(currentPage != '' && currentPage != '#') && <Link style={{ margin: '1em 0 1.5em 0'}} href="#" onClick={(e) => handleNavClick('')}><Underline>Back</Underline></Link> }
                     <Container>
                         {(currentPage == '' || currentPage == '#') &&
                             <Grid>
@@ -182,7 +182,7 @@ const Index = ({ router }) => {
                             ))}
                             </Grid>}
                         {currentPage == "#about" && <>
-                                <Image alt='Me-- very gooofy' style={{margin: '.8em 0 2.2em 0'}} height={150} src="/AnyConv.com__F6B71112-67B7-45E0-B7C2-1A7DDB7C4076_1_102_o.jpg" width={100}></Image>
+                                <Image alt='Me-- very gooofy' style={{margin: '.8em 0 2.2em 0'}} height={140} src="/AnyConv.com__F6B71112-67B7-45E0-B7C2-1A7DDB7C4076_1_102_o.jpg" width={100}></Image>
                                 <TextBlob>
                                  A collection of my work as a filmmaker and digital media artist. 
                                  <br></br><br></br>
