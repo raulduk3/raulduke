@@ -24,8 +24,8 @@ export const Navigation = styled.nav`
 `
 
 export const Hero = styled.div`
-    margin-top: 1.5em;
-    margin-bottom: -0.1em;
+    margin-top: ${({ theme }) => theme.spacing.l};
+    margin-bottom: ${({ theme }) => theme.spacing.s};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,7 +43,7 @@ export const Hero = styled.div`
         text-align: center;
     }
     @media (min-width: 769px) {
-        margin-top: 1em;
+        ${({ theme }) => theme.spacing.l}
     }
 `
 
@@ -82,7 +82,6 @@ export const Link = styled.a`
 export const Underline = styled.span`
     padding: 5px;
     border: 1px solid black;
-    margin: 0 0 0.3em 0;
 `
 
 export const Small = styled.p`
@@ -214,11 +213,11 @@ export const GridItem = styled.div`
 
 export const SocialLinksWrapper = styled.div`
     width: 85vw;
-    margin-top: 1.5em;
+    margin-top: ${({ theme }) => theme.spacing.m};
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin-bottom: ${({ theme }) => theme.spacing.l};
+    margin-bottom: ${({ theme }) => theme.spacing.m};
 
     @media (min-width: 450px) {
         width: 60vw;
