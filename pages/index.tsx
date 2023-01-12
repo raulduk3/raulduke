@@ -141,14 +141,14 @@ const Index = ({ router }) => {
                 <meta name="robots" content="follow"/>
           </Head>
           <GlobalStyles />
-            <PageWrapper isHome={!(router.asPath.includes("#"))}>
+            <PageWrapper isHome={currentPage == '' || currentPage == '#'}>
                 <Container>
                     <Navigation>
                         {isMobile ? (
                             <>
                                 <HamburgerWrapper onClick={handleClick} />
                                 <MenuWrapper size={size} open={open} onClick={handleClick}>
-                                    <Link href="#" onClick={(e) => handleNavClick('')}>Home</Link>
+                                    <Link href="/" onClick={(e) => handleNavClick('')}>Home</Link>
                                     <Link href="#about" onClick={(e) => handleNavClick('#about')}>{currentPage == "#about" ? <i>About</i>: 'About'}</Link>
                                     <Link href="#projects" onClick={(e) => handleNavClick('#projects')}>{currentPage == "#projects" ? <i>Projects</i> : 'Projects'}</Link>
                                     <Link href="#archive" onClick={(e) => handleNavClick('#archive')}>{currentPage == "#archive" ? <i>Archive</i> : 'Archive'}</Link>
@@ -163,12 +163,12 @@ const Index = ({ router }) => {
                             )}
                     </Navigation>
                     <Hero>
-                        <Title><Link href='#' onClick={(e) => handleNavClick('')}>Richard Álvarez</Link></Title>
+                        <Title><Link href='/' onClick={(e) => handleNavClick('')}>Richard Álvarez</Link></Title>
                         <p>Mexican-American Filmmaker</p>
                         <SocialLinks></SocialLinks>
                     </Hero>
                     <Container>
-                        {!(currentPage.includes("#")) &&
+                        {(currentPage == '' || currentPage == '#') &&
                             <Grid>
                             {videos.map((video) => (
                                 <GridItem key={video.title}>
@@ -202,7 +202,7 @@ const Index = ({ router }) => {
                                 <RA>(coming soon)</RA>
                             </>}
                     </Container>
-                    {(currentPage.includes("#")) && <Link style={{ margin: '2.5em', fontSize: '0.45em' }} href="#" onClick={(e) => handleNavClick('')}><Underline>Back</Underline></Link> }
+                    {(currentPage.includes("#")) && <Link style={{ margin: '2.5em', fontSize: '0.45em' }} href="/" onClick={(e) => handleNavClick('')}><Underline>Back</Underline></Link> }
                 </Container>
                 <Footer />
             </PageWrapper>
