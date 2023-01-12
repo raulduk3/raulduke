@@ -25,7 +25,6 @@ export const Navigation = styled.nav`
 
 export const Hero = styled.div`
     margin-top: ${({ theme }) => theme.spacing.l};
-    margin-bottom: ${({ theme }) => theme.spacing.s};
     display: flex;
     flex-direction: column;
     align-items: center;
