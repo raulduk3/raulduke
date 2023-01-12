@@ -168,7 +168,7 @@ const Index = ({ router }) => {
                     </Hero>
                     {(currentPage != '' && currentPage != '#') && <Link href="#" onClick={(e) => handleNavClick('')}><Underline>Back</Underline></Link> }
                     <Container>
-                        {(currentPage == '' || currentPage == '#') &&
+                        {(currentPage == '' || currentPage == '#') &&<>
                             <Grid>
                             {videos.map((video) => (
                                 <GridItem key={video.title}>
@@ -177,8 +177,9 @@ const Index = ({ router }) => {
                                     </a>
                                     <h3>{video.title}</h3>
                                 </GridItem>
+                                
                             ))}
-                            </Grid>}
+                            </Grid><RandomString></RandomString></>}
                         {currentPage == "#about" && <>
                                 <Image src="./AnyConv.com__F6B71112-67B7-45E0-B7C2-1A7DDB7C4076_1_102_o.jpg" width={100}></Image>
                                 <TextBlob>
