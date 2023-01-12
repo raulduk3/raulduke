@@ -169,7 +169,7 @@ const Index = ({ router }) => {
                         <SocialLinks></SocialLinks>
                     </Hero>
                     <Container>
-                        {(currentPage.includes("#")) &&
+                        {!(currentPage.includes("#")) &&
                             <Grid>
                             {videos.map((video) => (
                                 <GridItem key={video.title}>
