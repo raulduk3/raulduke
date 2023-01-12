@@ -166,7 +166,7 @@ const Index = ({ router }) => {
                         <p>Mexican-American Filmmaker</p>
                         <SocialLinks></SocialLinks>
                     </Hero>
-                    {(currentPage != '' && currentPage != '#') && <Link href="/" onClick={(e) => handleNavClick('')}><Underline>Back</Underline></Link> }
+                    {(currentPage != '' && currentPage != '#') && <Link href="#" onClick={(e) => handleNavClick('')}><Underline>Back</Underline></Link> }
                     <Container>
                         {(currentPage == '' || currentPage == '#') &&
                             <Grid>
