@@ -19,6 +19,7 @@ const Projects = () => {
       <div style={{
         textAlign: 'left',
         fontSize: '0.83cem',
+        maxWidth: '90vw'
       }}>
         {links.map((link, index) => (
           <h4
@@ -30,7 +31,7 @@ const Projects = () => {
               fontWeight: 100,
               wordWrap: 'break-word',
               wordBreak: 'break-all',
-              textAlignLast: 'left'
+              textAlignLast: 'center'
             }}
           >
             <Link href={link.url}>{link.name}</Link>
