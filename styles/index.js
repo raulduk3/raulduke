@@ -30,7 +30,8 @@ export const Hero = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: ${({ theme }) => theme.spacing.l} 0 0 0;
+    padding: ${({ theme }) => theme.spacing.l};
+    padding-bottom: 0;
     p {
         margin: -10px 0 0 0;
         font-size: 0.76em;

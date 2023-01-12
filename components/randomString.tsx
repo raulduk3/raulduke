@@ -10,16 +10,17 @@ function RandomString() {
     
     useEffect(() => {
       generateRandomString();
-  
+      
       window.addEventListener("mousemove", handleMouseMove);
       window.addEventListener("touchstart", handleMouseMove);
       window.addEventListener("scroll", handleMouseMove);
 
-  
+      let auto = setInterval(generateRandomString, 1000);
       return () => {
         window.removeEventListener("mousemove", handleMouseMove);
         window.removeEventListener("touchstart", handleMouseMove);
         window.removeEventListener("scroll", handleMouseMove);
+        clearInterval(auto);
       };
     }, []);
   
