@@ -94,7 +94,7 @@ const Index = ({ router }) => {
 		url: 'https://youtu.be/rSVpTN6pRjA',
 		image: '/maxresdefault (4).jpg'
 	  },
-  ])
+    ])
 
   const handleResize = useCallback(event => {
     setSize(window.innerHeight);
@@ -106,11 +106,6 @@ const Index = ({ router }) => {
 
     window.addEventListener('resize', handleResize);
 
-    if(currentPage != '#about' || currentPage != "#projects" || currentPage != "#archive")
-    {
-        setCurrentPage('');
-    }
-
     return () => {
         window.removeEventListener('resize', handleResize);
     }
@@ -121,10 +116,6 @@ const Index = ({ router }) => {
   }
 
   const handleNavClick = (page) => {
-    if(page != '#about' && page != "#projects" && page != "#archive")
-    {
-        setCurrentPage('');
-    }
     setCurrentPage(page);
   }
 
