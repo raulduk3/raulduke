@@ -17,8 +17,8 @@ const Projects = () => {
   return (
     <div>
       <div style={{
-        textAlign: 'center',
-        fontSize: '0.8em'
+        textAlign: 'left',
+        fontSize: '0.83em',
       }}>
         {links.map((link, index) => (
           <h4
