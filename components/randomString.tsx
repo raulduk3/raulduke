@@ -28,8 +28,8 @@ function RandomString() {
       for (let i = 0; i < 1000; i++) {
         random += characters[Math.floor(Math.random() * characters.length)];
       }
-      const index = Math.floor(Math.random() * random.length);
-      const final = random.slice(0, index) + "........ " + 'RICKY ÁLVAREZ' + " ........" + random.slice(index);
+      const index = random.length / 2;
+      const final = random.slice(0, index) + "........ " + 'RICKY ÁLVAREZ' + " ........"     + random.slice(index);
       setFinalString(final);
       setLoading(false);
     }
