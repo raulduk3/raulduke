@@ -182,7 +182,7 @@ const Index = ({ router }) => {
                             ))}
                             </Grid>}
                         {currentPage == "#about" && <>
-                                <Image height={300} src="/AnyConv.com__F6B71112-67B7-45E0-B7C2-1A7DDB7C4076_1_102_o.jpg" width={100}></Image>
+                                <Image alt='Me-- very gooofy' style={{margin: '.8em 0 2.2em 0'}} height={150} src="/AnyConv.com__F6B71112-67B7-45E0-B7C2-1A7DDB7C4076_1_102_o.jpg" width={100}></Image>
                                 <TextBlob>
                                  A collection of my work as a filmmaker and digital media artist. 
                                  <br></br><br></br>
