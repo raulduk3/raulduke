@@ -104,8 +104,6 @@ const Index = ({ router }) => {
     if(window.innerWidth < 760) { setIsMobile(true) } else { setIsMobile(false) }
     handleResize({});
 
-    setCurrentPage(router.asPath.split('/').pop());
-
     window.addEventListener('resize', handleResize);
 
     return () => {
