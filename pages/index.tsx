@@ -179,7 +179,7 @@ const Index = ({ router }) => {
                                 </GridItem>
                                 
                             ))}
-                            </Grid><RandomString></RandomString></>}
+                            </Grid><RandomString style={{height: 'auto'}}></RandomString></>}
                         {currentPage == "#about" && <>
                                 <Image src="./AnyConv.com__F6B71112-67B7-45E0-B7C2-1A7DDB7C4076_1_102_o.jpg" width={100}></Image>
                                 <TextBlob>
