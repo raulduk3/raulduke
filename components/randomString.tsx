@@ -35,7 +35,7 @@ function RandomString() {
 
     function handleMouseMove() {
       generateRandomString();
-    }
+    }w
   
     if (loading) {
       return <Small>Loading...</Small>
