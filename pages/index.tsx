@@ -167,7 +167,6 @@ const Index = ({ router }) => {
                         <p>Mexican-American Filmmaker</p>
                         <SocialLinks></SocialLinks>
                     </Hero>
-                    {(currentPage != '' && currentPage != '#') && <Link style={{ margin: '1em 0 1.5em 0'}} href="#" onClick={(e) => handleNavClick('')}><Underline>Back</Underline></Link> }
                     <Container>
                         {(currentPage == '' || currentPage == '#') &&
                             <Grid>
@@ -203,6 +202,7 @@ const Index = ({ router }) => {
                                 <RA>(coming soon)</RA>
                             </>}
                     </Container>
+                    {(currentPage != '' && currentPage != '#') && <Link style={{ margin: '1em 0 1.5em 0'}} href="#" onClick={(e) => handleNavClick('')}><Underline>Back</Underline></Link> }
                 </Container>
                 <Footer />
             </PageWrapper>
