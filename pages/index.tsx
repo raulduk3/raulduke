@@ -181,7 +181,7 @@ const Index = ({ router }) => {
                             ))}
                             </Grid>}
                         {currentPage == "#about" && <>
-                                <Image alt='Me-- very gooofy' style={{margin: '.8em 0 2.2em 0'}} height={140} src="/AnyConv.com__F6B71112-67B7-45E0-B7C2-1A7DDB7C4076_1_102_o.jpg" width={100}></Image>
+                                <Image alt='Me-- very gooofy' style={{margin: '1.8em'}} height={140} src="/AnyConv.com__F6B71112-67B7-45E0-B7C2-1A7DDB7C4076_1_102_o.jpg" width={100}></Image>
                                 <TextBlob>
                                  A collection of my work as a filmmaker and digital media artist. 
                                  <br></br><br></br>
@@ -202,7 +202,7 @@ const Index = ({ router }) => {
                                 <RA>(coming soon)</RA>
                             </>}
                     </Container>
-                    {(currentPage != '' && currentPage != '#') && <Link style={{ margin: '3.5em 0 1em 0', fontSize: '0.45em' }} href="#" onClick={(e) => handleNavClick('')}><Underline>Back</Underline></Link> }
+                    {(currentPage != '' && currentPage != '#') && <Link style={{ margin: '5.5em 0 1em 0', fontSize: '0.45em' }} href="#" onClick={(e) => handleNavClick('')}><Underline>Back</Underline></Link> }
                 </Container>
                 <Footer />
             </PageWrapper>
