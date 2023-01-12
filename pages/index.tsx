@@ -201,7 +201,7 @@ const Index = ({ router }) => {
                                 <RA>(coming soon)</RA>
                             </>}
                     </Container>
-                    {currentPage != '#' && <Link style={{ margin: '2.5em', fontSize: '0.45em' }} href="#" onClick={(e) => handleNavClick('')}><Underline>Back</Underline></Link> }
+                    {currentPage != '#' && <Link style={{ margin: '2.5em', fontSize: '0.45em' }} href="#" onClick={(e) => handleNavClick('#')}><Underline>Back</Underline></Link> }
                 </Container>
                 <Footer />
             </PageWrapper>
