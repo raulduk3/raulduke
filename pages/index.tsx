@@ -141,7 +141,7 @@ const Index = ({ router }) => {
                 <meta name="robots" content="follow"/>
           </Head>
           <GlobalStyles />
-            <PageWrapper isHome={router.asPath.includes("#")}>
+            <PageWrapper isHome={!(router.asPath.includes("#"))}>
                 <Container>
                     <Navigation>
                         {isMobile ? (
