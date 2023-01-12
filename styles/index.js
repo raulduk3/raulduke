@@ -47,12 +47,13 @@ export const Hero = styled.div`
 `
 
 export const PageWrapper = styled.div.attrs(props => ({
-    'size': props.size,
+    'isHome': props.isHome,
   }))`
     flex-direction: column;
     display: flex;
     justify-content: space-between; 
     min-height: 100%;
+    ${props.isHome ? 'touch-action: none;' : ''};
 `
 
 export const RA = styled.p`
