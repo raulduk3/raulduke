@@ -211,14 +211,18 @@ export const GridItem = styled.div`
 `
 
 export const SocialLinksWrapper = styled.div`
-    width: 64vw;
+    width: 85vw;
     margin-top: 1.5em;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     margin-bottom: ${({ theme }) => theme.spacing.l};
-    @media (min-width: 769px) {
-        width: 16.5vw;
+
+    @media (min-width: 450px) {
+        width: 60vw;
+    }
+    @media (min-width: 780px) {
+        width: 25vw;
     }
 `
 
