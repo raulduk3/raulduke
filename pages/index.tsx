@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from '../styles/global'
 import { theme } from '../styles/theme'
-import { SocialLinksWrapper, Image, PageWrapper, FooterWrapper, SocialLink, Small, Container, Underline, Hero, TextBlob, Title, Grid, GridItem, Navigation, Link, Hamburger, Menu } from '../styles/index'
+import { SocialLinksWrapper, RA, Image, PageWrapper, FooterWrapper, SocialLink, Small, Container, Underline, Hero, TextBlob, Title, Grid, GridItem, Navigation, Link, Hamburger, Menu } from '../styles/index'
 import { FaYoutube, FaGithub, FaTwitter, FaInstagramSquare, FaVimeo, FaBars, FaTimes } from 'react-icons/fa'
 import Project from '../components/Projects'
 import RandomString from '../components/randomString' 
@@ -194,7 +194,10 @@ const Index = () => {
                         {currentPage == "projects" &&
                             <Project></Project>}
                         {currentPage == "archive" &&
-                            <RandomString></RandomString>}
+                            <>
+                                <RandomString></RandomString>
+                                <RA>(coming soon)</RA>
+                            </>}
                     </Container>
                 </Container>
                 <Footer />

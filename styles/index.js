@@ -56,6 +56,13 @@ export const PageWrapper = styled.div.attrs(props => ({
     min-height: 100%;
 `
 
+export const RA = styled.p`
+  position: absolute;
+  background-color: ${({ theme }) => theme.colors.secondary};
+  padding: 0.8% 2%;
+  font-size: 0.8em;
+`
+
 export const Title = styled.h1`
     font-size: ${({ theme }) => theme.fontSizes.h1};
     margin-bottom: ${({ theme }) => theme.spacing.s};
@@ -115,9 +122,9 @@ export const Hamburger = styled.button`
 
 export const TextBlob = styled.div`
     max-width: 80%;
-    line-break: loose;
-    letter-spacing: 0.09rem;
-    word-spacing: -0.025srem;
+    line-break: strict;
+    letter-spacing: 0.018rem;
+    word-spacing: -0.1rem;
     font-size: 0.81em;
     @media (min-width: 769px) {
         max-width: 35%;

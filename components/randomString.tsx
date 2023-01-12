@@ -28,9 +28,7 @@ function RandomString() {
       for (let i = 0; i < 1000; i++) {
         random += characters[Math.floor(Math.random() * characters.length)];
       }
-      const index = random.length / 2;
-      const final = random.slice(0, index) + "........ " + 'RICKY ÁLVAREZ' + " ........"     + random.slice(index);
-      setFinalString(final);
+      setFinalString(random);
       setLoading(false);
     }
 
@@ -44,7 +42,10 @@ function RandomString() {
   
     return (
       <Small style={{
-        letterSpacing: '0.5em'
+        letterSpacing: '0.4em',
+        maxHeight: '24.55vh',
+        overflow: 'hidden',
+        marginTop: '5%'
       }}>{finalString}</Small>
     );
   }
