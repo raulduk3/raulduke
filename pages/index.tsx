@@ -186,7 +186,7 @@ const Index = ({ router }) => {
                                  <br></br><br></br>
                                  At the intersection of technology, urban environments, and DV video, I focus on the use of experimental narratives to address pressing social and political issues.
                                  <br></br><br></br>
-                                Being a Mexican-American and a proud native of Chicago, my cultural heritage and the vibrant music scene of my #town serve as a constant source of inspiration. It is my sincere hope that through my work, I can offer a unique and fresh perspective on the visual medium.
+                                Being a Mexican-American and a proud native of Chicago, my cultural heritage and the vibrant music scene of my home serve as a constant source of inspiration. It is my sincere hope that through my work, I can offer a unique and fresh perspective on the visual medium.
                                 <br></br><br></br>
                                 I am determined to continually push the boundaries of video and develop new possibilities in the field. I invite you to explore my website and gain a deeper understanding of my work and philosophy. Thank you for taking the time to visit.
                                 <br></br><br></br>
