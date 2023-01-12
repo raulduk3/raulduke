@@ -122,7 +122,7 @@ export const Hamburger = styled.button`
 `
 
 export const TextBlob = styled.div`
-    max-width: 80%;
+    max-width: 90%;
     line-break: strict;
     letter-spacing: 0.018rem;
     word-spacing: -0.1rem;
