@@ -106,6 +106,11 @@ const Index = ({ router }) => {
 
     window.addEventListener('resize', handleResize);
 
+    if(currentPage != '#about' || currentPage != "#projects" || currentPage != "#archive")
+    {
+        setCurrentPage('');
+    }
+
     return () => {
         window.removeEventListener('resize', handleResize);
     }
