@@ -76,7 +76,11 @@ export const Underline = styled.span`
 `
 
 export const Small = styled.p`
-    font-size: 0.2em;
+    letter-spacing: 1em;
+    line-break: anywhere;
+    font-size: 0.35em;
+    max-width: 25vw;
+    display: inline-block;
 `
 
 export const Image = styled.img`
@@ -110,11 +114,13 @@ export const Hamburger = styled.button`
 `
 
 export const TextBlob = styled.div`
-    width: 80%;
-    letter-spacing: 0.005rem;
-    word-spacing: -0.005srem;
+    max-width: 80%;
+    line-break: loose;
+    letter-spacing: 0.09rem;
+    word-spacing: -0.025srem;
+    font-size: 0.81em;
     @media (min-width: 769px) {
-        width: 35%;
+        max-width: 35%;
     }
 `
 
