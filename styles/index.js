@@ -46,15 +46,12 @@ export const Hero = styled.div`
     }
 `
 
-export const PageWrapper = styled.div.attrs(props => ({
-    'isHome': props.isHome,
-  }))`
+export const PageWrapper = styled.div`
     max-width: 100%;
     flex-direction: column;
     display: flex;
     justify-content: space-between; 
     min-height: 100%;
-    ${(props)=>{props.isHome ? 'touch-action: none;' : ''}};
 `
 
 export const RA = styled.p`

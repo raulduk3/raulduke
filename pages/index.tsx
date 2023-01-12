@@ -116,10 +116,6 @@ const Index = ({ router }) => {
   }
 
   const handleNavClick = (page) => {
-    if(page == '#') {
-        setCurrentPage('');
-        return;
-    }
     setCurrentPage(page);
   }
 
@@ -144,7 +140,7 @@ const Index = ({ router }) => {
                 <meta name="robots" content="follow"/>
           </Head>
           <GlobalStyles />
-            <PageWrapper isHome={!currentPage}>
+            <PageWrapper>
                 <Container>
                     <Navigation>
                         {isMobile ? (
@@ -205,7 +201,7 @@ const Index = ({ router }) => {
                                 <RA>(coming soon)</RA>
                             </>}
                     </Container>
-                    {!currentPage && <Link style={{ margin: '2.5em', fontSize: '0.45em' }} href="#" onClick={(e) => handleNavClick('')}><Underline>Back</Underline></Link> }
+                    {currentPage.includes("#") && <Link style={{ margin: '2.5em', fontSize: '0.45em' }} href="#" onClick={(e) => handleNavClick('')}><Underline>Back</Underline></Link> }
                 </Container>
                 <Footer />
             </PageWrapper>
