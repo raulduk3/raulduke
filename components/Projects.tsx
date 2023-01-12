@@ -27,6 +27,7 @@ const Projects = () => {
               opacity: isVisible ? 1 : 0,
               transition: 'opacity 0.3s',
               transitionDelay: `${index * 0.1}s`,
+              fontWeight: 100
             }}
           >
             <Link href={link.url}>{link.name}</Link>
