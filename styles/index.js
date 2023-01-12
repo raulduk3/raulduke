@@ -49,6 +49,7 @@ export const Hero = styled.div`
 export const PageWrapper = styled.div.attrs(props => ({
     'isHome': props.isHome,
   }))`
+    max-width: 100vw;
     flex-direction: column;
     display: flex;
     justify-content: space-between; 
