@@ -118,6 +118,10 @@ const Index = ({ router }) => {
   }
 
   const handleNavClick = (page) => {
+    if(page == '#')
+    {
+        setCurrentPage('');
+    }
     setCurrentPage(page);
   }
 
