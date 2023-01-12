@@ -5,10 +5,13 @@ import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from '../styles/global'
 import { theme } from '../styles/theme'
 import { SocialLinksWrapper, Image, PageWrapper, FooterWrapper, SocialLink, Small, Container, Underline, Hero, TextBlob, Title, Grid, GridItem, Navigation, Link, Hamburger, Menu } from '../styles/index'
-import { FaYoutube, FaTwitter, FaInstagramSquare, FaVimeo, FaBars, FaTimes } from 'react-icons/fa'
+import { FaYoutube, FaGithub, FaTwitter, FaInstagramSquare, FaVimeo, FaBars, FaTimes } from 'react-icons/fa'
 import Project from '../components/Projects'
 import RandomString from '../components/randomString' 
-import { getRandomStringServerSideProps } from '../components/randomString'
+
+const characters = 
+"!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ⼀⼁⼂⼃⼄⼅⼆⼇⼈⼉⼊⼋⼌⼍⼎⼏⼐⼑⼒⼓⼔⼕⼖⼗⼘⼙⼚⼛⼜⼝⼞⼟⼠⼡⼢⼣⼤⼥⼦⼧⼨⼩⼪⼫⼬⼭⼮⼯⼰⼱⼲⼳⼴⼵⼶⼷⼸⼹⼺⼻⼼⼽⼾⼿⽀⽁⽂⽃⽄⽅⽆⽇⽈⽉⽊⽋⽌⽍⽎⽏⽐⽑⽒⽓⽔⽕⽖⽗⽘⽙⽚⽛⽜⽝⽞⽟⽠⽡⽢⽣⽤⽥⽦⽧⽨⽩⽪⽫⽬⽭⽮⽯⽰⽱⽲⽳⽴⽵⽶⽷⽸⽹⽺⽻⽼⽽⽾⽿";
+
 
 const Footer = () => (
   <FooterWrapper>
@@ -41,6 +44,9 @@ const SocialLinks = () => (
         <SocialLink href='https://www.youtube.com/@rickalvarez3686/' target="_blank" rel="noopener noreferrer">
             <FaYoutube size={25} />
         </SocialLink>
+        <SocialLink href='https://github.com/morty-c137-prime' target="_blank" rel="noopener noreferrer">
+            <FaGithub size={25} />
+        </SocialLink>
         <SocialLink href='https://twitter.com/raalvarez_3' target="_blank" rel="noopener noreferrer">
             <FaTwitter size={25} />
         </SocialLink>
@@ -50,7 +56,7 @@ const SocialLinks = () => (
     </SocialLinksWrapper>
 )
 
-const Index = ({initialString}) => {
+const Index = () => {
   const [open, setOpen] = useState(false)
   const [size, setSize] = useState(100)
   const [currentPage, setCurrentPage] = useState('home')
@@ -188,7 +194,7 @@ const Index = ({initialString}) => {
                         {currentPage == "projects" &&
                             <Project></Project>}
                         {currentPage == "archive" &&
-                            <RandomString initialString={initialString} ></RandomString>}
+                            <RandomString></RandomString>}
                     </Container>
                 </Container>
                 <Footer />
@@ -197,8 +203,5 @@ const Index = ({initialString}) => {
     )
 }
 
-export async function getServerSideProps() {
-    return getRandomStringServerSideProps();
-}
 
 export default Index
