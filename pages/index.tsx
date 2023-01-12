@@ -148,16 +148,16 @@ const Index = ({ router }) => {
                                 <HamburgerWrapper onClick={handleClick} />
                                 <MenuWrapper size={size} open={open} onClick={handleClick}>
                                     <Link href="#" onClick={(e) => handleNavClick('')}>Home</Link>
-                                    <Link href="#about" onClick={(e) => handleNavClick('#about')}>About</Link>
-                                    <Link href="#projects" onClick={(e) => handleNavClick('#projects')}>Projects</Link>
-                                    <Link href="#archive" onClick={(e) => handleNavClick('#archive')}>Archive</Link>
+                                    <Link href="#about" onClick={(e) => handleNavClick('#about')}>{currentPage == "#about" ? <i>About</i>: 'About'}</Link>
+                                    <Link href="#projects" onClick={(e) => handleNavClick('#projects')}>{currentPage == "#projects" ? <i>Projects</i> : 'Projects'}</Link>
+                                    <Link href="#archive" onClick={(e) => handleNavClick('#archive')}>{currentPage == "#archive" ? <i>Archive</i> : 'Archive'}</Link>
                                 </MenuWrapper>
                             </>
                             ) : (
                                 <>
-                                    <Link href="#about" onClick={(e) => handleNavClick('#about')}>About</Link>
-                                    <Link href="#projects" onClick={(e) => handleNavClick('#projects')}>Projects</Link>
-                                    <Link href="#archive" onClick={(e) => handleNavClick('#archive')}>Archive</Link>
+                                    <Link href="#about" onClick={(e) => handleNavClick('#about')}>{currentPage == "#about" ? <i>About</i>: 'About'}</Link>
+                                    <Link href="#projects" onClick={(e) => handleNavClick('#projects')}>{currentPage == "#projects" ? <i>Projects</i> : 'Projects'}</Link>
+                                    <Link href="#archive" onClick={(e) => handleNavClick('#archive')}>{currentPage == "#archive" ? <i>Archive</i> : 'Archive'}</Link>
                                 </>
                             )}
                     </Navigation>
