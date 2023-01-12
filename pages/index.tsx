@@ -4,7 +4,8 @@ import { useMediaQuery } from 'react-responsive'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from '../styles/global'
 import { theme } from '../styles/theme'
-import { SocialLinksWrapper, RA, Image, PageWrapper, FooterWrapper, SocialLink, Small, Container, Underline, Hero, TextBlob, Title, Grid, GridItem, Navigation, Link, Hamburger, Menu } from '../styles/index'
+import Image from 'next/image'
+import { SocialLinksWrapper, RA, PageWrapper, FooterWrapper, SocialLink, Small, Container, Underline, Hero, TextBlob, Title, Grid, GridItem, Navigation, Link, Hamburger, Menu } from '../styles/index'
 import { FaYoutube, FaGithub, FaTwitter, FaInstagramSquare, FaVimeo, FaBars, FaTimes } from 'react-icons/fa'
 import Project from '../components/Projects'
 import RandomString from '../components/randomString' 
@@ -181,7 +182,7 @@ const Index = ({ router }) => {
                             ))}
                             </Grid>}
                         {currentPage == "#about" && <>
-                                <Image src="./AnyConv.com__F6B71112-67B7-45E0-B7C2-1A7DDB7C4076_1_102_o.jpg" width={100}></Image>
+                                <Image height={300} src="./AnyConv.com__F6B71112-67B7-45E0-B7C2-1A7DDB7C4076_1_102_o.jpg" width={100}></Image>
                                 <TextBlob>
                                  A collection of my work as a filmmaker and digital media artist. 
                                  <br></br><br></br>
