@@ -82,7 +82,7 @@ export const Link = styled.a`
 export const Underline = styled.span`
     padding: 5px;
     border: 1px solid black;
-    margin: 0.3em 0 0.3em 0;
+    margin: 0 0 0.3em 0;
 `
 
 export const Small = styled.p`
