@@ -25,7 +25,7 @@ function RandomString() {
   
     function generateRandomString() {
       let random = "";
-      for (let i = 0; i < 1000; i++) {
+      for (let i = 0; i < 5000; i++) {
         random += characters[Math.floor(Math.random() * characters.length)];
       }
       setFinalString(random);
@@ -43,9 +43,10 @@ function RandomString() {
     return (
       <Small style={{
         letterSpacing: '0.4em',
-        maxHeight: '24.55vh',
+        maxHeight: '24.4vh',
         overflow: 'hidden',
-        marginTop: '5%'
+        minWidth: '80vw',
+        opacity: 0.7
       }}>{finalString}</Small>
     );
   }

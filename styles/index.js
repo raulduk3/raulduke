@@ -59,8 +59,9 @@ export const PageWrapper = styled.div.attrs(props => ({
 export const RA = styled.p`
   position: absolute;
   background-color: ${({ theme }) => theme.colors.secondary};
-  padding: 0.8% 2%;
-  font-size: 0.8em;
+  padding: 2% 4%;
+  font-size: 0.6em;
+  font-weight: 100;
 `
 
 export const Title = styled.h1`
