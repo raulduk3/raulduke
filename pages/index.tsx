@@ -61,7 +61,7 @@ const SocialLinks = () => (
 const Index = ({ router }) => {
   const [open, setOpen] = useState(false)
   const [size, setSize] = useState(100)
-  const [currentPage, setCurrentPage] = useState(router.asPath.split('/').pop() == "#about" || router.asPath.split('/').pop() == "#projects" || router.asPath.split('/').pop() == "#archive" ? outer.asPath.split('/').pop() : "#");
+  const [currentPage, setCurrentPage] = useState(router.asPath.split('/').pop() == "#about" || router.asPath.split('/').pop() == "#projects" || router.asPath.split('/').pop() == "#archive" ? router.asPath.split('/').pop() : "#");
   const [isMobile, setIsMobile] = useState(false)
   const [videos, setVideos] = useState([
       {
