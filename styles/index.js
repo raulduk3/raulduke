@@ -212,7 +212,7 @@ export const GridItem = styled.div`
 
 export const SocialLinksWrapper = styled.div`
     width: 64vw;
-    margin-top: 1.3em;
+    margin-top: 1.5em;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
