@@ -29,7 +29,7 @@ function RandomString() {
         random += characters[Math.floor(Math.random() * characters.length)];
       }
       const index = Math.floor(Math.random() * random.length);
-      const final = random.slice(0, index) + ' RICKY ÁLVAREZ ' + random.slice(index);
+      const final = random.slice(0, index) + '     RICKY ÁLVAREZ     ' + random.slice(index);
       setFinalString(final);
       setLoading(false);
     }
