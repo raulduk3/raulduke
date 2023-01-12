@@ -24,8 +24,8 @@ export const Navigation = styled.nav`
 `
 
 export const Hero = styled.div`
-    margin-top: 2em;
-    margin-bottom: 0em;
+    margin-top: 1.5em;
+    margin-bottom: -0.1em;
     display: flex;
     flex-direction: column;
     align-items: center;
