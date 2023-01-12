@@ -110,7 +110,9 @@ export const Hamburger = styled.button`
 `
 
 export const TextBlob = styled.div`
-    width: 75%;
+    width: 80%;
+    letter-spacing: 0.005rem;
+    word-spacing: -0.005srem;
     @media (min-width: 769px) {
         width: 35%;
     }

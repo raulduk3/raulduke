@@ -175,10 +175,17 @@ const Index = () => {
                             </Grid>}
                         {currentPage == "about" && <>
                                 <Image src="./AnyConv.com__F6B71112-67B7-45E0-B7C2-1A7DDB7C4076_1_102_o.jpg" width={100}></Image>
-                                <TextBlob>Rick Álvarez is a Mexican-American student filmmaker, mixed media artist, and proud Chicago native.<br></br><br></br>
-                                With a focus on technology, urban environments, DV video, and experimental narratives, Rick uses his work to address social and political issues through motion pictures.<br></br><br></br>
-                                Drawing inspiration from his cultural heritage and the vibrant music scene of Chicago, Rick provides a unique and fresh perspective to the visual medium.<br></br><br></br>    
-                                Rick is determined to push the boundaries of video.</TextBlob>
+                                <TextBlob>
+                                 A collection of my work as a filmmaker and digital media artist. 
+                                 <br></br><br></br>
+                                 At the intersection of technology, urban environments, and DV video, I focus on the use of experimental narratives to address pressing social and political issues.
+                                 <br></br><br></br>
+                                Being a Mexican-American and a proud native of Chicago, my cultural heritage and the vibrant music scene of my hometown serve as a constant source of inspiration. It is my sincere hope that through my work, I can offer a unique and fresh perspective on the visual medium.
+                                <br></br><br></br>
+                                I am determined to continually push the boundaries of video and develop new possibilities in the field. I invite you to explore my website and gain a deeper understanding of my work and philosophy. Thank you for taking the time to visit.
+                                <br></br><br></br>
+                                Click the footer below to contact me :)
+                                </TextBlob>
                             </>}
                         {currentPage == "projects" &&
                             <Small>(coming soon)</Small>}
