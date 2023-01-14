@@ -10,6 +10,7 @@ import { FaYoutube, FaGithub, FaTwitter, FaInstagramSquare, FaVimeo, FaBars, FaT
 import Project from '../components/Projects'
 import RandomString from '../components/randomString' 
 import { withRouter } from 'next/router'
+import RandomUnicode from '../components/RandomUnicode'
 
 const characters = 
 "!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ⼀⼁⼂⼃⼄⼅⼆⼇⼈⼉⼊⼋⼌⼍⼎⼏⼐⼑⼒⼓⼔⼕⼖⼗⼘⼙⼚⼛⼜⼝⼞⼟⼠⼡⼢⼣⼤⼥⼦⼧⼨⼩⼪⼫⼬⼭⼮⼯⼰⼱⼲⼳⼴⼵⼶⼷⼸⼹⼺⼻⼼⼽⼾⼿⽀⽁⽂⽃⽄⽅⽆⽇⽈⽉⽊⽋⽌⽍⽎⽏⽐⽑⽒⽓⽔⽕⽖⽗⽘⽙⽚⽛⽜⽝⽞⽟⽠⽡⽢⽣⽤⽥⽦⽧⽨⽩⽪⽫⽬⽭⽮⽯⽰⽱⽲⽳⽴⽵⽶⽷⽸⽹⽺⽻⽼⽽⽾⽿";
@@ -58,7 +59,7 @@ const SocialLinks = () => (
     </SocialLinksWrapper>
 )
 
-const Index = ({ router }) => {
+function Index({ router }) {
   const [open, setOpen] = useState(false)
   const [size, setSize] = useState(100)
   const [currentPage, setCurrentPage] = useState(router.asPath.split('/').pop() == "#about" || router.asPath.split('/').pop() == "#projects" || router.asPath.split('/').pop() == "#archive" ? router.asPath.split('/').pop() : "#");
@@ -120,11 +121,10 @@ const Index = ({ router }) => {
   }
 
   return (
-      <ThemeProvider theme={theme}>
-          <Head>
+        <ThemeProvider theme={theme}>
+            <Head>
                 <title>Richard Álvarez | Filmmaker</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
                 <meta property="og:type" content="website" />
                 <meta property="og:image" content="https://raulduke.com/images/BANNER.jpg" />
                 <meta property="og:title" content="Rick Alvarez" key="title" />
@@ -138,8 +138,9 @@ const Index = ({ router }) => {
                 <meta name="language" content="English" />
                 <meta name="revisit-after" content="10 days"/>
                 <meta name="robots" content="follow"/>
-          </Head>
-          <GlobalStyles />
+            </Head>
+            <GlobalStyles />
+            {currentPage == "#" && <RandomUnicode></RandomUnicode>}
             <PageWrapper>
                 <Container>
                     <Navigation>
@@ -182,10 +183,10 @@ const Index = ({ router }) => {
                         {currentPage == "#about" && <>
                                 <Image alt='Me-- very gooofy' style={{marginTop: '0.5em', marginBottom: '2em'}} height={140} src="/AnyConv.com__F6B71112-67B7-45E0-B7C2-1A7DDB7C4076_1_102_o.jpg" width={100}></Image>
                                 <TextBlob>
-                                 A collection of my work as a filmmaker and digital media artist. 
-                                 <br></br><br></br>
-                                 At the intersection of technology, urban environments, and DV video, I focus on the use of experimental narratives to address pressing social and political issues.
-                                 <br></br><br></br>
+                                    A collection of my work as a filmmaker and digital media artist. 
+                                    <br></br><br></br>
+                                    At the intersection of technology, urban environments, and DV video, I focus on the use of experimental narratives to address pressing social and political issues.
+                                    <br></br><br></br>
                                 Being a Mexican-American and a proud native of Chicago, my cultural heritage and the vibrant music scene of my home serve as a constant source of inspiration. It is my sincere hope that through my work, I can offer a unique and fresh perspective on the visual medium.
                                 <br></br><br></br>
                                 I am determined to continually push the boundaries of video and develop new possibilities in the field. I invite you to explore my website and gain a deeper understanding of my work and philosophy. Thank you for taking the time to visit.
@@ -201,9 +202,9 @@ const Index = ({ router }) => {
                                 <RA>(coming soon)</RA>
                             </>}
                     </Container>
-                    {currentPage != '#' && <Link style={{ margin: '2.5em', fontSize: '0.45em' }} href="#" onClick={(e) => handleNavClick('#')}><Underline>Back</Underline></Link> }
-                </Container>
-                <Footer />
+                {currentPage != '#' && <Link style={{ margin: '2.5em', fontSize: '0.45em' }} href="#" onClick={(e) => handleNavClick('#')}><Underline>Back</Underline></Link> }
+            </Container>
+            <Footer />
             </PageWrapper>
         </ThemeProvider>
     )

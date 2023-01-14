@@ -6,6 +6,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     padding: ${({ theme }) => theme.spacing.s};
+    // background-color: ${({ theme }) => theme.colors.secondary};
 `
 
 export const Navigation = styled.nav`
@@ -14,22 +15,19 @@ export const Navigation = styled.nav`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: ${({ theme }) => theme.spacing.m} 0;
-    margin-bottom: ${({ theme }) => theme.spacing.s};
-    position: absolute;
-    top: 0;
+    padding: ${({ theme }) => theme.spacing.m} 0;   
+    background-color: ${({ theme }) => theme.colors.secondary};
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0);
     color: transparent;
 `
 
 export const Hero = styled.div`
-    margin-top: ${({ theme }) => theme.spacing.m};
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2em 1em;
+    background-color: ${({ theme }) => theme.colors.secondary};
+    padding: 0 1em;
     padding-bottom: 0;
     p {
         margin: -10px 0 0 0;
@@ -47,6 +45,7 @@ export const Hero = styled.div`
 `
 
 export const PageWrapper = styled.div`
+    z-index: -2;
     max-width: 100%;
     flex-direction: column;
     display: flex;
@@ -212,6 +211,7 @@ export const GridItem = styled.div`
 export const SocialLinksWrapper = styled.div`
     width: 85vw;
     margin-top: ${({ theme }) => theme.spacing.m};
+    background-color: ${({ theme }) => theme.colors.secondary};
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -240,7 +240,6 @@ export const SocialLink = styled.a`
 `
 
 export const FooterWrapper = styled.footer`
-    background-color: white;
     color: ${({ theme }) => theme.colors.primary};
     text-align: center;
     padding: ${({ theme }) => theme.spacing.m};

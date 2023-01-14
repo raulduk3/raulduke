@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from '../styles/index'
 
-const Projects = () => {
+export default function Projects() {
   const [links, setLinks] = useState([
       { name: 'Sentiment Analysis of Rotten Tomato Reviews', url: 'https://github.com/morty-c137-prime/sa-rotten-tamatoes' },
       { name: 'raulduke.com', url: 'https://github.com/morty-c137-prime/raulduke' },
@@ -40,7 +40,3 @@ const Projects = () => {
     </div>
   );
 };
-
-  
-
-export default Projects;
