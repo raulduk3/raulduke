@@ -209,7 +209,7 @@ export const GridItem = styled.div`
 `
 
 export const SocialLinksWrapper = styled.div`
-    width: 85vw;
+    width: 75vw;
     margin-top: ${({ theme }) => theme.spacing.m};
     background-color: ${({ theme }) => theme.colors.secondary};
     display: flex;
@@ -217,11 +217,14 @@ export const SocialLinksWrapper = styled.div`
     justify-content: space-evenly;
     margin-bottom: ${({ theme }) => theme.spacing.m};
 
-    @media (min-width: 450px) {
-        width: 50vw;
+    @media (min-width: 550px) {
+        width: 45vw;
     }
     @media (min-width: 780px) {
-        width: 22vw;
+        width: 30vw;
+    }
+    @media (min-width: 1024px) {
+        width: 20vw;
     }
 `
 
