@@ -178,9 +178,7 @@ function Index({ router }) {
                             {videos.map((video) => (
                                 <GridItem key={video.title}>
                                     <a href={video.url}>
-                                        <img src={video.image} style={{
-                                            maxHeight: '100%'
-                                        }} alt={video.title} />
+                                        <img src={video.image} width={300} alt={video.title} />
                                     </a>
                                     <h3>{video.title}</h3>
                                 </GridItem>
