@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from 'react';
 const easeOutQuad = t => t * (2 - t);
 
 export default function RandomUnicode() {
-  const canvasRe    f = useRef(null);
+  const canvasRef = useRef(null);
   const [size, setSize] = useState([0, 0]);
 
   useEffect(() => {

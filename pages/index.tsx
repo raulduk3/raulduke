@@ -140,7 +140,7 @@ function Index({ router }) {
                 <meta name="robots" content="follow"/>
             </Head>
             <GlobalStyles />
-            {currentPage == "#" && <RandomUnicode></RandomUnicode>}
+            {/* {currentPage == "#" && <RandomUnicode></RandomUnicode>} */}
             <PageWrapper>
                 <Container>
                     <Navigation>
