@@ -62,7 +62,8 @@ export const RA = styled.p`
 `
 
 export const Title = styled.h1`
-    font-size: ${({ theme }) => theme.fontSizes.h1};
+    font-size: 2.3em;
+    word-spacing: 0.4rem;
     margin-bottom: ${({ theme }) => theme.spacing.s};
 `
 
@@ -101,6 +102,7 @@ export const Hamburger = styled.button`
     color: ${({ theme }) => theme.colors.primary};
     @media (max-width: 768px) {
         display: flex;
+        margin-left: -1.5px;
         position: relative;
         cursor: pointer;
         background-color: transparent;
