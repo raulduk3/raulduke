@@ -228,7 +228,10 @@ export const SocialLinksWrapper = styled.div`
 `
 
 export const SocialLink = styled.a`
-    margin: 0 2%;
+    margin: 0 3.5%;
+    @media (min-width: 1024px) {
+        margin: 0 2%
+    }
     &:last-child {
         margin-right: 0;
     }
