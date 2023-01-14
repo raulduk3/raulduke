@@ -91,6 +91,11 @@ function Index({ router }) {
 		image: '/maxresdefault (3).jpg'
 	  },
       {
+        title: 'LIVE LAUGH KILL (Dir. RAUL DUKE)',
+        url: 'https://www.youtube.com/watch?v=ootubrdXBmA',
+        image: '/maxresdefault (6).jpg'
+      },
+      {
 		title: 'V, Sol Infinito (Unfinished)',
 		url: 'https://youtu.be/rSVpTN6pRjA',
 		image: '/maxresdefault (4).jpg'
