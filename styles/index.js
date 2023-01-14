@@ -218,10 +218,10 @@ export const SocialLinksWrapper = styled.div`
     margin-bottom: ${({ theme }) => theme.spacing.m};
 
     @media (min-width: 450px) {
-        width: 60vw;
+        width: 50vw;
     }
     @media (min-width: 780px) {
-        width: 25vw;
+        width: 22vw;
     }
 `
 
