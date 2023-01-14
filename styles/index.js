@@ -102,7 +102,6 @@ export const Hamburger = styled.button`
     color: ${({ theme }) => theme.colors.primary};
     @media (max-width: 768px) {
         display: flex;
-        margin-left: -1.5px;
         position: relative;
         cursor: pointer;
         background-color: transparent;
