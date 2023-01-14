@@ -98,12 +98,9 @@ export const Hamburger = styled.button`
     border: none;
     user-select: none;
     padding: 0;
-    margin: 0.40em -3px 0.40em 0;
     color: ${({ theme }) => theme.colors.primary};
     @media (max-width: 768px) {
-        display: block;
-        width: 30px;
-        height: 30px;
+        display: flex;
         position: relative;
         cursor: pointer;
         background-color: transparent;
@@ -214,7 +211,7 @@ export const SocialLinksWrapper = styled.div`
     background-color: ${({ theme }) => theme.colors.secondary};
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-bottom: ${({ theme }) => theme.spacing.m};
 
     @media (min-width: 550px) {
@@ -229,7 +226,7 @@ export const SocialLinksWrapper = styled.div`
 `
 
 export const SocialLink = styled.a`
-    margin-right: ${({ theme }) => theme.spacing.xs};
+    margin: 0 2%;
     &:last-child {
         margin-right: 0;
     }
