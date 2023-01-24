@@ -16,13 +16,13 @@ const characters =
 "!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ⼀⼁⼂⼃⼄⼅⼆⼇⼈⼉⼊⼋⼌⼍⼎⼏⼐⼑⼒⼓⼔⼕⼖⼗⼘⼙⼚⼛⼜⼝⼞⼟⼠⼡⼢⼣⼤⼥⼦⼧⼨⼩⼪⼫⼬⼭⼮⼯⼰⼱⼲⼳⼴⼵⼶⼷⼸⼹⼺⼻⼼⼽⼾⼿⽀⽁⽂⽃⽄⽅⽆⽇⽈⽉⽊⽋⽌⽍⽎⽏⽐⽑⽒⽓⽔⽕⽖⽗⽘⽙⽚⽛⽜⽝⽞⽟⽠⽡⽢⽣⽤⽥⽦⽧⽨⽩⽪⽫⽬⽭⽮⽯⽰⽱⽲⽳⽴⽵⽶⽷⽸⽹⽺⽻⽼⽽⽾⽿";
 
 
-const Footer = () => (
+function Footer() (
   <FooterWrapper>
       <Link href='mailto:alvarez2@kenyon.edu'>copyright © 2023 built w/ love by richard álvarez</Link>
   </FooterWrapper>
 )
 
-const HamburgerWrapper = ({ onClick }) => {
+function HamburgerWrapper({ onClick }) {
   return (
       <Hamburger onClick={onClick}>
           <FaBars size={20} />
@@ -30,7 +30,7 @@ const HamburgerWrapper = ({ onClick }) => {
   )
 }
 
-const MenuWrapper = ({onClick, size, open, children}) => {
+function MenuWrapper({onClick, size, open, children}) {
 	return (    
         <Menu size={size} open={open} onClick={onClick}>
             <button onClick={onClick}><FaTimes></FaTimes></button>
@@ -39,25 +39,27 @@ const MenuWrapper = ({onClick, size, open, children}) => {
 	)
 }
 
-const SocialLinks = () => (
-    <SocialLinksWrapper>
-        <SocialLink href='https://vimeo.com/rickyalvarez/' target="_blank" rel="noopener noreferrer">
-            <FaVimeo size={25} />
-        </SocialLink>
-        <SocialLink href='https://www.youtube.com/@rickalvarez3686/' target="_blank" rel="noopener noreferrer">
-            <FaYoutube size={25} />
-        </SocialLink>
-        <SocialLink href='https://github.com/morty-c137-prime' target="_blank" rel="noopener noreferrer">
-            <FaGithub size={25} />
-        </SocialLink>
-        <SocialLink href='https://twitter.com/raalvarez_3' target="_blank" rel="noopener noreferrer">
-            <FaTwitter size={25} />
-        </SocialLink>
-        <SocialLink href='https://www.instagram.com/lofirick/' target="_blank" rel="noopener noreferrer">
-            <FaInstagramSquare size={30} />
-        </SocialLink>
-    </SocialLinksWrapper>
-)
+function SocialLinks() {
+    return (
+        <SocialLinksWrapper>
+            <SocialLink href='https://vimeo.com/rickyalvarez/' target="_blank" rel="noopener noreferrer">
+                <FaVimeo size={25} />
+            </SocialLink>
+            <SocialLink href='https://www.youtube.com/@rickalvarez3686/' target="_blank" rel="noopener noreferrer">
+                <FaYoutube size={25} />
+            </SocialLink>
+            <SocialLink href='https://github.com/morty-c137-prime' target="_blank" rel="noopener noreferrer">
+                <FaGithub size={25} />
+            </SocialLink>
+            <SocialLink href='https://twitter.com/raalvarez_3' target="_blank" rel="noopener noreferrer">
+                <FaTwitter size={25} />
+            </SocialLink>
+            <SocialLink href='https://www.instagram.com/lofirick/' target="_blank" rel="noopener noreferrer">
+                <FaInstagramSquare size={30} />
+            </SocialLink>
+        </SocialLinksWrapper>
+    )
+}
 
 function Index({ router }) {
   const [open, setOpen] = useState(false)
@@ -99,7 +101,12 @@ function Index({ router }) {
 		title: 'V, Sol Infinito (Unfinished)',
 		url: 'https://youtu.be/rSVpTN6pRjA',
 		image: '/maxresdefault (4).jpg'
-	  },
+	},
+	{
+		title: 'Chat with Nena',
+		url: 'https://youtu.be/tAxzJz09bes',
+		image: '/maxresdefault (7).jpg'
+	}
     ])
 
   const handleResize = useCallback(event => {
