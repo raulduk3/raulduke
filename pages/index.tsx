@@ -77,7 +77,7 @@ function Index({ router }) {
 		{
 			title: 'Evening in Glitch',
 			url: 'https://www.youtube.com/watch?v=SDDqeX3K6xc',
-			image: '/maxresdefault.jpg'
+			image: '/maxresdefault.webp'
 		},
 		{
 			title: '21st Century Dorm',
@@ -103,6 +103,11 @@ function Index({ router }) {
 			title: 'V, Sol Infinito (Unfinished)',
 			url: 'https://youtu.be/rSVpTN6pRjA',
 			image: '/maxresdefault (4).jpg'
+		},
+		{
+			title: 'Betty White by 5ouley',
+			url: 'https://youtu.be/Qt8xm5LxWBM',
+			image: '/maxresdefault.jpg'
 		},
 		{
 			title: 'Chat with Nena',
