@@ -56,9 +56,6 @@ function SocialLinks() {
 			<SocialLink href='https://twitter.com/raalvarez_3' target="_blank" rel="noopener noreferrer">
 				<FaTwitter size={25} />
 			</SocialLink>
-			<SocialLink href='https://www.instagram.com/lofirick/' target="_blank" rel="noopener noreferrer">
-				<FaInstagramSquare size={30} />
-			</SocialLink>
 		</SocialLinksWrapper>
 	)
 }
