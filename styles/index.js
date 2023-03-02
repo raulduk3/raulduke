@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.div.attrs(props => ({
+    'open': props.open,
+    'size': props.size
+  }))`
+    height: ${props => props.open ? '0' : 'auto'};
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;

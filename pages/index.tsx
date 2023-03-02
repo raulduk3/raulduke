@@ -158,7 +158,7 @@ function Index({ router }) {
 			<GlobalStyles />
 			{/* {currentPage == "#" && <RandomUnicode></RandomUnicode>} */}
 			<PageWrapper>
-				<Container>
+				<Container size={size} open={open}>
 					<Navigation>
 						{isMobile ? (
 							<>
