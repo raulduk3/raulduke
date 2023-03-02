@@ -5,7 +5,7 @@ export const Container = styled.div.attrs(props => ({
     'size': props.size
   }))`
     height: ${props => props.open ? '0' : 'auto'};
-    overflow-x: hidden;
+    X
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -141,6 +141,7 @@ export const Menu = styled.div.attrs(props => ({
     flex-direction: column;
     background-color: transparent;
     align-items: center;
+    overflow: hidden;
     justify-content: center;
     width: 100vw;
     height: ${props => (props.size) + 'px'};
