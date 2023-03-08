@@ -3,9 +3,8 @@ import styled from 'styled-components'
 export const Container = styled.div.attrs(props => ({
     'open': props.open,
     'size': props.size
-  }))`
+}))`
     height: ${props => props.open ? '0' : 'auto'};
-    X
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,7 +15,7 @@ export const Container = styled.div.attrs(props => ({
 
 export const Navigation = styled.nav`
     width: 100%;
-    max-width: 1200px;
+    max-width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,11 +58,11 @@ export const PageWrapper = styled.div`
 `
 
 export const RA = styled.p`
-  position: absolute;
-  background-color: ${({ theme }) => theme.colors.secondary};
-  padding: 2% 4%;
-  font-size: 0.6em;
-  font-weight: 100;
+    position: absolute;
+    background-color: ${({ theme }) => theme.colors.secondary};
+    padding: 2% 4%;
+    font-size: 0.6em;
+    font-weight: 100;
 `
 
 export const Title = styled.h1`

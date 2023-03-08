@@ -186,15 +186,15 @@ function Index({ router }) {
 					<Container>
 						{currentPage == "#" &&
 							<Grid>
-							{videos.map((video) => (
-								<GridItem key={video.title}>
-									<a href={video.url}>
-										<img src={video.image} width={300} alt={video.title} />
-									</a>
-									<h3>{video.title}</h3>
-								</GridItem>
-								
-							))}
+								{videos.map((video) => (
+									<GridItem key={video.title}>
+										<a href={video.url}>
+											<img src={video.image} width={300} alt={video.title} />
+										</a>
+										<h3>{video.title}</h3>
+									</GridItem>
+									
+								))}
 							</Grid>}
 						{currentPage == "#about" && <>
 								<Image alt='Me-- very gooofy' style={{marginTop: '0.5em', marginBottom: '2em'}} height={140} src="/AnyConv.com__F6B71112-67B7-45E0-B7C2-1A7DDB7C4076_1_102_o.jpg" width={100}></Image>

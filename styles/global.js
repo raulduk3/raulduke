@@ -5,7 +5,7 @@ export const GlobalStyles = createGlobalStyle`
     body {
         margin: 0;
         padding: 0;
-        overflox-x: hidden;
+        overflow-x: hidden;
         font-family: 'Open Sans', sans-serif;
         color: ${({ theme }) => theme.colors.primary};
     }
