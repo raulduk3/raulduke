@@ -195,7 +195,7 @@ function Index({ router }) {
 							<Grid>
 								{videos.map((video) => (
 									<GridItem key={video.title}>
-										<a href={video.url}>
+										<a href={video.url}>	
 											<img src={video.image} width={300} alt={video.title} />
 										</a>
 										<h3>{video.title}</h3>
@@ -203,7 +203,7 @@ function Index({ router }) {
 								))}
 							</Grid>}
 						{currentPage == "#about" && <>
-								<Image alt='Me-- very gooofy' style={{marginTop: '0.5em', marginBottom: '2em'}} height={140} src="/IMG_9884.jpg" width={100}></Image>
+								<Image alt='Me-- very gooofy' style={{marginTop: '0.5em', marginBottom: '2em'}} height={200} src="/IMG_9884.jpg" width={300}></Image>
 								<TextBlob>
 									A collection of my work as a filmmaker and digital media artist. 
 									<br></br><br></br>
