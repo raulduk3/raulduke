@@ -216,6 +216,7 @@ export const SocialLinksWrapper = styled.div`
     margin-top: ${({ theme }) => theme.spacing.m};
     background-color: ${({ theme }) => theme.colors.secondary};
     display: flex;
+    margin-left: -12px;
     align-items: center;
     justify-content: center;
     margin-bottom: ${({ theme }) => theme.spacing.m};
@@ -234,7 +235,7 @@ export const SocialLinksWrapper = styled.div`
 export const SocialLink = styled.a`
     margin: 0 3.5%;
     @media (min-width: 1024px) {
-        margin: 0 2%
+        margin: 0 4%
     }
     &:last-child {
         margin-right: 0;
