@@ -17,19 +17,19 @@ const characters =
 
 
 function Footer() {
-  return ( 
-	<FooterWrapper>
-		<Link href='mailto:alvarez2@kenyon.edu'>copyright © 2023 built w/ love by richard álvarez</Link>
-	</FooterWrapper>
-  )
+	return ( 
+		<FooterWrapper>
+			<Link href='mailto:alvarez2@kenyon.edu'>copyright © 2023 built w/ love by richard álvarez</Link>
+		</FooterWrapper>
+	)
 }
 
 function HamburgerWrapper({ onClick }) {
-  return (
-	  <Hamburger onClick={onClick}>
-		  <FaBars size={20} />
-	  </Hamburger>
-  )
+	return (
+		<Hamburger onClick={onClick}>
+			<FaBars size={20} />
+		</Hamburger>
+	)
 }
 
 function MenuWrapper({onClick, size, open, children}) {
@@ -61,11 +61,11 @@ function SocialLinks() {
 }
 
 function Index({ router }) {
-  const [open, setOpen] = useState(false)
-  const [size, setSize] = useState(100)
-  const [currentPage, setCurrentPage] = useState(router.asPath.split('/').pop() == "#about" || router.asPath.split('/').pop() == "#projects" || router.asPath.split('/').pop() == "#archive" ? router.asPath.split('/').pop() : "#");
-  const [isMobile, setIsMobile] = useState(false)
-  const [videos, setVideos] = useState([
+	const [open, setOpen] = useState(false)
+	const [size, setSize] = useState(100)
+	const [currentPage, setCurrentPage] = useState(router.asPath.split('/').pop() == "#about" || router.asPath.split('/').pop() == "#projects" || router.asPath.split('/').pop() == "#archive" ? router.asPath.split('/').pop() : "#");
+	const [isMobile, setIsMobile] = useState(false)
+	const [videos, setVideos] = useState([
 		{
 			title: '<3 RAUL DUKE (2020 - 2022)',
 			url: 'https://www.youtube.com/watch?v=6rMKwRTi2cs',
@@ -113,30 +113,30 @@ function Index({ router }) {
 		}
 	])
 
-  const handleResize = useCallback(event => {
-	setSize(window.innerHeight);
-  }, [size]);
+	const handleResize = useCallback(event => {
+		setSize(window.innerHeight);
+	}, [size]);
 
-  useEffect(() => {
-	if(window.innerWidth < 760) { setIsMobile(true) } else { setIsMobile(false) }
-	handleResize({});
+	useEffect(() => {
+		if(window.innerWidth < 760) { setIsMobile(true) } else { setIsMobile(false) }
+		handleResize({});
 
-	window.addEventListener('resize', handleResize);
+		window.addEventListener('resize', handleResize);
 
-	return () => {
-		window.removeEventListener('resize', handleResize);
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		}
+	}, [size]);
+
+	const handleClick = () => {
+		setOpen(!open);
+	};
+
+	const handleNavClick = (page) => {
+		setCurrentPage(page);
 	}
-  }, [size])
 
-  const handleClick = () => {
-	  setOpen(!open);
-  }
-
-  const handleNavClick = (page) => {
-	setCurrentPage(page);
-  }
-
-  return (
+	return (
 		<ThemeProvider theme={theme}>
 			<Head>
 				<title>Richard Álvarez | Filmmaker</title>
@@ -155,10 +155,13 @@ function Index({ router }) {
 				<meta name="revisit-after" content="10 days"/>
 				<meta name="robots" content="follow"/>
 			</Head>
+			
 			<GlobalStyles />
-			{/* {currentPage == "#" && <RandomUnicode></RandomUnicode>} */}
+
 			<PageWrapper>
 				<Container size={size} open={open}>
+
+					{/* Navigation */}
 					<Navigation>
 						{isMobile ? (
 							<>
@@ -178,11 +181,15 @@ function Index({ router }) {
 								</>
 							)}
 					</Navigation>
+
+					{/* Hero */}
 					<Hero>
 						<Title><Link href='#' onClick={(e) => handleNavClick('#')}>Richard Álvarez</Link></Title>
 						<p>Mexican-American Filmmaker</p>
 						<SocialLinks></SocialLinks>
 					</Hero>
+
+					{/* Content */}
 					<Container>
 						{currentPage == "#" &&
 							<Grid>
@@ -193,11 +200,10 @@ function Index({ router }) {
 										</a>
 										<h3>{video.title}</h3>
 									</GridItem>
-									
 								))}
 							</Grid>}
 						{currentPage == "#about" && <>
-								<Image alt='Me-- very gooofy' style={{marginTop: '0.5em', marginBottom: '2em'}} height={140} src="/AnyConv.com__F6B71112-67B7-45E0-B7C2-1A7DDB7C4076_1_102_o.jpg" width={100}></Image>
+								<Image alt='Me-- very gooofy' style={{marginTop: '0.5em', marginBottom: '2em'}} height={140} src="/IMG_9884.jpg" width={100}></Image>
 								<TextBlob>
 									A collection of my work as a filmmaker and digital media artist. 
 									<br></br><br></br>
