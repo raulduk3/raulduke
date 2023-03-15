@@ -20,7 +20,7 @@ const characters =
 function Footer() {
 	return ( 
 		<FooterWrapper>
-			<Link href='mailto:alvarez2@kenyon.edu'>copyright © 2023 built w/ love by richard álvarez</Link>
+			<Link href='mailto:alvarez1@kenyon.edu'>copyright © 2023 built w/ love by richard álvarez</Link>
 		</FooterWrapper>
 	)
 }
