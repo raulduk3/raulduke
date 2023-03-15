@@ -206,7 +206,7 @@ function Index({ router }) {
 								))}
 							</Grid>}
 						{currentPage == "#about" && <>
-								<Image alt='Me-- very gooofy' style={{marginTop: '0.5em', marginBottom: '2em', width: '50%', height: '50%'}} src={profilePic} ></Image>
+								<Image alt='Me-- very gooofy' style={{marginTop: '0em', marginBottom: '3em', width: '50%', height: '50%'}} src={profilePic} ></Image>
 								<TextBlob>
 									A collection of my work as a filmmaker and digital media artist. 
 									<br></br><br></br>
