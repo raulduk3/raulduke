@@ -66,7 +66,7 @@ export const RA = styled.p`
 `
 
 export const Title = styled.h1`
-    font-size: 2.3em;
+    font-size: 2.0em;
     word-spacing: 0.4rem;
     margin-bottom: ${({ theme }) => theme.spacing.s};
 `

@@ -11,6 +11,7 @@ import Project from '../components/Projects'
 import RandomString from '../components/randomString' 
 import { withRouter } from 'next/router'
 import RandomUnicode from '../components/RandomUnicode'
+import profilePic from '../public/IMG_9884.jpg'
 
 const characters = 
 "!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ⼀⼁⼂⼃⼄⼅⼆⼇⼈⼉⼊⼋⼌⼍⼎⼏⼐⼑⼒⼓⼔⼕⼖⼗⼘⼙⼚⼛⼜⼝⼞⼟⼠⼡⼢⼣⼤⼥⼦⼧⼨⼩⼪⼫⼬⼭⼮⼯⼰⼱⼲⼳⼴⼵⼶⼷⼸⼹⼺⼻⼼⼽⼾⼿⽀⽁⽂⽃⽄⽅⽆⽇⽈⽉⽊⽋⽌⽍⽎⽏⽐⽑⽒⽓⽔⽕⽖⽗⽘⽙⽚⽛⽜⽝⽞⽟⽠⽡⽢⽣⽤⽥⽦⽧⽨⽩⽪⽫⽬⽭⽮⽯⽰⽱⽲⽳⽴⽵⽶⽷⽸⽹⽺⽻⽼⽽⽾⽿";
@@ -184,7 +185,9 @@ function Index({ router }) {
 
 					{/* Hero */}
 					<Hero>
-						<Title><Link href='#' onClick={(e) => handleNavClick('#')}>Richard Álvarez</Link></Title>
+						<Title><Link style={{
+							margin: '0'
+						}} href='#' onClick={(e) => handleNavClick('#')}>Richard Álvarez</Link></Title>
 						<p>Mexican-American Filmmaker</p>
 						<SocialLinks></SocialLinks>
 					</Hero>
@@ -203,17 +206,17 @@ function Index({ router }) {
 								))}
 							</Grid>}
 						{currentPage == "#about" && <>
-								<Image alt='Me-- very gooofy' style={{marginTop: '0.5em', marginBottom: '2em'}} height={200} src="/IMG_9884.jpg" width={300}></Image>
+								<Image alt='Me-- very gooofy' style={{marginTop: '0.5em', marginBottom: '2em', width: '50%', height: '50%'}} src={profilePic} ></Image>
 								<TextBlob>
 									A collection of my work as a filmmaker and digital media artist. 
 									<br></br><br></br>
 									At the intersection of technology, urban environments, and DV video, I focus on the use of experimental narratives to address pressing social and political issues.
 									<br></br><br></br>
-								Being a Mexican-American and a proud native of Chicago, my cultural heritage and the vibrant music scene of my home serve as a constant source of inspiration. It is my sincere hope that through my work, I can offer a unique and fresh perspective on the visual medium.
-								<br></br><br></br>
-								I am determined to continually push the boundaries of video and develop new possibilities in the field. I invite you to explore my website and gain a deeper understanding of my work and philosophy. Thank you for taking the time to visit.
-								<br></br><br></br>
-								Click the footer below to contact me :)
+									Being a Mexican-American and a proud native of Chicago, my cultural heritage and the vibrant music scene of my home serve as a constant source of inspiration. It is my sincere hope that through my work, I can offer a unique and fresh perspective on the visual medium.
+									<br></br><br></br>
+									I am determined to continually push the boundaries of video and develop new possibilities in the field. I invite you to explore my website and gain a deeper understanding of my work and philosophy. Thank you for taking the time to visit.
+									<br></br><br></br>
+									Click the footer below to contact me :)
 								</TextBlob>
 							</>}
 						{currentPage == "#projects" &&
