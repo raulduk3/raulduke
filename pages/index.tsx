@@ -187,7 +187,7 @@ function Index({ router }) {
 					<Hero>
 						<Title><Link style={{
 							margin: '0'
-						}} href='#' onClick={(e) => handleNavClick('#')}>Richard Álvarez</Link></Title>
+						}} href='#' onClick={(e) => handleNavClick('#')}>Rick Álvarez</Link></Title>
 						<p>Mexican-American Filmmaker</p>
 						<SocialLinks></SocialLinks>
 					</Hero>
