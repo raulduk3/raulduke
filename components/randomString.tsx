@@ -44,6 +44,7 @@ function RandomString() {
     return (
       <Small style={{
         letterSpacing: '0.4em',
+        fontSize: '0.8em',
         height: '60vh',
         overflow: 'hidden',
         minWidth: '80vw',
