@@ -10,7 +10,6 @@ import { FaYoutube, FaGithub, FaTwitter, FaInstagramSquare, FaVimeo, FaBars, FaT
 import Project from '../components/Projects'
 import RandomString from '../components/randomString' 
 import { withRouter } from 'next/router'
-import RandomUnicode from '../components/RandomUnicode'
 import profilePic from '../public/IMG_9884.jpg'
 
 const characters = 
