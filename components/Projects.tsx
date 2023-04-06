@@ -4,8 +4,10 @@ import { Link } from '../styles/index'
 export default function Projects() {
   const [links, setLinks] = useState([
       { name: 'Sentiment Analysis of Rotten Tomato Reviews', url: 'https://github.com/morty-c137-prime/sa-rotten-tamatoes' },
-      { name: 'raulduke.com', url: 'https://github.com/morty-c137-prime/raulduke' },
       { name: 'film-project-template', url: 'https://github.com/morty-c137-prime/film-project-template' },
+      { name: 'chat-app', url: 'https://github.com/morty-c137-prime/film-project-template' },
+      { name: 'raulduke.com', url: 'https://github.com/morty-c137-prime/raulduke' },
+      
 
   ]);
   const [isVisible, setIsVisible] = useState(false);
