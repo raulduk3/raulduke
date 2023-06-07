@@ -21,7 +21,9 @@ export default function Projects() {
   }, []);
 
   return (
-    <div>
+    <div style={{
+      marginTop: '-4%'
+    }}>
       <div style={{
         textAlign: 'left',
         fontSize: '0.83cem',
