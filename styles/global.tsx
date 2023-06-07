@@ -5,7 +5,7 @@ const GlobalStyles = createGlobalStyle`
 
     #__next {
         width: 100%;
-        height: 100vh;
+        height: 100%;
     }
 
     html, body {
@@ -14,6 +14,7 @@ const GlobalStyles = createGlobalStyle`
         overflow-x: hidden;
         font-family: 'Open Sans', sans-serif;
         width: 100%;
+        height: 100%;
         height: 100vh;
         color: ${({ theme }) => theme.colors.primary};
     }
