@@ -1,9 +1,11 @@
-export const theme = {
+import { DefaultTheme } from 'styled-components';
+
+export const theme: DefaultTheme = {
     colors: {
         primary: '#333',
         secondary: '#fff',
-        socialLink: '#333',
-        socialLinkHover: '#333',
+        socialLink: '#333',   
+        socialLinkHover: '#333' 
     },
     spacing: {
         xs: '2px',

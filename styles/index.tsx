@@ -1,9 +1,14 @@
 import styled from 'styled-components'
 
-export const Container = styled.div.attrs(props => ({
+interface ContainerProps {
+    open: boolean;
+    size: number; 
+}
+
+export const Container = styled.div.attrs<ContainerProps>(props => ({
     'open': props.open,
     'size': props.size
-}))`
+}))<ContainerProps>`
     height: ${props => props.open ? '0' : 'auto'};
     display: flex;
     flex-direction: column;
@@ -132,10 +137,10 @@ export const TextBlob = styled.div`
     }
 `
 
-export const Menu = styled.div.attrs(props => ({
+export const Menu = styled.div.attrs<ContainerProps>(props => ({
     'open': props.open,
     'size': props.size
-  }))`
+  }))<ContainerProps>`
     display: flex;
     flex-direction: column;
     background-color: transparent;

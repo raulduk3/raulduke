@@ -198,7 +198,7 @@ function Index({ router }) {
 					</Hero>
 
 					{/* Content */}
-					<Container>
+					<Container size={size} open={open}>
 						{currentPage == "#" &&
 							<Grid>
 								{videos.map((video) => (
