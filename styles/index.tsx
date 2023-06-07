@@ -259,6 +259,8 @@ export const SocialLink = styled.a`
 export const FooterWrapper = styled.footer`
     color: ${({ theme }) => theme.colors.primary};
     text-align: center;
+    display: flex;
+    justify-content: center;
     padding: ${({ theme }) => theme.spacing.m};
     font-size: 0.7em;
     flex-shrink: 0;
