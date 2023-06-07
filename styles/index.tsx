@@ -13,6 +13,7 @@ export const Container = styled.div.attrs<ContainerProps>(props => ({
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 100vw;
     justify-content: center;
     padding: ${({ theme }) => theme.spacing.s};
     // background-color: ${({ theme }) => theme.colors.secondary};
