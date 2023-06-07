@@ -25,7 +25,7 @@ export const Navigation = styled.nav`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: ${({ theme }) => theme.spacing.m} 0;   
+    padding: ${({ theme }) => theme.spacing.s} 0;   
     background-color: ${({ theme }) => theme.colors.secondary};
     z-index: 2;
     color: transparent;
@@ -41,7 +41,6 @@ export const Hero = styled.div`
     padding: 0 1em;
     padding-bottom: 0;
     p {
-        margin: 10px 0 0 0;
         text-align: center;
         font-size: 0.76em;
     }
@@ -221,7 +220,6 @@ export const GridItem = styled.div`
 
 export const SocialLinksWrapper = styled.div`
     width: 75vw;
-    margin-top: ${({ theme }) => theme.spacing.m};
     background-color: ${({ theme }) => theme.colors.secondary};
     display: flex;
     margin-left: -12px;
