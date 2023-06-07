@@ -34,6 +34,7 @@ export const Navigation = styled.nav`
 export const Hero = styled.div`
     display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: center;
     justify-content: center;
     background-color: ${({ theme }) => theme.colors.secondary};
@@ -44,7 +45,7 @@ export const Hero = styled.div`
         font-size: 0.76em;
     }
     h1 {
-        margin-top: 0;
+        margin: 0;
         font-size: 1.76em;
         word-spacing: 0.1em;
         text-align: center;
