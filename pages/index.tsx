@@ -67,6 +67,11 @@ function Index({ router }) {
 	const [isMobile, setIsMobile] = useState(false)
 	const [videos, setVideos] = useState([
 		{
+			title: 'GRAYS - Trees (Official Video)',
+			url: 'https://www.youtube.com/watch?v=4qz6IblO704',
+			image: '/maxresdefault (9).webp'
+		},
+		{
 			title: '<3 RAUL DUKE (2020 - 2022)',
 			url: 'https://www.youtube.com/watch?v=6rMKwRTi2cs',
 			image: '/maxresdefault (1).jpg'
