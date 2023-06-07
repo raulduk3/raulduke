@@ -34,7 +34,7 @@ export const Navigation = styled.nav`
 export const Hero = styled.div`
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align
     align-items: center;
     justify-content: center;
     background-color: ${({ theme }) => theme.colors.secondary};
@@ -265,7 +265,7 @@ export const FooterWrapper = styled.footer`
     padding: ${({ theme }) => theme.spacing.m};
     font-size: 0.7em;
     flex-shrink: 0;
-    width: 100%;
+    max-width: 100%;
     a {
         color: ${({ theme }) => theme.colors.primary};
         text-decoration: none;
