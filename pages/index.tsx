@@ -187,6 +187,7 @@ function Index({ router }) {
 
 					{/* Content */}
 					<Container size={size} open={open}>
+						{/* Index */}
 						{currentPage == "#" &&
 							<Grid>
 								{videos.map((video) => (
@@ -198,8 +199,10 @@ function Index({ router }) {
 									</GridItem>
 								))}
 							</Grid>}
+						
+						{/* About */}
 						{currentPage == "#about" && <>
-								<Image alt='Me-- very gooofy' style={{marginTop: '0em', marginBottom: '3em', width: '50%', height: '50%'}} src={profilePic} ></Image>
+								<Image alt='Me-- very gooofy' style={{marginTop: '0em', marginBottom: '3em', width: '100%', height: '50%'}} src={profilePic} ></Image>
 								<TextBlob>
 									A collection of my work as a filmmaker and digital media artist. 
 									<br></br><br></br>
@@ -212,8 +215,12 @@ function Index({ router }) {
 									Click the footer below to contact me :)
 								</TextBlob>
 							</>}
+						
+						{/* Projects */}
 						{currentPage == "#projects" &&
 							<Project></Project>}
+							
+						{/* Archive */}
 						{currentPage == "#archive" &&
 							<>
 								<RandomString></RandomString>
