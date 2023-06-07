@@ -69,7 +69,7 @@ function Index({ router }) {
 		{
 			title: 'GRAYS - Trees (Official Video)',
 			url: 'https://www.youtube.com/watch?v=4qz6IblO704',
-			image: '/maxresdefault (9).webp'
+			image: '/maxresdefault (9).jpg'
 		},
 		{
 			title: '<3 RAUL DUKE (2020 - 2022)',
