@@ -8,7 +8,7 @@ export const theme: DefaultTheme = {
         socialLinkHover: '#333' 
     },
     spacing: {
-        xs: '8px',
+        xs: '2px',
         s: '10px',
         m: '20px',
         l: '40px'

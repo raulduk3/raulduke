@@ -41,6 +41,7 @@ export const Hero = styled.div`
     padding: 0 1em;
     padding-bottom: 0;
     p {
+        margin-top:  ${({ theme }) => theme.spacing.xs};
         text-align: center;
         font-size: 0.76em;
     }
