@@ -202,7 +202,7 @@ function Index({ router }) {
 						
 						{/* About */}
 						{currentPage == "#about" && <>
-								<Image alt='Me-- very gooofy' style={{marginTop: '0em', marginBottom: '3em', width: '100%', height: '50%'}} src={profilePic} ></Image>
+								<Image alt='Me-- very gooofy' width={350} style={{marginTop: '0em', marginBottom: '3em'}} src={profilePic} ></Image>
 								<TextBlob>
 									A collection of my work as a filmmaker and digital media artist. 
 									<br></br><br></br>
