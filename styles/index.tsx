@@ -34,14 +34,15 @@ export const Navigation = styled.nav`
 export const Hero = styled.div`
     display: flex;
     flex-direction: column;
-    text-align
+    text-align: center;
     align-items: center;
     justify-content: center;
     background-color: ${({ theme }) => theme.colors.secondary};
     padding: 0 1em;
     padding-bottom: 0;
     p {
-        margin: -10px 0 0 0;
+        margin: 10px 0 0 0;
+        text-align: center;
         font-size: 0.76em;
     }
     h1 {
@@ -142,7 +143,7 @@ export const TextBlob = styled.div`
 export const Menu = styled.div.attrs<ContainerProps>(props => ({
     'open': props.open,
     'size': props.size
-  }))<ContainerProps>`
+}))<ContainerProps>`
     display: flex;
     flex-direction: column;
     background-color: transparent;
