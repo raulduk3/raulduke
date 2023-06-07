@@ -1,12 +1,14 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import { useState, useEffect, useCallback } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { ThemeProvider } from 'styled-components'
-import { GlobalStyles } from '../styles/global'
-import { theme } from '../styles/theme'
-import Image from 'next/image'
-import { SocialLinksWrapper, RA, PageWrapper, FooterWrapper, SocialLink, Small, Container, Underline, Hero, TextBlob, Title, Grid, GridItem, Navigation, Link, Hamburger, Menu } from '../styles/index'
 import { FaYoutube, FaGithub, FaTwitter, FaInstagramSquare, FaVimeo, FaBars, FaTimes } from 'react-icons/fa'
+
+// * Styled components and themes
+import GlobalStyles from '../styles/global'
+import { theme } from '../styles/theme'
+import { SocialLinksWrapper, RA, PageWrapper, FooterWrapper, SocialLink, Small, Container, Underline, Hero, TextBlob, Title, Grid, GridItem, Navigation, Link, Hamburger, Menu } from '../styles/index'
 import Project from '../components/Projects'
 import RandomString from '../components/randomString' 
 import { withRouter } from 'next/router'
@@ -14,7 +16,6 @@ import profilePic from '../public/IMG_9884.jpg'
 
 const characters = 
 "!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ⼀⼁⼂⼃⼄⼅⼆⼇⼈⼉⼊⼋⼌⼍⼎⼏⼐⼑⼒⼓⼔⼕⼖⼗⼘⼙⼚⼛⼜⼝⼞⼟⼠⼡⼢⼣⼤⼥⼦⼧⼨⼩⼪⼫⼬⼭⼮⼯⼰⼱⼲⼳⼴⼵⼶⼷⼸⼹⼺⼻⼼⼽⼾⼿⽀⽁⽂⽃⽄⽅⽆⽇⽈⽉⽊⽋⽌⽍⽎⽏⽐⽑⽒⽓⽔⽕⽖⽗⽘⽙⽚⽛⽜⽝⽞⽟⽠⽡⽢⽣⽤⽥⽦⽧⽨⽩⽪⽫⽬⽭⽮⽯⽰⽱⽲⽳⽴⽵⽶⽷⽸⽹⽺⽻⽼⽽⽾⽿";
-
 
 function Footer() {
 	return ( 
@@ -67,54 +68,54 @@ function Index({ router }) {
 	const [isMobile, setIsMobile] = useState(false)
 	const [videos, setVideos] = useState([
 		{
-			title: 'GRAYS - Trees (Official Video)',
+			title: 'GRAYS - trees (Official Video)',
 			url: 'https://www.youtube.com/watch?v=4qz6IblO704',
-			image: '/maxresdefault (9).jpg'
+			image: '/video_images/maxresdefault (9).jpg'
 		},
 		{
 			title: '<3 RAUL DUKE (2020 - 2022)',
 			url: 'https://www.youtube.com/watch?v=6rMKwRTi2cs',
-			image: '/maxresdefault (1).jpg'
+			image: '/video_images/maxresdefault (1).jpg'
 		},
 		{
 			title: 'Evening in Glitch',
 			url: 'https://www.youtube.com/watch?v=SDDqeX3K6xc',
-			image: '/maxresdefault.webp'
+			image: '/video_images/maxresdefault.webp'
 		},
 		{
 			title: '21st Century Dorm',
 			url: 'https://vimeo.com/681213937',
-			image: '/c.jpg'
+			image: '/video_images/21stcenturydorm-cover.jpg'
 		},
 		{
 			title: 'KRVMPUS Live Set',
 			url: 'https://youtu.be/7Slky5S2n8c',
-			image: '/maxresdefault (2).jpg'
+			image: '/video_images/maxresdefault (2).jpg'
 		},
 		{
 			title: 'Poltergeist by 5ouley',
 			url: 'https://youtu.be/z_O_n9QNYKo',
-			image: '/maxresdefault (3).jpg'
+			image: '/video_images/maxresdefault (3).jpg'
 		},
 		{
 			title: 'LIVE LAUGH KILL (Dir. RAUL DUKE)',
 			url: 'https://www.youtube.com/watch?v=ootubrdXBmA',
-			image: '/maxresdefault (6).jpg'
+			image: '/video_images/maxresdefault (6).jpg'
 		},
 		{
 			title: 'V, Sol Infinito (Unfinished)',
 			url: 'https://youtu.be/rSVpTN6pRjA',
-			image: '/maxresdefault (4).jpg'
+			image: '/video_images/maxresdefault (4).jpg'
 		},
 		{
 			title: 'Betty White by 5ouley',
 			url: 'https://youtu.be/Qt8xm5LxWBM',
-			image: '/maxresdefault.jpg'
+			image: '/video_images/maxresdefault.jpg'
 		},
 		{
 			title: 'Chat with Nena',
 			url: 'https://youtu.be/tAxzJz09bes',
-			image: '/maxresdefault (7).jpg'
+			image: '/video_images/maxresdefault (7).jpg'
 		}
 	])
 
