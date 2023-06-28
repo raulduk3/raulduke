@@ -68,6 +68,11 @@ function Index({ router }) {
 	const [isMobile, setIsMobile] = useState(false)
 	const [videos, setVideos] = useState([
 		{
+			title: 'CRUEL Live Show at Beat Kitchen',
+			url: 'https://youtu.be/1SYq18xK6gw',
+			image: '/video_images/cruelliveshow.webp'
+		},
+		{
 			title: 'GRAYS - trees (Official Video)',
 			url: 'https://www.youtube.com/watch?v=4qz6IblO704',
 			image: '/video_images/maxresdefault (9).jpg'
@@ -103,7 +108,7 @@ function Index({ router }) {
 			image: '/video_images/maxresdefault (6).jpg'
 		},
 		{
-			title: 'V, Sol Infinito (Unfinished)',
+			title: 'V (Sol Infinito)',
 			url: 'https://youtu.be/rSVpTN6pRjA',
 			image: '/video_images/maxresdefault (4).jpg'
 		},
@@ -228,7 +233,7 @@ function Index({ router }) {
 							</>}
 					</Container>
 					
-					{currentPage != '#' && <Link style={{fontSize: '0.45em' }} href="#" onClick={(e) => handleNavClick('#')}><Underline>Back</Underline></Link> }
+					{currentPage != '#' && <Link style={{ fontSize: '0.45em' }} href="#" onClick={(e) => handleNavClick('#')}><Underline>Back</Underline></Link> }
 				</Container>
 				<Footer />
 			</PageWrapper>
