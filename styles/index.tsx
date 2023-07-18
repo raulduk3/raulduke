@@ -266,6 +266,7 @@ export const FooterWrapper = styled.footer`
     font-size: 0.7em;
     flex-shrink: 0;
     max-width: 100%;
+    margin-bottom: 0.5em;
     a {
         color: ${({ theme }) => theme.colors.primary};
         text-decoration: none;
