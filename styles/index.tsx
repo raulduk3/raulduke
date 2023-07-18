@@ -263,7 +263,6 @@ export const FooterWrapper = styled.footer`
     text-align: center;
     display: flex;
     justify-content: center;
-    padding: ${({ theme }) => theme.spacing.m};
     font-size: 0.7em;
     flex-shrink: 0;
     max-width: 100%;

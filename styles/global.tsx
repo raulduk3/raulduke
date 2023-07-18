@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Open Sans', sans-serif;
         width: 100%;
         height: 100%;
-        height: 100vh;
+        max-height: 100%;
         color: ${({ theme }) => theme.colors.primary};
     }
 `
