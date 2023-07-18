@@ -233,7 +233,7 @@ function Index({ router }) {
 							</>}
 					</Container>
 					
-					{currentPage != '#' && <Link style={{ fontSize: '0.45em' }} href="#" onClick={(e) => handleNavClick('#')}><Underline>Back</Underline></Link> }
+					{currentPage != '#' && <Link style={{ paddingTop: '2em', fontSize: '0.45em' }} href="#" onClick={(e) => handleNavClick('#')}><Underline>Back</Underline></Link> }
 				</Container>
 				<Footer />
 			</PageWrapper>
