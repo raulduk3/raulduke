@@ -1,18 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import GlobalStyles from '../styles/global'
+import Project from '../components/Projects'
+import RandomString from '../components/randomString' 
+import profilePic from '../public/IMG_9884.jpg'
+
 import { useState, useEffect, useCallback } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { ThemeProvider } from 'styled-components'
-import { FaYoutube, FaGithub, FaTwitter, FaInstagramSquare, FaVimeo, FaBars, FaTimes } from 'react-icons/fa'
-
-// * Styled components and themes
-import GlobalStyles from '../styles/global'
 import { theme } from '../styles/theme'
-import { SocialLinksWrapper, RA, PageWrapper, FooterWrapper, SocialLink, Small, Container, Underline, Hero, TextBlob, Title, Grid, GridItem, Navigation, Link, Hamburger, Menu } from '../styles/index'
-import Project from '../components/Projects'
-import RandomString from '../components/randomString' 
 import { withRouter } from 'next/router'
-import profilePic from '../public/IMG_9884.jpg'
+import { FaYoutube, FaGithub, FaTwitter, FaInstagramSquare, FaVimeo, FaBars, FaTimes } from 'react-icons/fa'
+import { SocialLinksWrapper, RA, PageWrapper, FooterWrapper, SocialLink, Small, Container, Underline, Hero, TextBlob, Title, Grid, GridItem, Navigation, Link, Hamburger, Menu } from '../styles/index'
 
 const characters = 
 "!#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ⼀⼁⼂⼃⼄⼅⼆⼇⼈⼉⼊⼋⼌⼍⼎⼏⼐⼑⼒⼓⼔⼕⼖⼗⼘⼙⼚⼛⼜⼝⼞⼟⼠⼡⼢⼣⼤⼥⼦⼧⼨⼩⼪⼫⼬⼭⼮⼯⼰⼱⼲⼳⼴⼵⼶⼷⼸⼹⼺⼻⼼⼽⼾⼿⽀⽁⽂⽃⽄⽅⽆⽇⽈⽉⽊⽋⽌⽍⽎⽏⽐⽑⽒⽓⽔⽕⽖⽗⽘⽙⽚⽛⽜⽝⽞⽟⽠⽡⽢⽣⽤⽥⽦⽧⽨⽩⽪⽫⽬⽭⽮⽯⽰⽱⽲⽳⽴⽵⽶⽷⽸⽹⽺⽻⽼⽽⽾⽿";
@@ -51,7 +50,7 @@ function SocialLinks() {
 			<SocialLink href='https://www.youtube.com/@rickalvarez3686/' target="_blank" rel="noopener noreferrer">
 				<FaYoutube size={25} />
 			</SocialLink>
-			<SocialLink href='https://github.com/morty-c137-prime' target="_blank" rel="noopener noreferrer">
+			<SocialLink href='https://github.com/raulduk3' target="_blank" rel="noopener noreferrer">
 				<FaGithub size={25} />
 			</SocialLink>
 			<SocialLink href='https://twitter.com/raalvarez_3' target="_blank" rel="noopener noreferrer">
