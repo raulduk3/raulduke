@@ -46,7 +46,7 @@ function SocialLinks() {
 			<SocialLink href='https://vimeo.com/rickyalvarez/' target="_blank" rel="noopener noreferrer">
 				<FaVimeo size={25} />
 			</SocialLink>
-			<SocialLink href='https://www.youtube.com/@rickalvarez3686/' target="_blank" rel="noopener noreferrer">
+			<SocialLink href='https://www.youtube.com/@rickanthonyalvarez' target="_blank" rel="noopener noreferrer">
 				<FaYoutube size={25} />
 			</SocialLink>
 			<SocialLink href='https://github.com/raulduk3' target="_blank" rel="noopener noreferrer">
