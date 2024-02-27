@@ -209,7 +209,7 @@ function Index({ router }) {
 								<TextBlob>
 									A collection of my work as a filmmaker and digital media artist. 
 									<br></br><br></br>
-									At the intersection of technology, urban environments, and DV video, I focus on the use of experimental narratives to address pressing social and political issues.
+									At the intersection of technology, urban environments, and the DV format, I focus on the use of experimental narratives to address pressing social and political issues.
 									<br></br><br></br>
 									Being a Mexican-American and a proud native of Chicago, my cultural heritage and the vibrant music scene of my home serve as a constant source of inspiration. It is my sincere hope that through my work, I can offer a unique and fresh perspective on the visual medium.
 									<br></br><br></br>

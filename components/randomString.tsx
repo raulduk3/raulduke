@@ -15,7 +15,7 @@ function RandomString() {
       window.addEventListener("touchstart", handleMouseMove);
       window.addEventListener("scroll", handleMouseMove);
 
-      let auto = setInterval(generateRandomString, 1000);
+      let auto = setInterval(generateRandomString, 3000);
       return () => {
         window.removeEventListener("mousemove", handleMouseMove);
         window.removeEventListener("touchstart", handleMouseMove);
