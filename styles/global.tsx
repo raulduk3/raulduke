@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
     html, body {
         margin: 0;
         padding: 0;
-        overflow-x: hidden;
+        overflow: hidden;
         font-family: 'Open Sans', sans-serif;
         width: 100%;
         height: 100%;
