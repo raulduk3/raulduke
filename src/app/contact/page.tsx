@@ -10,7 +10,7 @@ export default function HomePage() {
       {allFolders.map((folder) => (
         <div key={folder.name} className="mb-3">
           {folder.name && (
-            <h2 className="text-xl tracking-widest uppercase text-white">{folder.name}</h2>
+            <h2 className="text-2xl tracking-widest uppercase text-white">{folder.name}</h2>
           )}
           <ul className="list-none list-inside">
             {folder.posts.map((post) => (

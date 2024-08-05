@@ -92,7 +92,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </head>
-      <body className={avenir.className + " flex flex-col  bg-black text-white justify-center items-center min-h-[100vh]"}>
+      <body className={avenir.className + " flex flex-col bg-black text-white justify-center items-center min-h-[100svh]"}>
         <Header></Header>
         <section className="flex grow flex-1 w-full"> 
           {children}
