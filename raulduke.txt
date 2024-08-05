@@ -43,19 +43,22 @@ export default config;
     "lint": "next lint"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
+    "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.5"
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.5"
+    "typescript": "^5"
   }
 }
 
@@ -91,6 +94,53 @@ export default config;
 
 =========================
 
+=== Content of: ./src/app/home/page.tsx ===
+// src/app/page.tsx
+import { getAllPosts } from '@/lib/markdown';
+import Link from 'next/link';
+
+export default function HomePage() {
+  const allPosts = getAllPosts();
+
+  return (
+    <div className="container mx-auto p-4">
+      <ul className="list-disc list-inside">
+        {allPosts.map((post) => (
+          <li key={post.slug} className="mb-2">
+            <Link href={`/posts/${post.slug}`} className="text-blue-500 hover:underline">
+              {post.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+=========================
+
+=== Content of: ./src/app/posts/[slug]/page.tsx ===
+// src/app/posts/[slug]/page.tsx
+import { getPostData, getAllPosts } from '../../../lib/markdown';
+
+export async function generateStaticParams() {
+    const allPosts = getAllPosts();
+    return allPosts.map((post) => ({
+        slug: post.slug,
+    }));
+}
+
+export default async function PostPage({ params }: { params: any }) {
+    const postData = await getPostData(params.slug);
+
+    return (
+        <div className="container mx-auto p-4">
+            <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
+            <div className="prose" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </div>
+    );
+}
+=========================
+
 === Content of: ./src/app/layout.tsx ===
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -118,120 +168,27 @@ export default function RootLayout({
 =========================
 
 === Content of: ./src/app/page.tsx ===
-import Image from "next/image";
+// src/app/page.tsx
+import { getAllPosts } from '@/lib/markdown';
+import Link from 'next/link';
 
-export default function Home() {
+export default function HomePage() {
+  const allPosts = getAllPosts();
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <div className="container mx-auto p-4">
+      <ul className="list-disc list-inside">
+        {allPosts.map((post) => (
+          <li key={post.slug} className="mb-2">
+            <Link href={`/posts/${post.slug}`} className="text-blue-500 hover:underline">
+              {post.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
-
 =========================
 
 === Content of: ./src/app/globals.css ===
@@ -269,5 +226,2437 @@ body {
   }
 }
 
+=========================
+
+=== Content of: ./src/lib/markdown.ts ===
+// src/lib/markdown.ts
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
+
+const contentDirectory = path.join(process.cwd(), 'content');
+
+export function getAllPosts() {
+    const fileNames = fs.readdirSync(contentDirectory);
+    const allPostsData = fileNames.map((fileName) => {
+        const slug = fileName.replace(/\.md$/, '');
+        const fullPath = path.join(contentDirectory, fileName);
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+        const matterResult = matter(fileContents);
+
+        return {
+            slug,
+            ...matterResult.data,
+        };
+    });
+    return allPostsData;
+}
+
+export async function getPostData(slug: string) {
+    const fullPath = path.join(contentDirectory, `${slug}.md`);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const matterResult = matter(fileContents);
+    const processedContent = await remark().use(html).process(matterResult.content);
+    const contentHtml = processedContent.toString();
+
+    return {
+        slug,
+        contentHtml,
+        ...matterResult.data,
+    };
+}
+=========================
+
+=== Content of: ./next-env.d.ts ===
+/// <reference types="next" />
+/// <reference types="next/image-types/global" />
+
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/basic-features/typescript for more information.
+
+=========================
+
+=== Content of: ./tailwind.config.ts ===
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+    },
+  },
+  plugins: [],
+};
+export default config;
+
+=========================
+
+=== Content of: ./package.json ===
+{
+  "name": "raulduke",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
+
+=========================
+
+=== Content of: ./tsconfig.json ===
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+=========================
+
+=== Content of: ./src/app/posts/[slug]/page.tsx ===
+// src/app/posts/[slug]/page.tsx
+import { getPostData, getAllPosts } from '../../../lib/markdown';
+
+export async function generateStaticParams() {
+    const allPosts = getAllPosts();
+    return allPosts.map((post) => ({
+        slug: post.slug,
+    }));
+}
+
+export default async function PostPage({ params }: { params: any }) {
+    const postData = await getPostData(params.slug);
+
+    return (
+        <div className="container mx-auto p-4">
+            <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
+            <div className="prose" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </div>
+    );
+}
+=========================
+
+=== Content of: ./src/app/layout.tsx ===
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Create Next App",
+  description: "Generated by create next app",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
+    </html>
+  );
+}
+
+=========================
+
+=== Content of: ./src/app/page.tsx ===
+// src/app/page.tsx
+import { getAllPosts } from '@/lib/markdown';
+import Link from 'next/link';
+
+export default function HomePage() {
+  const allPosts = getAllPosts();
+
+  return (
+    <div className="flex flex-col p-6">
+      <h1 className='text-xl'>RICHARD ÁLVAREZ</h1>
+      <h2>Video</h2>
+      <hg>Projects</hg>
+      <h2>Blog</h2>
+      <ul className="list-image-none list-inside">
+        {allPosts.map((post) => (
+          <li key={post.slug} className="pl-6">
+            <Link href={`/posts/${post.slug}`} className="text-blue-500 hover:underline">
+              {post.title}
+            </Link>
+            &nbsp;&nbsp;
+            <span className="text-sm text-gray-500">{post.date.toDateString()}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+=========================
+
+=== Content of: ./src/app/globals.css ===
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+=========================
+
+=== Content of: ./src/lib/markdown.ts ===
+// src/lib/markdown.ts
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
+
+const contentDirectory = path.join(process.cwd(), 'content');
+
+export function getAllPosts() {
+    const fileNames = fs.readdirSync(contentDirectory);
+    const allPostsData = fileNames.map((fileName) => {
+        const slug = fileName.replace(/\.md$/, '');
+        const fullPath = path.join(contentDirectory, fileName);
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+        const matterResult = matter(fileContents);
+
+        return {
+            slug,
+            ...matterResult.data,
+        };
+    });
+    return allPostsData;
+}
+
+export async function getPostData(slug: string) {
+    const fullPath = path.join(contentDirectory, `${slug}.md`);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const matterResult = matter(fileContents);
+    const processedContent = await remark().use(html).process(matterResult.content);
+    const contentHtml = processedContent.toString();
+
+    return {
+        slug,
+        contentHtml,
+        ...matterResult.data,
+    };
+}
+=========================
+
+=== Content of: ./next-env.d.ts ===
+/// <reference types="next" />
+/// <reference types="next/image-types/global" />
+
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/basic-features/typescript for more information.
+
+=========================
+
+=== Content of: ./tailwind.config.ts ===
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+    },
+  },
+  plugins: [],
+};
+export default config;
+
+=========================
+
+=== Content of: ./package.json ===
+{
+  "name": "raulduke",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
+
+=========================
+
+=== Content of: ./tsconfig.json ===
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+=========================
+
+=== Content of: ./src/app/posts/[slug]/page.tsx ===
+// src/app/posts/[slug]/page.tsx
+import { getPostData, getAllPosts } from '../../../lib/markdown';
+
+export async function generateStaticParams() {
+    const allPosts = getAllPosts();
+    return allPosts.map((post) => ({
+        slug: post.slug,
+    }));
+}
+
+export default async function PostPage({ params }: { params: any }) {
+    const postData = await getPostData(params.slug);
+
+    return (
+        <div className="container mx-auto p-4">
+            <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
+            <div className="prose" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </div>
+    );
+}
+=========================
+
+=== Content of: ./src/app/layout.tsx ===
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Richard Álvarez',
+    default: 'Richard Álvarez',
+  },
+  description: 'Artist website of Richard Álvarez.',
+  keywords: [
+    'Rick Alvarez',
+    'rick',
+    'Alvarez',
+    'dvi',
+    'canon xl2',
+    'Canon XL2',
+    'glitch art',
+    'raul duke',
+    'Raoul Duke',
+    'Raul Duke',
+    'underground artist',
+    'vfx',
+    'chicago',
+    'music scene',
+    'music videos',
+    'art',
+    'poetry',
+    'latinx art',
+    'video art',
+    'code',
+    'programming',
+    'p5js',
+    '5ouley',
+    'Undercurrent',
+    'chicago underground artists',
+    'cgi',
+    'animation',
+    'punk art',
+    'youtube music videos',
+    'nudity in music videos',
+    'chicago underground film festival',
+  ],
+  openGraph: {
+    siteName: 'raulduke.com',
+    title: 'Richard Álvarez',
+    description: 'Artist website of Richard Álvarez.',
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://raulduke.com',
+    images: [
+      {
+        url: 'https://raulduke.com/images/BANNER.jpg',
+        width: 800,
+        height: 650,
+        alt: 'Richard Álvarez',
+      },
+    ],
+  },
+  metadataBase: new URL('https://raulduke.com'),
+  icons: [
+    { rel: 'icon', href: '/favicon.ico', url: '/favicon.ico' },
+  ],
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </head>
+      <body className={inter.className}>{children}</body>
+    </html>
+  );
+}
+
+=========================
+
+=== Content of: ./src/app/page.tsx ===
+// src/app/page.tsx
+import { getAllPosts } from '@/lib/markdown';
+import Link from 'next/link';
+
+export default function HomePage() {
+  const allPosts = getAllPosts();
+
+  return (
+    <div className="flex flex-col p-6">
+      <h1 className='text-xl'>RICHARD ÁLVAREZ</h1>
+      <h2>Video</h2>
+      <hg>Projects</hg>
+      <h2>Blog</h2>
+      <ul className="list-image-none list-inside">
+        {allPosts.map((post) => (
+          <li key={post.slug} className="pl-6">
+            <Link href={`/posts/${post.slug}`} className="text-blue-500 hover:underline">
+              {post.title}
+            </Link>
+            &nbsp;&nbsp;
+            <span className="text-sm text-gray-500">{post.date.toDateString()}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+=========================
+
+=== Content of: ./src/app/globals.css ===
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+=========================
+
+=== Content of: ./src/lib/markdown.ts ===
+// src/lib/markdown.ts
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
+
+const contentDirectory = path.join(process.cwd(), 'content');
+
+export function getAllPosts() {
+    const fileNames = fs.readdirSync(contentDirectory);
+    const allPostsData = fileNames.map((fileName) => {
+        const slug = fileName.replace(/\.md$/, '');
+        const fullPath = path.join(contentDirectory, fileName);
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+        const matterResult = matter(fileContents);
+
+        return {
+            slug,
+            ...matterResult.data,
+        };
+    });
+    return allPostsData;
+}
+
+export async function getPostData(slug: string) {
+    const fullPath = path.join(contentDirectory, `${slug}.md`);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const matterResult = matter(fileContents);
+    const processedContent = await remark().use(html).process(matterResult.content);
+    const contentHtml = processedContent.toString();
+
+    return {
+        slug,
+        contentHtml,
+        ...matterResult.data,
+    };
+}
+=========================
+
+=== Content of: ./next-env.d.ts ===
+/// <reference types="next" />
+/// <reference types="next/image-types/global" />
+
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/basic-features/typescript for more information.
+
+=========================
+
+=== Content of: ./tailwind.config.ts ===
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        white: '#FFFDED',
+        black: '#262626',
+        orange: '#DF4800',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
+=========================
+
+=== Content of: ./package.json ===
+{
+  "name": "raulduke",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
+
+=========================
+
+=== Content of: ./tsconfig.json ===
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+=========================
+
+=== Content of: ./src/app/posts/[slug]/page.tsx ===
+// src/app/posts/[slug]/page.tsx
+import { getPostData, getAllPosts } from '../../../lib/markdown';
+
+export async function generateStaticParams() {
+    const allPosts = getAllPosts();
+    return allPosts.map((post) => ({
+        slug: post.slug,
+    }));
+}
+
+export default async function PostPage({ params }: { params: any }) {
+    const postData = await getPostData(params.slug);
+
+    return (
+        <div className="flex flex-col p-6">
+            <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
+            <div className="prose" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </div>
+    );
+}
+=========================
+
+=== Content of: ./src/app/layout.tsx ===
+import type { Metadata } from "next";
+import  localFont from "next/font/local";
+import "./globals.css";
+
+import Header from "@/components/Header";
+
+const avenir = localFont({
+  src: [
+    { path: '../../public/fonts/Avenir-Black-03.ttf', weight: '900', style: 'normal' },
+    { path: '../../public/fonts/Avenir-BlackOblique-04.ttf', weight: '900', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Book-01.ttf', weight: '400', style: 'normal' },
+    { path: '../../public/fonts/Avenir-BookOblique-02.ttf', weight: '400', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Heavy-05.ttf', weight: '700', style: 'normal' },
+    { path: '../../public/fonts/Avenir-HeavyOblique-06.ttf', weight: '700', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Light-07.ttf', weight: '300', style: 'normal' },
+    { path: '../../public/fonts/Avenir-LightOblique-08.ttf', weight: '300', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Medium-09.ttf', weight: '500', style: 'normal' },
+    { path: '../../public/fonts/Avenir-MediumOblique-10.ttf', weight: '500', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Oblique-11.ttf', weight: '400', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Roman-12.ttf', weight: '400', style: 'normal' },
+  ],
+  variable: '--font-avenir',
+});
+
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | richard álvarez',
+    default: 'richard Alvarez',
+  },
+  description: 'Artist website of Richard Álvarez.',
+  keywords: [
+    'Rick Alvarez',
+    'rick',
+    'Alvarez',
+    'dvi',
+    'canon xl2',
+    'Canon XL2',
+    'glitch art',
+    'raul duke',
+    'Raoul Duke',
+    'Raul Duke',
+    'underground artist',
+    'vfx',
+    'chicago',
+    'music scene',
+    'music videos',
+    'art',
+    'poetry',
+    'latinx art',
+    'video art',
+    'code',
+    'programming',
+    'p5js',
+    'chicago underground artists',
+    'cgi',
+    'animation',
+    'punk art',
+    'youtube music videos',
+    'nudity in music videos',
+    'chicago underground film festival',
+  ],
+  openGraph: {
+    siteName: 'raulduke.com',
+    title: 'Richard Álvarez',
+    description: 'Artist website of Richard Álvarez.',
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://raulduke.com',
+    images: [
+      {
+        url: 'https://raulduke.com/images/BANNER.jpg',
+        width: 800,
+        height: 650,
+        alt: 'Richard Álvarez',
+      },
+    ],
+  },
+  metadataBase: new URL('https://raulduke.com'),
+  icons: [
+    { rel: 'icon', href: '/favicon.ico', url: '/favicon.ico' },
+  ],
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </head>
+      <body className={avenir.className + " flex flex-col h-[100svh] bg-black text-white justify-center items-center"}>
+        <Header></Header>
+        <section className="flex grow flex-1 w-full"> 
+          {children}
+        </section>
+        <section>
+          <footer>
+            <p>© {new Date().getFullYear()} Richard Alvarez</p>
+          </footer>
+        </section>
+      </body>
+    </html>
+  );
+}
+
+=========================
+
+=== Content of: ./src/app/page.tsx ===
+// src/app/page.tsx
+import { getAllPosts } from '@/lib/markdown';
+import Link from 'next/link';
+
+export default function HomePage() {
+  const allPosts = getAllPosts();
+
+  return (
+    <div className="flex flex-col p-6 bg-black text-white">
+      <h2 className='pl-2 uppercase tracking-wid'>Video</h2>
+      <h2 className='pl-2 uppercase tracking-wid'>Projects</h2>
+      <h2 className='pl-2 uppercase tracking-wid'>Blog</h2>
+      <ul className="list-none list-inside">
+        {allPosts.map((post) => (
+          <li key={post.slug} className="pl-8">
+            <Link href={`/posts/${post.slug}`} className="text-orange hover:underline">
+              {post.title}
+            </Link>
+            &nbsp;&nbsp;
+            <span className="text-sm text-gray-500">{post.date.toDateString()}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+=========================
+
+=== Content of: ./src/app/globals.css ===
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 38, 38, 38; /* Black */
+  --background-start-rgb: 255, 253, 237; /* White */
+  --background-end-rgb: 255, 253, 237; /* White */
+  --font-avenir: 'Avenir', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 253, 237; /* White */
+    --background-start-rgb: 38, 38, 38; /* Black */
+    --background-end-rgb: 38, 38, 38; /* Black */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: var(--font-avenir);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+=========================
+
+=== Content of: ./src/components/Header.tsx ===
+'use client';
+
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+
+const Header = () => {
+    const [top, setTop] = useState(true);
+
+    // Detect whether user has scrolled the page down by 10px 
+    useEffect(() => {
+        const scrollHandler = () => {
+            window.pageYOffset > 10 ? setTop(false) : setTop(true);
+        };
+        window.addEventListener('scroll', scrollHandler);
+        return () => window.removeEventListener('scroll', scrollHandler);
+    }, [top]);
+
+    return (
+        <header className={`w-full z-30 transition duration-300 flex ease-in-out p-6 ${top ? 'bg-black' : 'bg-black/90 backdrop-blur-sm shadow-lg'}`}>
+            <Link href="/" aria-label="Richard Alvarez">
+                <h1 className='text-5xl uppercase tracking-widest font-bold'>Rick Alvarez</h1>
+            </Link>
+        </header>
+    );
+};
+
+export default Header;
+=========================
+
+=== Content of: ./src/lib/markdown.ts ===
+// src/lib/markdown.ts
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
+
+const contentDirectory = path.join(process.cwd(), 'content');
+
+export function getAllPosts() {
+    const fileNames = fs.readdirSync(contentDirectory);
+    const allPostsData = fileNames.map((fileName) => {
+        const slug = fileName.replace(/\.md$/, '');
+        const fullPath = path.join(contentDirectory, fileName);
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+        const matterResult = matter(fileContents);
+
+        return {
+            slug,
+            ...matterResult.data,
+        };
+    });
+    return allPostsData;
+}
+
+export async function getPostData(slug: string) {
+    const fullPath = path.join(contentDirectory, `${slug}.md`);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const matterResult = matter(fileContents);
+    const processedContent = await remark().use(html).process(matterResult.content);
+    const contentHtml = processedContent.toString();
+
+    return {
+        slug,
+        contentHtml,
+        ...matterResult.data,
+    };
+}
+=========================
+
+=== Content of: ./next-env.d.ts ===
+/// <reference types="next" />
+/// <reference types="next/image-types/global" />
+
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/basic-features/typescript for more information.
+
+=========================
+
+=== Content of: ./tailwind.config.ts ===
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        white: '#FFFDED',
+        black: '#262626',
+        orange: '#DF4800',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
+=========================
+
+=== Content of: ./package.json ===
+{
+  "name": "raulduke",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
+
+=========================
+
+=== Content of: ./tsconfig.json ===
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+=========================
+
+=== Content of: ./src/app/layout.tsx ===
+import type { Metadata } from "next";
+import  localFont from "next/font/local";
+import "./globals.css";
+
+import Header from "@/components/Header";
+
+const avenir = localFont({
+  src: [
+    { path: '../../public/fonts/Avenir-Black-03.ttf', weight: '900', style: 'normal' },
+    { path: '../../public/fonts/Avenir-BlackOblique-04.ttf', weight: '900', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Book-01.ttf', weight: '400', style: 'normal' },
+    { path: '../../public/fonts/Avenir-BookOblique-02.ttf', weight: '400', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Heavy-05.ttf', weight: '700', style: 'normal' },
+    { path: '../../public/fonts/Avenir-HeavyOblique-06.ttf', weight: '700', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Light-07.ttf', weight: '300', style: 'normal' },
+    { path: '../../public/fonts/Avenir-LightOblique-08.ttf', weight: '300', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Medium-09.ttf', weight: '500', style: 'normal' },
+    { path: '../../public/fonts/Avenir-MediumOblique-10.ttf', weight: '500', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Oblique-11.ttf', weight: '400', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Roman-12.ttf', weight: '400', style: 'normal' },
+  ],
+  variable: '--font-avenir',
+});
+
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | richard álvarez',
+    default: 'richard Alvarez',
+  },
+  description: 'Artist website of Richard Álvarez.',
+  keywords: [
+    'Rick Alvarez',
+    'rick',
+    'Alvarez',
+    'dvi',
+    'canon xl2',
+    'Canon XL2',
+    'glitch art',
+    'raul duke',
+    'Raoul Duke',
+    'Raul Duke',
+    'underground artist',
+    'vfx',
+    'chicago',
+    'music scene',
+    'music videos',
+    'art',
+    'poetry',
+    'latinx art',
+    'video art',
+    'code',
+    'programming',
+    'p5js',
+    'chicago underground artists',
+    'cgi',
+    'animation',
+    'punk art',
+    'youtube music videos',
+    'nudity in music videos',
+    'chicago underground film festival',
+  ],
+  openGraph: {
+    siteName: 'raulduke.com',
+    title: 'Richard Álvarez',
+    description: 'Artist website of Richard Álvarez.',
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://raulduke.com',
+    images: [
+      {
+        url: 'https://raulduke.com/images/BANNER.jpg',
+        width: 800,
+        height: 650,
+        alt: 'Richard Álvarez',
+      },
+    ],
+  },
+  metadataBase: new URL('https://raulduke.com'),
+  icons: [
+    { rel: 'icon', href: '/favicon.ico', url: '/favicon.ico' },
+  ],
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </head>
+      <body className={avenir.className + " flex flex-col h-[100svh] bg-black text-white justify-center items-center"}>
+        <Header></Header>
+        <section className="flex grow flex-1 w-full"> 
+          {children}
+        </section>
+        <section>
+          <footer>
+            <p>© {new Date().getFullYear()} Richard Alvarez</p>
+          </footer>
+        </section>
+      </body>
+    </html>
+  );
+}
+
+=========================
+
+=== Content of: ./src/app/page.tsx ===
+// src/app/page.tsx
+import { getAllPosts } from '@/lib/markdown';
+import Link from 'next/link';
+
+export default function HomePage() {
+  const allFolders = getAllPosts();
+
+  return (
+    <div className="flex flex-col p-6 bg-black text-white min-h-screen">
+      {allFolders.map((folder) => (
+        <div key={folder.name} className="mb-8">
+          {folder.name && (
+            <h2 className="text-2xl font-bold uppercase text-orange mb-4">{folder.name}</h2>
+          )}
+          <ul className="list-none list-inside">
+            {folder.posts.map((post) => (
+              <li key={post.slug} className="pl-8 mb-2">
+                <Link href={`/${post.slug}`} className="text-orange hover:underline">
+                  {post.title}
+                </Link>
+                &nbsp;&nbsp;
+                <span className="text-sm text-gray-500">{post.date.toDateString()}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
+=========================
+
+=== Content of: ./src/app/[slug]/page.tsx ===
+// src/app/posts/[slug]/page.tsx
+import { getPostData, getAllPosts } from '@/lib/markdown';
+
+export async function generateStaticParams() {
+    const allFolders = getAllPosts();
+    return allFolders.flatMap((folder) =>
+        folder.posts.map((post) => ({
+            slug: post.slug,
+        }))
+    );
+}
+
+export default async function PostPage({ params }: { params: any }) {
+    const postData = await getPostData(params.slug);
+
+    return (
+        <div className="container mx-auto p-4">
+            <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
+            <div className="prose" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </div>
+    );
+}
+=========================
+
+=== Content of: ./src/app/globals.css ===
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 38, 38, 38; /* Black */
+  --background-start-rgb: 255, 253, 237; /* White */
+  --background-end-rgb: 255, 253, 237; /* White */
+  --font-avenir: 'Avenir', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 253, 237; /* White */
+    --background-start-rgb: 38, 38, 38; /* Black */
+    --background-end-rgb: 38, 38, 38; /* Black */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: var(--font-avenir);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+=========================
+
+=== Content of: ./src/components/Header.tsx ===
+'use client';
+
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+
+const Header = () => {
+    const [top, setTop] = useState(true);
+
+    // Detect whether user has scrolled the page down by 10px 
+    useEffect(() => {
+        const scrollHandler = () => {
+            window.pageYOffset > 10 ? setTop(false) : setTop(true);
+        };
+        window.addEventListener('scroll', scrollHandler);
+        return () => window.removeEventListener('scroll', scrollHandler);
+    }, [top]);
+
+    return (
+        <header className={`w-full z-30 transition duration-300 flex ease-in-out p-6 ${top ? 'bg-black' : 'bg-black/90 backdrop-blur-sm shadow-lg'}`}>
+            <Link href="/" aria-label="Richard Alvarez">
+                <h1 className='text-5xl uppercase tracking-widest font-bold'>Rick Alvarez</h1>
+            </Link>
+        </header>
+    );
+};
+
+export default Header;
+=========================
+
+=== Content of: ./src/lib/markdown.ts ===
+// src/lib/markdown.ts
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
+
+const contentDirectory = path.join(process.cwd(), 'content');
+
+interface PostData {
+    slug: string;
+    title: string;
+    date: Date;
+    contentHtml: string;
+}
+
+interface FolderData {
+    name: string;
+    posts: PostData[];
+}
+
+export function getAllPosts(directory = contentDirectory, relativePath = ''): FolderData[] {
+    const dirEntries = fs.readdirSync(directory, { withFileTypes: true });
+    const folders: FolderData[] = [];
+
+    dirEntries.forEach((entry) => {
+        if (entry.isDirectory()) {
+            const folderName = entry.name;
+            const folderPath = path.join(directory, folderName);
+            const folderPosts = getAllPosts(folderPath, path.join(relativePath, folderName));
+            folders.push(...folderPosts);
+        } else if (entry.isFile() && entry.name.endsWith('.md')) {
+            const filePath = path.join(directory, entry.name);
+            const fileContents = fs.readFileSync(filePath, 'utf8');
+            const matterResult = matter(fileContents);
+
+            const processedContent = remark().use(html).processSync(matterResult.content).toString();
+
+            const postData: PostData = {
+                slug: path.join(relativePath, entry.name.replace(/\.md$/, '')).replace(/\\/g, '/'),
+                title: matterResult.data.title || entry.name.replace(/\.md$/, ''),
+                date: new Date(matterResult.data.date || Date.now()),
+                contentHtml: processedContent,
+            };
+
+            const folderIndex = folders.findIndex((folder) => folder.name === relativePath);
+            if (folderIndex === -1) {
+                folders.push({ name: relativePath, posts: [postData] });
+            } else {
+                folders[folderIndex].posts.push(postData);
+            }
+        }
+    });
+
+    return folders;
+}
+
+export async function getPostData(slug: string) {
+    const fullPath = path.join(contentDirectory, `${slug}.md`);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const matterResult = matter(fileContents);
+    const processedContent = await remark().use(html).process(matterResult.content);
+    const contentHtml = processedContent.toString();
+
+    return {
+        slug,
+        contentHtml,
+        ...matterResult.data,
+    };
+}
+=========================
+
+=== Content of: ./next-env.d.ts ===
+/// <reference types="next" />
+/// <reference types="next/image-types/global" />
+
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/basic-features/typescript for more information.
+
+=========================
+
+=== Content of: ./tailwind.config.ts ===
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        white: '#FFFDED',
+        black: '#262626',
+        orange: '#DF4800',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
+=========================
+
+=== Content of: ./package.json ===
+{
+  "name": "raulduke",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
+
+=========================
+
+=== Content of: ./tsconfig.json ===
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+=========================
+
+=== Content of: ./src/app/[...slug]/page.tsx ===
+// src/app/[...slug]/page.tsx
+import { getPostData, getAllPosts } from '@/lib/markdown';
+import Link from 'next/link';
+
+export async function generateStaticParams() {
+    const allFolders = getAllPosts();
+    return allFolders.flatMap((folder) =>
+        folder.posts.map((post) => ({
+            slug: post.slug.split('/'),
+        }))
+    );
+}
+
+export default async function PostPage({ params }: { params: { slug: string[] } }) {
+    const slug = params.slug.join('/');
+    const postData = await getPostData(slug);
+
+    return (
+        <div className='flex flex-col gap-6'>
+            <Link href="/" className='px-6 text-orange hover:underline'>back</Link>
+            <div className="flex flex-col px-6">
+                <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
+                <div className="prose" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+            </div>
+        </div>
+    );
+}
+=========================
+
+=== Content of: ./src/app/layout.tsx ===
+import type { Metadata } from "next";
+import  localFont from "next/font/local";
+import "./globals.css";
+
+import Header from "@/components/Header";
+
+const avenir = localFont({
+  src: [
+    { path: '../../public/fonts/Avenir-Black-03.ttf', weight: '900', style: 'normal' },
+    { path: '../../public/fonts/Avenir-BlackOblique-04.ttf', weight: '900', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Book-01.ttf', weight: '400', style: 'normal' },
+    { path: '../../public/fonts/Avenir-BookOblique-02.ttf', weight: '400', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Heavy-05.ttf', weight: '700', style: 'normal' },
+    { path: '../../public/fonts/Avenir-HeavyOblique-06.ttf', weight: '700', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Light-07.ttf', weight: '300', style: 'normal' },
+    { path: '../../public/fonts/Avenir-LightOblique-08.ttf', weight: '300', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Medium-09.ttf', weight: '500', style: 'normal' },
+    { path: '../../public/fonts/Avenir-MediumOblique-10.ttf', weight: '500', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Oblique-11.ttf', weight: '400', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Roman-12.ttf', weight: '400', style: 'normal' },
+  ],
+  variable: '--font-avenir',
+});
+
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | richard álvarez',
+    default: 'richard Alvarez',
+  },
+  description: 'Artist website of Richard Álvarez.',
+  keywords: [
+    'Rick Alvarez',
+    'rick',
+    'Alvarez',
+    'dvi',
+    'canon xl2',
+    'Canon XL2',
+    'glitch art',
+    'raul duke',
+    'Raoul Duke',
+    'Raul Duke',
+    'underground artist',
+    'vfx',
+    'chicago',
+    'music scene',
+    'music videos',
+    'art',
+    'poetry',
+    'latinx art',
+    'video art',
+    'code',
+    'programming',
+    'p5js',
+    'chicago underground artists',
+    'cgi',
+    'animation',
+    'punk art',
+    'youtube music videos',
+    'nudity in music videos',
+    'chicago underground film festival',
+  ],
+  openGraph: {
+    siteName: 'raulduke.com',
+    title: 'Richard Álvarez',
+    description: 'Artist website of Richard Álvarez.',
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://raulduke.com',
+    images: [
+      {
+        url: 'https://raulduke.com/images/BANNER.jpg',
+        width: 800,
+        height: 650,
+        alt: 'Richard Álvarez',
+      },
+    ],
+  },
+  metadataBase: new URL('https://raulduke.com'),
+  icons: [
+    { rel: 'icon', href: '/favicon.ico', url: '/favicon.ico' },
+  ],
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </head>
+      <body className={avenir.className + " flex flex-col h-[100svh] bg-black text-white justify-center items-center"}>
+        <Header></Header>
+        <section className="flex grow flex-1 w-full"> 
+          {children}
+        </section>
+        <section>
+          <footer>
+            <p>© {new Date().getFullYear()} Richard Alvarez</p>
+          </footer>
+        </section>
+      </body>
+    </html>
+  );
+}
+
+=========================
+
+=== Content of: ./src/app/page.tsx ===
+// src/app/page.tsx
+import { getAllPosts } from '@/lib/markdown';
+import Link from 'next/link';
+
+export default function HomePage() {
+  const allFolders = getAllPosts();
+
+  return (
+    <div className="flex flex-col px-6 text-white">
+      {allFolders.map((folder) => (
+        <div key={folder.name} className="mb-3">
+          {folder.name && (
+            <h2 className="text-2xl tracking-widest uppercase text-white">{folder.name.split(" ")[1]}</h2>
+          )}
+          <ul className="list-none list-inside">
+            {folder.posts.map((post) => (
+              <li key={post.slug} className="pl-6">
+                <Link href={`/${post.slug}`} className="text-orange hover:underline">
+                  {post.title}
+                </Link>
+                &nbsp;&nbsp;
+                <span className="text-sm text-gray-500">{post.date.toDateString()}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
+=========================
+
+=== Content of: ./src/app/globals.css ===
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 38, 38, 38; /* Black */
+  --background-start-rgb: 255, 253, 237; /* White */
+  --background-end-rgb: 255, 253, 237; /* White */
+  --font-avenir: 'Avenir', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 253, 237; /* White */
+    --background-start-rgb: 38, 38, 38; /* Black */
+    --background-end-rgb: 38, 38, 38; /* Black */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: var(--font-avenir);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+=========================
+
+=== Content of: ./src/components/Header.tsx ===
+'use client';
+
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+
+const Header = () => {
+    const [top, setTop] = useState(true);
+
+    // Detect whether user has scrolled the page down by 10px 
+    useEffect(() => {
+        const scrollHandler = () => {
+            window.pageYOffset > 10 ? setTop(false) : setTop(true);
+        };
+        window.addEventListener('scroll', scrollHandler);
+        return () => window.removeEventListener('scroll', scrollHandler);
+    }, [top]);
+
+    return (
+        <header className={`w-full z-30 transition duration-300 flex ease-in-out p-6 ${top ? 'bg-black' : 'bg-black/90 backdrop-blur-sm shadow-lg'}`}>
+            <Link href="/" aria-label="Richard Alvarez">
+                <h1 className='text-5xl uppercase tracking-widest font-bold'>Rick Alvarez</h1>
+            </Link>
+        </header>
+    );
+};
+
+export default Header;
+=========================
+
+=== Content of: ./src/lib/markdown.ts ===
+// src/lib/markdown.ts
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
+
+const contentDirectory = path.join(process.cwd(), 'content');
+
+interface PostData {
+    slug: string;
+    title: string;
+    date: Date;
+    contentHtml: string;
+}
+
+interface FolderData {
+    name: string;
+    posts: PostData[];
+}
+
+export function getAllPosts(directory = contentDirectory, relativePath = ''): FolderData[] {
+    const dirEntries = fs.readdirSync(directory, { withFileTypes: true });
+    const folders: FolderData[] = [];
+
+    dirEntries.forEach((entry) => {
+        if (entry.isDirectory()) {
+            const folderName = entry.name.split(" ")[1];
+            const folderPath = path.join(directory, folderName);
+            const folderPosts = getAllPosts(folderPath, path.join(relativePath, folderName));
+            folders.push(...folderPosts);
+        } else if (entry.isFile() && entry.name.endsWith('.md')) {
+            const filePath = path.join(directory, entry.name);
+            const fileContents = fs.readFileSync(filePath, 'utf8');
+            const matterResult = matter(fileContents);
+
+            const processedContent = remark().use(html).processSync(matterResult.content).toString();
+
+            const postData: PostData = {
+                slug: path.join(relativePath, entry.name.replace(/\.md$/, '')).replace(/\\/g, '/'),
+                title: matterResult.data.title || entry.name.replace(/\.md$/, ''),
+                date: new Date(matterResult.data.date || Date.now()),
+                contentHtml: processedContent,
+            };
+
+            const folderIndex = folders.findIndex((folder) => folder.name === relativePath);
+            if (folderIndex === -1) {
+                folders.push({ name: relativePath, posts: [postData] });
+            } else {
+                folders[folderIndex].posts.push(postData);
+            }
+        }
+    });
+
+    return folders;
+}
+
+export async function getPostData(slug: string) {
+    const fullPath = path.join(contentDirectory, `${slug}.md`);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const matterResult = matter(fileContents);
+    const processedContent = await remark().use(html).process(matterResult.content);
+    const contentHtml = processedContent.toString();
+
+    return {
+        slug,
+        contentHtml,
+        ...matterResult.data,
+    };
+}
+=========================
+
+=== Content of: ./next-env.d.ts ===
+/// <reference types="next" />
+/// <reference types="next/image-types/global" />
+
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/basic-features/typescript for more information.
+
+=========================
+
+=== Content of: ./tailwind.config.ts ===
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        white: '#FFFDED',
+        black: '#262626',
+        orange: '#DF4800',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      typography: (theme: any) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.white'),
+            a: {
+              color: theme('colors.orange'),
+              '&:hover': {
+                color: theme('colors.white'),
+              },
+            },
+            h1: {
+              color: theme('colors.white'),
+              fontWeight: 'bold',
+              fontSize: '2rem',
+              marginBottom: '1rem',
+            },
+            h2: {
+              color: theme('colors.white'),
+              fontSize: '1.5rem',
+              marginBottom: '0.75rem',
+            },
+            h3: {
+              color: theme('colors.white'),
+              fontSize: '1.25rem',
+              marginBottom: '0.5rem',
+            },
+            p: {
+              color: theme('colors.white'),
+              marginBottom: '1.25rem',
+              lineHeight: '1.75',
+            },
+            img: {
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              display: 'block',
+            },
+          },
+        },
+        lg: {
+          css: {
+            h1: {
+              fontSize: '2.5rem',
+            },
+            h2: {
+              fontSize: '2rem',
+            },
+            h3: {
+              fontSize: '1.75rem',
+            },
+          },
+        },
+      }),
+    },
+  },
+  plugins: [require('@tailwindcss/typography')],
+};
+
+export default config;
+=========================
+
+=== Content of: ./package.json ===
+{
+  "name": "raulduke",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@tailwindcss/typography": "^0.5.13",
+    "date-fns": "^3.6.0",
+    "gray-matter": "^4.0.3",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "rehype-raw": "^7.0.0",
+    "rehype-stringify": "^10.0.0",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "remark-rehype": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
+
+=========================
+
+=== Content of: ./tsconfig.json ===
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+=========================
+
+=== Content of: ./src/app/[...slug]/page.tsx ===
+// src/app/[...slug]/page.tsx
+import { getPostData, getAllPosts } from '@/lib/markdown';
+import Link from 'next/link';
+import { format } from 'date-fns';
+
+export async function generateStaticParams() {
+    const allFolders = getAllPosts();
+    return allFolders.flatMap((folder) =>
+        folder.posts.map((post) => ({
+            slug: post.slug.split('/'),
+        }))
+    );
+}
+
+export default async function PostPage({ params }: { params: { slug: string[] } }) {
+    const slug = params.slug.join('/');
+    const postData: any = await getPostData(slug);
+
+    return (
+        <div className='flex flex-col gap-3 px-6'>
+            <Link href="/" className='text-orange hover:underline'>back</Link>
+            <div className="flex flex-col">
+                <h1 className='text-2xl'>{postData.title}</h1>
+                <p className="text-gray-500 text-sm lg:m-0 m-0">{format(new Date(postData.date), 'MMMM dd, yyyy')}</p>
+                <div className='prose lg:prose-lg py-3' dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+            </div>
+        </div>
+    );
+}
+=========================
+
+=== Content of: ./src/app/layout.tsx ===
+import type { Metadata } from "next";
+import  localFont from "next/font/local";
+import "./globals.css";
+
+import Header from "@/components/Header";
+
+const avenir = localFont({
+  src: [
+    { path: '../../public/fonts/Avenir-Black-03.ttf', weight: '900', style: 'normal' },
+    { path: '../../public/fonts/Avenir-BlackOblique-04.ttf', weight: '900', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Book-01.ttf', weight: '400', style: 'normal' },
+    { path: '../../public/fonts/Avenir-BookOblique-02.ttf', weight: '400', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Heavy-05.ttf', weight: '700', style: 'normal' },
+    { path: '../../public/fonts/Avenir-HeavyOblique-06.ttf', weight: '700', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Light-07.ttf', weight: '300', style: 'normal' },
+    { path: '../../public/fonts/Avenir-LightOblique-08.ttf', weight: '300', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Medium-09.ttf', weight: '500', style: 'normal' },
+    { path: '../../public/fonts/Avenir-MediumOblique-10.ttf', weight: '500', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Oblique-11.ttf', weight: '400', style: 'italic' },
+    { path: '../../public/fonts/Avenir-Roman-12.ttf', weight: '400', style: 'normal' },
+  ],
+  variable: '--font-avenir',
+});
+
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | richard álvarez',
+    default: 'richard Alvarez',
+  },
+  description: 'Artist website of Richard Álvarez.',
+  keywords: [
+    'Rick Alvarez',
+    'rick',
+    'Alvarez',
+    'dvi',
+    'canon xl2',
+    'Canon XL2',
+    'glitch art',
+    'raul duke',
+    'Raoul Duke',
+    'Raul Duke',
+    'underground artist',
+    'vfx',
+    'chicago',
+    'music scene',
+    'music videos',
+    'art',
+    'poetry',
+    'latinx art',
+    'video art',
+    'code',
+    'programming',
+    'p5js',
+    'chicago underground artists',
+    'cgi',
+    'animation',
+    'punk art',
+    'youtube music videos',
+    'nudity in music videos',
+    'chicago underground film festival',
+  ],
+  openGraph: {
+    siteName: 'raulduke.com',
+    title: 'Richard Álvarez',
+    description: 'Artist website of Richard Álvarez.',
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://raulduke.com',
+    images: [
+      {
+        url: 'https://raulduke.com/images/BANNER.jpg',
+        width: 800,
+        height: 650,
+        alt: 'Richard Álvarez',
+      },
+    ],
+  },
+  metadataBase: new URL('https://raulduke.com'),
+  icons: [
+    { rel: 'icon', href: '/favicon.ico', url: '/favicon.ico' },
+  ],
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </head>
+      <body className={avenir.className + " flex flex-col  bg-black text-white justify-center items-center min-h-[100vh]"}>
+        <Header></Header>
+        <section className="flex grow flex-1 w-full"> 
+          {children}
+        </section>
+        <section>
+          <footer className="z-30 w-full flex flex-col items-center justify-center gap-2 text-[0.7em] pb-5 px-6">
+            <p>© {new Date().getFullYear()} Richard Alvarez</p>
+          </footer>
+        </section>
+      </body>
+    </html>
+  );
+}
+
+=========================
+
+=== Content of: ./src/app/page.tsx ===
+// src/app/page.tsx
+import { getAllPosts } from '@/lib/markdown';
+import Link from 'next/link';
+
+export default function HomePage() {
+  const allFolders = getAllPosts();
+
+  return (
+    <div className="flex flex-col px-6 text-white">
+      {allFolders.map((folder) => (
+        <div key={folder.name} className="mb-3">
+          {folder.name && (
+            <h2 className="text-2xl tracking-widest uppercase text-white">{folder.name}</h2>
+          )}
+          <ul className="list-none list-inside">
+            {folder.posts.map((post) => (
+              <li key={post.slug}>
+                <Link href={`/${post.slug}`} className="text-orange hover:underline">
+                  {post.title}
+                </Link>
+                &nbsp;&nbsp;
+                <span className="text-sm text-gray-500">{post.date.toDateString()}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
+=========================
+
+=== Content of: ./src/app/globals.css ===
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255; /* White */
+  --background-start-rgb: 38, 38, 38; /* Black */
+  --background-end-rgb: 38, 38, 38; /* Black */
+  --font-avenir: 'Avenir', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255; /* White */
+    --background-start-rgb: 38, 38, 38; /* Black */
+    --background-end-rgb: 38, 38, 38; /* Black */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: var(--font-avenir);
+}
+
+@layer components {
+  .prose {
+    max-width: 100%;
+    color: white;
+  }
+
+  .prose h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.1111111;
+  }
+
+  .prose h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose h3 {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose p {
+    color: white;
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+  }
+
+  .prose img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .prose figure {
+    margin: 0;
+  }
+
+  .prose figcaption {
+    color: white;
+    text-align: center;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+  }
+
+  .prose a {
+    color: #DF4800;
+    text-decoration: underline;
+  }
+
+  .prose a:hover {
+    color: #FFFDED;
+  }
+
+  .prose iframe {
+    width: 100%;
+    height: 315px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  @media (min-width: 640px) {
+    .prose h1 {
+      font-size: 2.5rem;
+    }
+
+    .prose h2 {
+      font-size: 2rem;
+    }
+
+    .prose h3 {
+      font-size: 1.75rem;
+    }
+
+    .prose iframe {
+      height: 450px;
+    }
+  }
+
+  .menu-open {
+    transform: translateX(0);
+  }
+
+  .menu-closed {
+    transform: translateX(100%);
+  }
+
+  @media (min-width: 768px) {
+    .menu-open,
+    .menu-closed {
+      transform: none;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+=========================
+
+=== Content of: ./src/components/Header.tsx ===
+'use client';
+
+import Link from 'next/link';
+import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+
+const Header = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
+    return (
+        <header className="w-full z-10 transition duration-300 flex items-center justify-between ease-in-out p-6 bg-black">
+            <Link href="/" className="w-1/3" aria-label="Richard Alvarez">
+                <h1 className='text-5xl uppercase tracking-widest font-bold md:block hidden'>Rick Alvarez</h1>
+                <h1 className='text-5xl uppercase tracking-widest font-bold md:hidden'>R.A.</h1>
+            </Link>
+            <button onClick={toggleMenu} className="ml-auto z-30 md:hidden text-white">
+                <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} size="2x" />
+            </button>
+            <nav className={`fixed top-0 z-0 left-0 w-full h-full bg-black flex flex-col items-center justify-center transform ${menuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out md:relative md:transform-none md:flex-row md:justify-end`}>
+                <Link href="/" className="uppercase text-white py-2 px-4" onClick={() => setMenuOpen(false)}>Home</Link>
+                <Link href="/about" className="uppercase text-white py-2 px-4" onClick={() => setMenuOpen(false)}>About</Link>
+            </nav>
+        </header>
+    );
+};
+
+export default Header;
+=========================
+
+=== Content of: ./src/lib/markdown.ts ===
+// src/lib/markdown.ts
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
+import rehypeRaw from 'rehype-raw';
+
+const contentDirectory = path.join(process.cwd(), 'content');
+
+interface PostData {
+    slug: string;
+    title: string;
+    date: Date;
+    contentHtml: string;
+    fullPath: string;  // Store the full path
+}
+
+interface FolderData {
+    name: string;
+    posts: PostData[];
+}
+
+function slugify(name: string): string {
+    return name.replace(/^\d+\.\s*/, '').replace(/\s+/g, '-').toLowerCase();
+}
+
+export function getAllPosts(directory = contentDirectory, relativePath = ''): FolderData[] {
+    const dirEntries = fs.readdirSync(directory, { withFileTypes: true });
+    const folders: FolderData[] = [];
+
+    dirEntries.forEach((entry) => {
+        if (entry.isDirectory()) {
+            const folderName = entry.name.replace(/^\d+\.\s*/, ''); // Remove leading numbers and dot
+            const folderSlug = slugify(folderName);
+            const folderPath = path.join(directory, entry.name);
+            const folderPosts = getAllPosts(folderPath, path.join(relativePath, folderSlug));
+            folders.push(...folderPosts);
+        } else if (entry.isFile() && entry.name.endsWith('.md')) {
+            const filePath = path.join(directory, entry.name);
+            const fileContents = fs.readFileSync(filePath, 'utf8');
+            const matterResult = matter(fileContents);
+
+            const processedContent = remark()
+                .use(remarkParse)
+                .use(remarkRehype, { allowDangerousHtml: true })
+                .use(rehypeRaw)
+                .use(rehypeStringify)
+                .processSync(matterResult.content)
+                .toString();
+
+            const postData: PostData = {
+                slug: path.join(relativePath, slugify(entry.name.replace(/\.md$/, ''))).replace(/\\/g, '/'),
+                title: matterResult.data.title || entry.name.replace(/\.md$/, '').replace(/^\d+\.\s*/, ''),
+                date: new Date(matterResult.data.date || Date.now()),
+                contentHtml: processedContent,
+                fullPath: filePath,  // Store the full path
+            };
+
+            const folderIndex = folders.findIndex((folder) => folder.name === relativePath);
+            if (folderIndex === -1) {
+                folders.push({ name: relativePath, posts: [postData] });
+            } else {
+                folders[folderIndex].posts.push(postData);
+            }
+        }
+    });
+
+    return folders;
+}
+
+export async function getPostData(slug: string) {
+    const allFolders = getAllPosts();
+    let fullPath = '';
+
+    allFolders.forEach((folder) => {
+        folder.posts.forEach((post) => {
+            if (post.slug === slug) {
+                fullPath = post.fullPath;
+            }
+        });
+    });
+
+    if (!fullPath) {
+        throw new Error(`Post with slug ${slug} not found`);
+    }
+
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const matterResult = matter(fileContents);
+    const processedContent = await remark()
+        .use(remarkParse)
+        .use(remarkRehype, { allowDangerousHtml: true })
+        .use(rehypeRaw)
+        .use(rehypeStringify)
+        .process(matterResult.content);
+    const contentHtml = processedContent.toString();
+
+    return {
+        slug,
+        contentHtml,
+        ...matterResult.data,
+    };
+}
 =========================
 
