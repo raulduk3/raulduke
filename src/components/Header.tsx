@@ -13,7 +13,7 @@ const Header = () => {
     };
 
     return (
-        <header className="w-full z-10 transition duration-300 flex items-center ease-in-out p-3  bg-black">
+        <header className="w-full z-10 transition duration-300 flex items-center ease-in-out pb-3 px-6 pt-6 bg-black">
             <Link href="/" aria-label="Richard Alvarez">
                 <h1 className='text-4xl uppercase tracking-widest whitespace-nowrap'>Rick Alvarez</h1>
             </Link>
