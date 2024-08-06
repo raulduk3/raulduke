@@ -78,6 +78,11 @@ header {
   }
 
   @media (min-width: 640px) {
+    .prose {
+      max-width: 50%;
+      color: white;
+    }
+
     .prose h1 {
       font-size: 2.5rem;
     }
