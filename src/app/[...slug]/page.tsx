@@ -17,7 +17,7 @@ export default async function PostPage({ params }: { params: { slug: string[] } 
     const postData: any = await getPostData(slug);
 
     return (
-        <div className='flex flex-col px-6'>
+        <div className='flex flex-col gap-3 px-6'>
             <Link href="/" className='text-orange hover:underline'>back</Link>
             <div className="flex flex-col">
                 <h1 className='text-xl'>{postData.title}</h1>

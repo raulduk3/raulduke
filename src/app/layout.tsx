@@ -97,11 +97,6 @@ export default function RootLayout({
         <section className="flex grow flex-1 w-full"> 
           {children}
         </section>
-        <section>
-          <footer className="z-30 w-full flex flex-col items-center justify-center gap-2 text-[0.7em] pb-5 px-6">
-            <p>© {new Date().getFullYear()} Richard Alvarez</p>
-          </footer>
-        </section>
       </body>
     </html>
   );
