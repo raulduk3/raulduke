@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     url: 'https://raulduke.com',
     images: [
       {
-        url: 'https://raulduke.com/images/og-image.jpg',
+        url: 'https://raulduke.com/og-image.jpg',
         width: 800,
         height: 650,
         alt: 'Richard Alvarez',
