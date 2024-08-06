@@ -26,7 +26,7 @@ const avenir = localFont({
 export const metadata: Metadata = {
   title: {
     template: '%s | richard álvarez',
-    default: 'richard Alvarez',
+    default: 'richard alvarez',
   },
   description: 'Artist website of Richard Álvarez.',
   keywords: [
