@@ -25,7 +25,7 @@ const avenir = localFont({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | richard álvarez',
+    template: '%s | richard alvarez',
     default: 'richard alvarez',
   },
   description: 'Artist website of Richard Álvarez.',
@@ -62,17 +62,17 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     siteName: 'raulduke.com',
-    title: 'Richard Álvarez',
+    title: 'Richard Alvarez',
     description: 'Artist website of Richard Álvarez.',
     type: 'website',
     locale: 'en_US',
     url: 'https://raulduke.com',
     images: [
       {
-        url: 'https://raulduke.com/images/BANNER.jpg',
+        url: 'https://raulduke.com/images/og-image.jpg',
         width: 800,
         height: 650,
-        alt: 'Richard Álvarez',
+        alt: 'Richard Alvarez',
       },
     ],
   },
