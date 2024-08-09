@@ -1,5 +1,5 @@
 ---
-title: How I Used a Transformer Model to Predict Conway's Game of Life in Python
+title: Exploring Transformer Architecture  with Conway’s Game of Life
 date: 2024-08-08
 ---
 So, I’m boofing around in my room, and I think, “What’s a cool machine learning project I can mess with?” That’s how I ended up trying to predict the next state in Conway’s Game of Life using a Transformer model. It wasn’t easy, but it was worth the effort.
