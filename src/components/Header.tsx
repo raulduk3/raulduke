@@ -15,7 +15,7 @@ const Header = () => {
     return (
         <header className="w-full z-10 transition duration-300 flex items-center ease-in-out p-3 px-6 pt-6 bg-black">
             <Link href="/" aria-label="Richard Alvarez">
-                <h1 className='text-4xl uppercase tracking-widest whitespace-nowrap'>Rick Alvarez</h1>
+                <h1 className='text-xl uppercase tracking-widest whitespace-nowrap'>Rick Alvarez</h1>
             </Link>
             &nbsp;&nbsp;
             <Link className="text-orange hover:underline" href="/Richard_Alvarez_Resume.pdf">

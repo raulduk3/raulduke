@@ -93,8 +93,8 @@ export default function RootLayout({
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </head>
       <body className={avenir.className + " flex flex-col bg-black text-white justify-center items-center min-h-[100svh]"}>
-        <Header></Header>
-        <section className="flex grow flex-1 w-full"> 
+        {/*<Header></Header> */}
+        <section className="flex flex-col grow justify-center items-center flex-1 w-6/12 md:w-4/12"> 
           {children}
         </section>
       </body>

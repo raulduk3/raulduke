@@ -1,3 +1,4 @@
+/** == temporary  ==
 // src/app/page.tsx
 import { getAllPosts } from '@/lib/markdown';
 import Link from 'next/link';
@@ -28,3 +29,15 @@ export default function HomePage() {
     </div>
   );
 }
+**/
+
+// src/app/page.tsx
+
+export default function Index() {
+    return (
+	<>
+	    <p>under construction</p>
+	    <p>rá</p>
+	</>
+    );
+};
