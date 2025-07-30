@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen w-full">
       <section className="w-full max-w-xl">
-        <h1 className="text-3xl font-black tracking-widest uppercase text-center mb-2">Richard Álvarez</h1>
+        <h1 className="text-3xl font-black tracking-wider uppercase text-center mb-2">Richard Álvarez</h1>
         
         <p className="text-orange text-center text-lg font-light mb-1 text-left">web developer & filmmaker</p>
         <p className="max-w-md text-base text-white/80 mb-2 text-left">
@@ -32,7 +32,7 @@ export default function HomePage() {
       </section>
 
       <section className="w-full max-w-xl">
-        <h2 className="text-xl font-semibold uppercase mb-2 text-left">Portfolio</h2>
+        <h2 className="text-xl font-semibold uppercase mb-2 tracking-wider text-left">Portfolio</h2>
         <ul className="list-disc pl-5 text-left space-y-0.5">
           {portfolio.map((item) =>
             item.external ? (
