@@ -1,102 +1,11 @@
-/* src/app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 255, 255, 255; /* White */
-  --background-rgb: 38, 38, 38; /* Black */
-  --orange-rgb: 223, 72, 0; /* Orange */
-  --font-avenir: 'Avenir', sans-serif;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background-color: rgb(var(--background-rgb));
-  font-family: var(--font-avenir);
-}
-
-header {
-  background-color: rgb(var(--background-rgb));
-}
-
-@layer components {
-  .prose {
-    max-width: 100%;
-    color: white;
-  }
-
-  .prose h1 {
-    color: white;
-    font-weight: bold;
-    font-size: 2rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    line-height: 1.1111111;
-  }
-
-  .prose h2 {
-    color: white;
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .prose h3 {
-    color: white;
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .prose p {
-    color: white;
-    margin-bottom: 1.25rem;
-    line-height: 1.75;
-  }
-
-  .prose img {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-
-  .prose figure {
-    margin: 0;
-  }
-
-  .prose figcaption {
-    color: white;
-    text-align: center;
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
-  }
-
-  .prose iframe {
-    width: 100%;
-    height: 315px;
-    margin: 0 auto;
-    display: block;
-  }
-
-  @media (min-width: 640px) {
-    .prose {
-      max-width: 50%;
-      color: white;
-    }
-
-    .prose h1 {
-      font-size: 2.5rem;
-    }
-
-    .prose h2 {
-      font-size: 2rem;
-    }
-
-    .prose h3 {
-      font-size: 1.75rem;
-    }
-
-    .prose iframe {
-      height: 450px;
-    }
-  }
+html, body {
+  height: 100%;
+  min-height: 100%;
+  background: #0a0a0a; /* Clean dark background, change if you prefer light */
+  color: #fff;
+  font-family: 'Inter', system-ui, sans-serif;
 }
