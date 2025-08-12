@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import  localFont from "next/font/local";
 import "./globals.css";
 
-import Header from "@/components/Header";
-
 const avenir = localFont({
   src: [
     { path: '../../public/fonts/Avenir-Black-03.ttf', weight: '900', style: 'normal' },
@@ -61,22 +59,22 @@ export const metadata: Metadata = {
     'chicago underground film festival',
   ],
   openGraph: {
-    siteName: 'raulduke.com',
+    siteName: 'richardalvarez.info',
     title: 'Richard Alvarez',
     description: 'Artist website of Richard Álvarez.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://raulduke.com',
+    url: 'https://rrichardalvarez.info',
     images: [
       {
-        url: 'https://raulduke.com/og-image.jpg',
+        url: 'https://richardalvarez.info/og-image.jpg',
         width: 800,
         height: 650,
         alt: 'Richard Alvarez',
       },
     ],
   },
-  metadataBase: new URL('https://raulduke.com'),
+  metadataBase: new URL('https://richardalvarez.info'),
   icons: [
     { rel: 'icon', href: '/favicon.ico', url: '/favicon.ico' },
   ],
@@ -93,7 +91,6 @@ export default function RootLayout({
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </head>
       <body className={avenir.className + " flex flex-col bg-black text-white justify-center items-center min-h-[100svh]"}>
-        {/*<Header></Header> */}
         <section className="flex flex-col grow justify-center items-center flex-1 w-8/12 md:w-4/12"> 
           {children}
         </section>
