@@ -10,10 +10,10 @@ export default function HomePage() {
         
         <p className="text-orange text-center text-lg font-light mb-1 text-left">web developer & filmmaker</p>
         <p className="max-w-md text-base text-white/80 mb-2 text-left">
-          I build creative, effective, and minimal web experiences.<br />
+          I build creative, effective, and minimal internet experiences.<br />
           <span className="text-white/60">Based in Chicago, working globally.</span>
         </p>
-        <div className="flex gap-4 mt-2 mb-2 text-left">
+        <div className="flex md:flex-row flex-col md:gap-2 mt-2 mb-2 text-left">
           <a
             href="mailto:rawalvarez731@gmail.com"
             className="underline text-orange hover:text-white"
