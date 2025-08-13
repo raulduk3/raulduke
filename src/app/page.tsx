@@ -34,7 +34,7 @@ export default function HomePage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Submit a request
+            website request form
           </a>
         </div>
       </section>
