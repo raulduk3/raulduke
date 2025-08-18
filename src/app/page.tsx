@@ -21,14 +21,6 @@ export default function HomePage() {
             email
           </a>
           <a
-            href="https://instagram.com/lofirick"
-            className="underline text-orange hover:text-white"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            instagram
-          </a>
-          <a
             href="https://forms.gle/KnJiVfGeGaz8Ngd56"
             className="underline text-orange hover:text-white"
             target="_blank"
