@@ -3,7 +3,7 @@
 export interface PortfolioItem {
     title: string;
     url: string;
-    description?: string; // Optional
+    description?: string; 
     external?: boolean; // open in new tab if true
 }
 
@@ -18,7 +18,6 @@ export const portfolio: PortfolioItem[] = [
         title: "Machine Television",
         url: "https://machinetelevision-git-main-richard-alvarezs-projects.vercel.app/",
         description: "E-commerce",
-        external: false,
+        external: true,
     },
-    // Add more here!
 ];

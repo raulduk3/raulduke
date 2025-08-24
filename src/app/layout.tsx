@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import  localFont from "next/font/local";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 const avenir = localFont({
   src: [
@@ -94,6 +95,7 @@ export default function RootLayout({
         <section className="flex flex-col grow justify-center items-center flex-1 w-8/12 md:w-4/12"> 
           {children}
         </section>
+        <Analytics />
       </body>
     </html>
   );

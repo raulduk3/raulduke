@@ -13,6 +13,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@tailwindcss/typography": "^0.5.13",
+    "@vercel/analytics": "^1.5.0",
     "date-fns": "^3.6.0",
     "gray-matter": "^4.0.3",
     "next": "^15.4.4",
