@@ -8,7 +8,7 @@ export default function HomePage() {
       <section className="w-full max-w-xl mb-6">
         <h1 className="text-3xl font-black tracking-wider uppercase text-center mb-2">Richard Álvarez</h1>
         
-        <p className="text-orange text-center text-lg font-light mb-1 text-left">web developer & AI Engineer</p>
+        <p className="text-orange text-center text-lg font-light mb-1 text-left">Web Developer & AI Engineer</p>
         <p className="max-w-md text-base text-white/80 mb-2 text-left">
           I build creative, effective, and minimal internet experiences.<br />
           <span className="text-white/60">Based in Chicago, working globally.</span>
