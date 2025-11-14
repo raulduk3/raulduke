@@ -32,7 +32,7 @@ export default function HomePage() {
       </section>
 
       <section className="w-full max-w-xl">
-        <h2 className="text-xl font-semibold uppercase mb-2 tracking-wider text-left">Portfolio</h2>
+        <h2 className="text-xl font-semibold uppercase mb-2 tracking-wider text-left">Websites</h2>
         <ul className="list-disc pl-5 text-left space-y-0.5">
           {portfolio.map((item) =>
             item.external ? (
