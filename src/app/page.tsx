@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <main className="flex flex-col items-center justify-center min-h-dvh w-full">
       <section className="w-full max-w-xl mb-6">
-        <h1 className="text-3xl font-black tracking-wider uppercase text-center mb-2">Richard Álvarez</h1>
+        <h1 className="text-3xl font-black tracking-wider uppercase text-center mb-1">Richard Álvarez</h1>
         
         <p className="text-orange text-center text-lg font-light mb-1 text-left">Web Developer & AI Engineer</p>
         <p className="max-w-md text-base text-white/80 mb-2 text-left">
