@@ -6,23 +6,23 @@ export default function HomePage() {
   return (
     <main className="flex flex-col items-center justify-center min-h-dvh w-full">
       <section className="w-full max-w-xl mb-6">
-        <h1 className="text-3xl font-black tracking-wider uppercase text-center mb-1">Richard Álvarez</h1>
+        <h1 className="text-3xl font-black tracking-wide uppercase text-center mb-1">Richard Álvarez</h1>
         
-        <p className="text-orange text-center text-lg font-light mb-1 text-left">Web Developer & AI Engineer</p>
-        <p className="max-w-md text-base text-white/80 mb-2 text-left">
+        <p className="text-orange text-center text-lg font-light mb-1 text-left tracking-normal">Web Developer & AI Engineer</p>
+        <p className="max-w-md text-base text-white mb-2 text-left">
           I build creative, effective, and minimal internet experiences.<br />
-          <span className="text-white/60">Based in Chicago, working globally.</span>
+          <span className="text-white">Based in Chicago, working globally.</span>
         </p>
         <div className="flex md:flex-row flex-col md:gap-2 mt-2 mb-2 text-left">
           <a
             href="mailto:rawalvarez731@gmail.com"
-            className="underline text-orange hover:text-white"
+            className="no-underline text-orange hover:text-white"
           >
             email
           </a>
           <a
             href="https://forms.gle/KnJiVfGeGaz8Ngd56"
-            className="underline text-orange hover:text-white"
+            className="no-underline text-orange hover:text-white"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -31,37 +31,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="w-full max-w-xl">
-        <h2 className="text-xl font-semibold uppercase mb-2 tracking-wider text-left">Websites</h2>
-        <ul className="list-disc pl-5 text-left space-y-0.5">
+      {/* <section className="w-full max-w-xl">
+        <h2 className="text-xl font-semibold uppercase mb-2 tracking-wide text-left">Websites</h2>
+        <ul className="text-left pl-5 space-y-0.5 tracking-normal">
           {portfolio.map((item) =>
             item.external ? (
-              <li key={item.title} className="pl-0 leading-tight">
-                <a
-                  href={item.url}
-                  className="text-orange underline hover:text-white"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {item.title}
-                </a>
-                {item.description && (
-                  <span className="text-white/60 text-sm ml-2 align-middle">{item.description}</span>
-                )}
+              <li key={item.title} className="leading-tight flex items-center gap-1.5">
+                <span className="text-white text-sm leading-tight">▪</span>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={item.url}
+                    className="text-orange underline hover:text-white whitespace-nowrap"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {item.title}
+                  </a>
+                  {item.description && (
+                    <span className="text-white text-sm whitespace-nowrap">{item.description}</span>
+                  )}
+                </div>
               </li>
             ) : (
-              <li key={item.title} className="pl-0 leading-tight">
-                <Link href={item.url} className="text-orange underline hover:text-white">
-                  {item.title}
-                </Link>
-                {item.description && (
-                  <span className="text-white/60 text-sm ml-2 align-middle">{item.description}</span>
-                )}
+              <li key={item.title} className="leading-tight flex items-center gap-1.5">
+                <span className="text-white text-sm leading-tight">▪</span>
+                <div className="flex items-center gap-2">
+                  <Link href={item.url} className="text-orange no-underline hover:text-white whitespace-nowrap">
+                    {item.title}
+                  </Link>
+                  {item.description && (
+                    <span className="text-white text-sm whitespace-nowrap">{item.description}</span>
+                  )}
+                </div>
               </li>
             )
           )}
         </ul>
-      </section>
+      </section> */}
     </main>
   );
 }
