@@ -8,6 +8,11 @@ html, body {
   background: #F4FFFD; /* Clean dark background, change if you prefer light */
   color: #21221B;
   font-family: 'Inter', system-ui, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: default;
 }
 
 a:link {
