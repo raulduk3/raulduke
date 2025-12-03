@@ -95,6 +95,9 @@ export default function RootLayout({
         <section className="flex flex-col grow justify-center items-center flex-1 w-8/12 md:w-4/12"> 
           {children}
         </section>
+        <footer className="sticky bottom-0 w-full py-4 text-center text-white/60 text-sm">
+          <p>© 2025</p>
+        </footer>
         <Analytics />
       </body>
     </html>
