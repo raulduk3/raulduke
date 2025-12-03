@@ -96,7 +96,7 @@ export default function RootLayout({
           {children}
         </div>
         <footer className="py-2 text-center italic text-white/40 text-xs">
-          <p>Richard Alvarez © 2025</p>
+          <p>Richard Alvarez © {new Date().getFullYear()}</p>
         </footer>
         <Analytics />
       </body>
