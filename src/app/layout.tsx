@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   description: 'Artist website of Richard Álvarez.',
   keywords: [
     'Rick Alvarez',
-    'rick',
+    'rick alvarez chicago',
     'Alvarez',
     'dvi',
     'canon xl2',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     description: 'Artist website of Richard Álvarez.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://rrichardalvarez.info',
+    url: 'https://richardalvarez.info',
     images: [
       {
         url: 'https://richardalvarez.info/og-image.jpg',
@@ -95,7 +95,7 @@ export default function RootLayout({
         <div className="flex-1 flex flex-col justify-center items-center w-8/12 md:w-4/12 mx-auto"> 
           {children}
         </div>
-        <footer className="py-2 text-center italic text-white/40 text-xs">
+        <footer className="py-6 text-center italic text-white/40 text-xs">
           <p>Richard Alvarez © {new Date().getFullYear()}</p>
         </footer>
         <Analytics />
