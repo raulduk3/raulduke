@@ -4,20 +4,40 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <main className="flex flex-col items-center justify-center w-full">
-      <section className="w-full max-w-xl mb-6 flex flex-col items-center">
-        <h1 className="text-3xl font-black tracking-wide uppercase text-center mb-1">Richard Álvarez</h1>
+      <section className="w-full max-w-xl border-2 border-white p-8 flex flex-col items-center">
+        <div className="w-full border-b pb-4 mb-6">
+          <h1 className="text-3xl font-black tracking-wide uppercase text-center">Richard Álvarez</h1>
+        </div>
 
-        <p className="text-orange text-center text-lg font-light mb-1 text-left tracking-normal">Web Developer & AI Engineer</p>
-        <p className="max-w-md text-base text-white mb-2 text-left">
-          I build creative, effective, and minimal internet experiences.<br />
-          <span className="text-white">Based in Chicago, working globally.</span><br />
-          <a
-            href="mailto:rawalvarez731@gmail.com"
-            className="no-underline text-orange hover:text-white"
-          >
-            → email
-          </a>
-        </p>
+        <div className="w-full border-b pb-4 mb-6">
+          <p className="text-orange text-center text-lg font-light tracking-normal">Web Developer & AI Engineer</p>
+        </div>
+
+        <div className="w-full text-base text-white">
+          <p className="mb-4">
+            Creative technologist building creative, effective, and minimal internet experiences.
+          </p>
+          <p className="mb-4">
+            Based in Chicago, working globally.
+          </p>
+          <div className="flex flex-col border-t border-white pt-4 mt-6">
+            <p>
+              Links
+            </p>
+            <a
+              href="mailto:rawalvarez731@gmail.com"
+              className="no-underline text-orange hover:text-white font-medium"
+            >
+              → email
+            </a>
+            <a
+              href="/Richard_Alvarez_Resume.pdf"
+              className="no-underline text-orange hover:text-white font-medium"
+            >
+              → resume
+            </a>
+          </div>
+        </div>
       </section>
     </main>
   );

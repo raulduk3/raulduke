@@ -91,11 +91,11 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </head>
-      <body className={avenir.className + " flex flex-col bg-black text-white h-[100svh]"}>
-        <div className="flex-1 flex flex-col justify-center items-center w-8/12 md:w-4/12 mx-auto"> 
+      <body className={avenir.className + " flex flex-col bg-black text-white min-h-[100svh]"}>
+        <div className="flex-1 flex flex-col justify-center items-center w-full px-4"> 
           {children}
         </div>
-        <footer className="py-6 text-center italic text-white/40 text-xs">
+        <footer className="py-6 text-center italic text-white text-xs">
           <p>Richard Alvarez © {new Date().getFullYear()}</p>
         </footer>
         <Analytics />
