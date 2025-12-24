@@ -10,14 +10,14 @@ export default function HomePage() {
         </div>
 
         <div className="w-full border-b pb-4 mb-6">
-          <p className="text-orange text-center text-lg font-light tracking-normal">Web Developer & AI Engineer</p>
+          <p className="text-orange text-lg font-light tracking-normal">Web Developer & AI Engineer</p>
         </div>
 
         <div className="w-full text-base text-white">
           <p className="mb-4">
-            Creative technologist building creative, effective, and minimal internet experiences.
+            Creative technologist building novel, effective and minimal internet experiences.
           </p>
-          <p className="mb-4">
+          <p className="mb-4 text-white/70">
             Based in Chicago, working globally.
           </p>
           <div className="flex flex-col border-t border-white pt-4 mt-6">
