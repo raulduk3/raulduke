@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <main className="flex flex-col items-center justify-center w-full">
-      <section className="w-full max-w-xl border-2 border-white p-8 flex flex-col items-center">
+      <section className="w-full max-w-xl p-8 flex flex-col items-center">
         <div className="w-full border-b pb-4 mb-6">
           <h1 className="text-3xl font-black tracking-wide uppercase text-center">Richard Álvarez</h1>
         </div>
